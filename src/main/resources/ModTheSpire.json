@@ -1,0 +1,14 @@
+{
+  "modid": "Decade",
+  "name": "Decade(王小明)",
+  "author_list": [
+    "树"
+  ],
+  "description": "增加了以假面骑士Decade中的门矢士为原型的人物，测试版",
+  "dependencies": [
+    "basemod"
+  ],
+  "version": "0.0.5.6",
+  "sts_version": "07-14-2019",
+   "update_json": ""
+}

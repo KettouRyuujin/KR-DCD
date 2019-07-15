@@ -1,0 +1,111 @@
+
+decade_kamenride.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+kamenride0
+  rotate: false
+  xy: 637, 257
+  size: 106, 254
+  orig: 106, 254
+  offset: 0, 0
+  index: -1
+kamenride0023
+  rotate: false
+  xy: 745, 257
+  size: 104, 254
+  orig: 104, 254
+  offset: 0, 0
+  index: -1
+kamenride0032
+  rotate: false
+  xy: 650, 1
+  size: 105, 254
+  orig: 105, 254
+  offset: 0, 0
+  index: -1
+kamenride0028
+  rotate: false
+  xy: 171, 1
+  size: 134, 254
+  orig: 134, 254
+  offset: 0, 0
+  index: -1
+kamenride0000
+  rotate: false
+  xy: 529, 257
+  size: 106, 254
+  orig: 106, 254
+  offset: 0, 0
+  index: -1
+kamenride0008
+  rotate: false
+  xy: 757, 1
+  size: 98, 254
+  orig: 98, 254
+  offset: 0, 0
+  index: -1
+kamenride0020
+  rotate: false
+  xy: 851, 257
+  size: 97, 254
+  orig: 97, 254
+  offset: 0, 0
+  index: -1
+kamenride0027
+  rotate: false
+  xy: 1, 1
+  size: 168, 254
+  orig: 168, 254
+  offset: 0, 0
+  index: -1
+kamenride0029
+  rotate: false
+  xy: 290, 257
+  size: 126, 254
+  orig: 126, 254
+  offset: 0, 0
+  index: -1
+kamenride0026
+  rotate: false
+  xy: 1, 257
+  size: 151, 254
+  orig: 151, 254
+  offset: 0, 0
+  index: -1
+kamenride0025
+  rotate: false
+  xy: 154, 257
+  size: 134, 254
+  orig: 134, 254
+  offset: 0, 0
+  index: -1
+kamenride0031
+  rotate: false
+  xy: 418, 257
+  size: 109, 254
+  orig: 109, 254
+  offset: 0, 0
+  index: -1
+kamenride0040
+  rotate: false
+  xy: 542, 1
+  size: 106, 254
+  orig: 106, 254
+  offset: 0, 0
+  index: -1
+kamenride0030
+  rotate: false
+  xy: 431, 1
+  size: 109, 254
+  orig: 109, 254
+  offset: 0, 0
+  index: -1
+kamenride0024
+  rotate: false
+  xy: 307, 1
+  size: 122, 254
+  orig: 122, 254
+  offset: 0, 0
+  index: -1

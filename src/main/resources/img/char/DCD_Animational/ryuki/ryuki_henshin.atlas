@@ -1,0 +1,223 @@
+
+ryuki_henshin.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ryuki_hensin/16
+  rotate: false
+  xy: 1804, 1523
+  size: 151, 254
+  orig: 151, 254
+  offset: 0, 0
+  index: -1
+ryuki_hensin/17
+  rotate: false
+  xy: 601, 1
+  size: 134, 254
+  orig: 134, 254
+  offset: 0, 0
+  index: -1
+ryuki_hensin/18
+  rotate: false
+  xy: 737, 1
+  size: 126, 254
+  orig: 126, 254
+  offset: 0, 0
+  index: -1
+ryuki_hensin/19
+  rotate: false
+  xy: 861, 257
+  size: 110, 254
+  orig: 110, 254
+  offset: 0, 0
+  index: -1
+ryuki_hensin/20
+  rotate: false
+  xy: 973, 257
+  size: 104, 254
+  orig: 104, 254
+  offset: 0, 0
+  index: -1
+ryuki_hensin/21
+  rotate: false
+  xy: 753, 1025
+  size: 105, 254
+  orig: 105, 254
+  offset: 0, 0
+  index: -1
+ryuki_hensin/22
+  rotate: false
+  xy: 860, 769
+  size: 104, 254
+  orig: 104, 254
+  offset: 0, 0
+  index: -1
+ryuki_hensin/1
+  rotate: false
+  xy: 865, 1
+  size: 106, 254
+  orig: 106, 254
+  offset: 0, 0
+  index: -1
+ryuki_hensin/23
+  rotate: false
+  xy: 753, 769
+  size: 105, 254
+  orig: 105, 254
+  offset: 0, 0
+  index: -1
+ryuki_hensin/2
+  rotate: false
+  xy: 1804, 467
+  size: 206, 450
+  orig: 206, 450
+  offset: 0, 0
+  index: -1
+ryuki_hensin/24
+  rotate: false
+  xy: 866, 513
+  size: 104, 254
+  orig: 104, 254
+  offset: 0, 0
+  index: -1
+ryuki_hensin/3
+  rotate: false
+  xy: 443, 674
+  size: 308, 524
+  orig: 308, 524
+  offset: 0, 0
+  index: -1
+ryuki_hensin/25
+  rotate: false
+  xy: 973, 1
+  size: 106, 254
+  orig: 106, 254
+  offset: 0, 0
+  index: -1
+ryuki_hensin/4
+  rotate: false
+  xy: 825, 1326
+  size: 338, 546
+  orig: 338, 546
+  offset: 0, 0
+  index: -1
+ryuki_hensin/26
+  rotate: false
+  xy: 1, 1
+  size: 598, 671
+  orig: 598, 671
+  offset: 0, 0
+  index: -1
+ryuki_hensin/5
+  rotate: false
+  xy: 413, 1326
+  size: 410, 599
+  orig: 410, 599
+  offset: 0, 0
+  index: -1
+ryuki_hensin/6
+  rotate: false
+  xy: 1, 1326
+  size: 410, 599
+  orig: 410, 599
+  offset: 0, 0
+  index: -1
+ryuki_hensin/27
+  rotate: false
+  xy: 1, 674
+  size: 440, 650
+  orig: 440, 650
+  offset: 0, 0
+  index: -1
+ryuki_hensin/7
+  rotate: false
+  xy: 1493, 1326
+  size: 309, 524
+  orig: 309, 524
+  offset: 0, 0
+  index: -1
+ryuki_hensin/8
+  rotate: false
+  xy: 1804, 1
+  size: 226, 464
+  orig: 226, 464
+  offset: 0, 0
+  index: -1
+ryuki_hensin/28
+  rotate: false
+  xy: 1165, 1326
+  size: 326, 559
+  orig: 326, 559
+  offset: 0, 0
+  index: -1
+ryuki_hensin/9
+  rotate: false
+  xy: 1081, 1
+  size: 97, 254
+  orig: 97, 254
+  offset: 0, 0
+  index: -1
+ryuki_hensin/10
+  rotate: false
+  xy: 972, 513
+  size: 104, 254
+  orig: 104, 254
+  offset: 0, 0
+  index: -1
+ryuki_hensin/31
+  rotate: false
+  xy: 1804, 919
+  size: 174, 346
+  orig: 174, 346
+  offset: 0, 0
+  index: -1
+ryuki_hensin/11
+  rotate: false
+  xy: 753, 513
+  size: 111, 254
+  orig: 111, 254
+  offset: 0, 0
+  index: -1
+ryuki_hensin/29
+  rotate: false
+  xy: 1079, 257
+  size: 102, 251
+  orig: 102, 251
+  offset: 0, 0
+  index: -1
+ryuki_hensin/12
+  rotate: false
+  xy: 737, 257
+  size: 122, 254
+  orig: 122, 254
+  offset: 0, 0
+  index: -1
+ryuki_hensin/30
+  rotate: false
+  xy: 1183, 257
+  size: 102, 251
+  orig: 102, 251
+  offset: 0, 0
+  index: -1
+ryuki_hensin/13
+  rotate: false
+  xy: 601, 257
+  size: 134, 254
+  orig: 134, 254
+  offset: 0, 0
+  index: -1
+ryuki_hensin/14
+  rotate: false
+  xy: 1804, 1779
+  size: 151, 254
+  orig: 151, 254
+  offset: 0, 0
+  index: -1
+ryuki_hensin/15
+  rotate: false
+  xy: 1804, 1267
+  size: 168, 254
+  orig: 168, 254
+  offset: 0, 0
+  index: -1
