@@ -47,7 +47,12 @@ public class Decade_Attack extends AbstractCustomCardWithType{
 	
 	@Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+		if(p.hasPower("KuugaPegasusPower")||p.hasPower("RisingPegasusPower")){
+			AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+		}
+		else{
+			AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+		}
 		if(p.hasPower("KamenRideDecadePower")) {
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, new VulnerablePower(m, this.magicNumber, false), this.magicNumber));
 		}
@@ -87,7 +92,12 @@ public class Decade_Attack extends AbstractCustomCardWithType{
 
 	@Override
 	public void optionKuuga() {
-		this.rawDescription = DESCRIPTION;
+		if(AbstractDungeon.player.hasPower("KuugaPegasusPower")||AbstractDungeon.player.hasPower("RisingPegasusPower")){
+			this.rawDescription = EXTENDED_DESCRIPTION[3];
+		}
+		else{
+			this.rawDescription = DESCRIPTION;
+		}
 		initializeDescription();
 	     setBackgroundTexture("img/512/attack_kuuga.png", "img/1024/attack_kuuga.png");
 	}
