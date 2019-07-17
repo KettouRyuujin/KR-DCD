@@ -67,7 +67,13 @@ public class DecadeAnimationAction {
     		"img/char/DCD_Animational/kabuto/kamenform_normal.json",//61
     		"img/char/DCD_Animational/kabuto/kamenriderswitch_tokamenform.json",//62
     		"img/char/DCD_Animational/kabuto/kamenriderswitch_toriderform.json",//63
-    		"img/char/DCD_Animational/kabuto/kabuto_backtodcd.json"//64
+    		"img/char/DCD_Animational/kabuto/kabuto_backtodcd.json",//64
+			"img/char/DCD_Animational/deno/deno_backtodcd.json",//65
+			"img/char/DCD_Animational/deno/deno_normal.json",//66
+			"img/char/DCD_Animational/deno/deno_henshin.json",//67
+			"img/char/DCD_Animational/deno/deno_bokuni_tsurarete_miru.json",//68
+			"img/char/DCD_Animational/deno/deno_kotaewa_kiite_nai.json",//69
+			"img/char/DCD_Animational/deno/deno_nakerude.json"//70
     		};
 	
 	public static String [] ATLAS = {
@@ -135,7 +141,13 @@ public class DecadeAnimationAction {
     		"img/char/DCD_Animational/kabuto/kamenform_normal.atlas",//61
     		"img/char/DCD_Animational/kabuto/kamenriderswitch.atlas",//62
     		"img/char/DCD_Animational/kabuto/kamenriderswitch.atlas",//63
-    		"img/char/DCD_Animational/kabuto/kabuto_backtodcd.atlas"//64
+    		"img/char/DCD_Animational/kabuto/kabuto_backtodcd.atlas",//64
+			"img/char/DCD_Animational/deno/deno_backtodcd.atlas",//65
+			"img/char/DCD_Animational/deno/deno_normal.atlas",//66
+			"img/char/DCD_Animational/deno/deno_henshin.atlas",//67
+			"img/char/DCD_Animational/deno/deno_bokuni_tsurarete_miru.atlas",//68
+			"img/char/DCD_Animational/deno/deno_kotaewa_kiite_nai.atlas",//69
+			"img/char/DCD_Animational/deno/deno_nakerude.atlas"//70
     		};
 	
 	public static String [] NAME = {
@@ -203,7 +215,13 @@ public class DecadeAnimationAction {
     		"normal",//61
     		"tokamenform",//62
     		"toriderform",//63
-    		"backtodcd"//64
+    		"backtodcd",//64
+			"backtodcd",//65
+			"normal",//66
+			"henshin",//67
+			"bokunitsuraretemiru",//68
+			"kotaewa_kiite_nai",//69
+			"nakerude"//70
 	};
     
 }
