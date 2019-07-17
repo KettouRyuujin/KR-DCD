@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -19,8 +18,6 @@ import basemod.helpers.TooltipInfo;
 import dcdmod.DCDmod;
 import dcdmod.Patches.AbstractCardEnum;
 import dcdmod.Patches.AbstractCustomCardWithType;
-import dcdmod.Vfx.DenO_henshin_SoundsAndAnimation;
-import dcdmod.Vfx.DenO_kotaewa_kiite_nai;
 
 
 public class Decade_Attack extends AbstractCustomCardWithType{
@@ -59,7 +56,7 @@ public class Decade_Attack extends AbstractCustomCardWithType{
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, new VulnerablePower(m, this.magicNumber, false), this.magicNumber));
 		}
 		//AbstractDungeon.actionManager.addToTop(new VFXAction(new DenO_henshin_SoundsAndAnimation(p.drawX, p.drawY), 6.0F));
-		AbstractDungeon.actionManager.addToTop(new VFXAction(new DenO_kotaewa_kiite_nai(), 2.1F));
+		//AbstractDungeon.actionManager.addToTop(new VFXAction(new DenO_kotaewa_kiite_nai(), 2.5F));
 	}
 	
 	@Override

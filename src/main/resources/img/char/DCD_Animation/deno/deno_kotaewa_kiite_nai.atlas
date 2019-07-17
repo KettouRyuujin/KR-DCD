@@ -6,13 +6,6 @@ filter: Linear,Linear
 repeat: none
 kotaewa_kiite_nai/3
   rotate: false
-  xy: 311, 1
-  size: 150, 254
-  orig: 150, 254
-  offset: 0, 0
-  index: -1
-kotaewa_kiite_nai/4
-  rotate: false
   xy: 311, 257
   size: 150, 254
   orig: 150, 254
@@ -30,5 +23,12 @@ kotaewa_kiite_nai/1
   xy: 156, 1
   size: 153, 256
   orig: 153, 256
+  offset: 0, 0
+  index: -1
+kotaewa_kiite_nai/4
+  rotate: false
+  xy: 311, 1
+  size: 150, 254
+  orig: 150, 254
   offset: 0, 0
   index: -1

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bfa8c3e3-a842-4585-b2de-638422707007" name="Default Changelist" comment="更新电王动画">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/DenO_kotaewa_kiite_nai.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sounds/deno_kotaewa_kiite_nai.mp3" afterDir="false" />
+    <list default="true" id="bfa8c3e3-a842-4585-b2de-638422707007" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dcdmod/Card/Basic/Decade_Attack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dcdmod/Card/Basic/Decade_Attack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dcdmod/Card/Basic/Decade_Defend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dcdmod/Card/Basic/Decade_Defend.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dcdmod/DCDmod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dcdmod/DCDmod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/DenO_kotaewa_kiite_nai.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/DenO_kotaewa_kiite_nai.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/deno/deno_kotaewa_kiite_nai.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/deno/deno_kotaewa_kiite_nai.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/deno/deno_kotaewa_kiite_nai.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/deno/deno_kotaewa_kiite_nai.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/deno/deno_kotaewa_kiite_nai.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/deno/deno_kotaewa_kiite_nai.png" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -26,11 +26,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Card/Basic/Decade_Attack.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="61" column="88" selection-start-line="61" selection-start-column="88" selection-end-line="61" selection-end-column="88" />
+            <state relative-caret-position="190">
+              <caret line="19" column="49" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="55" column="80" selection-start-line="55" selection-start-column="80" selection-end-line="55" selection-end-column="80" />
             </state>
           </provider>
         </entry>
@@ -50,8 +59,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Vfx/DenO_kotaewa_kiite_nai.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="31" column="46" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="46" />
+            <state relative-caret-position="209">
+              <caret line="40" column="31" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -59,8 +68,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/DCDmod.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="339" column="26" lean-forward="true" selection-start-line="339" selection-start-column="26" selection-end-line="339" selection-end-column="48" />
+            <state relative-caret-position="135">
+              <caret line="339" column="67" selection-start-line="339" selection-start-column="67" selection-end-line="339" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -163,7 +172,7 @@
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator currentView="PackagesPane" proportions="" version="1">
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
@@ -197,36 +206,61 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="DCD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DCD" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DCD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DCD" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DCD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DCD" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+              <item name="char" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DCD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DCD" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+              <item name="char" type="462c0819:PsiDirectoryNode" />
+              <item name="DCD_Animation" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DCD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DCD" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+              <item name="char" type="462c0819:PsiDirectoryNode" />
+              <item name="DCD_Animation" type="462c0819:PsiDirectoryNode" />
+              <item name="deno" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="DCD" type="58d84e3e:PackageViewProjectNode" />
-              <item name="DCD" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="DCD" type="58d84e3e:PackageViewProjectNode" />
-              <item name="DCD" type="616d4139:PackageViewModuleNode" />
-              <item name="dcdmod" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="DCD" type="58d84e3e:PackageViewProjectNode" />
-              <item name="DCD" type="616d4139:PackageViewModuleNode" />
-              <item name="sounds" type="1f31426a:PackageElementNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/sounds" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/deno" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -234,8 +268,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\杀戮尖塔MOD\MKB-Mod\KR-DCD\DCD\src\main\resources\sounds" />
       <recent name="E:\杀戮尖塔MOD\MKB-Mod\KR-DCD\DCD\src\main\resources\img\char\DCD_Animation\deno" />
+      <recent name="E:\杀戮尖塔MOD\MKB-Mod\KR-DCD\DCD\src\main\resources\sounds" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="dcdmod.Vfx" />
@@ -352,14 +386,21 @@
       <option name="project" value="LOCAL" />
       <updated>1563349192229</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="更新电王动画">
+      <created>1563376569461</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1563376569461</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24463807" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24463807" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -368,7 +409,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32956153" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932975" weight="0.3555241" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932975" visible="true" weight="0.3555241" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -585,13 +626,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="55" column="112" selection-start-line="55" selection-start-column="112" selection-end-line="55" selection-end-column="112" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Card/Common/Hibiki_Attack1.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-228">
@@ -637,24 +671,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="55" column="80" selection-start-line="55" selection-start-column="80" selection-end-line="55" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/DCDmod.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="339" column="26" lean-forward="true" selection-start-line="339" selection-start-column="26" selection-end-line="339" selection-end-column="48" />
+        <state relative-caret-position="135">
+          <caret line="339" column="67" selection-start-line="339" selection-start-column="67" selection-end-line="339" selection-end-column="67" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Vfx/DenO_kotaewa_kiite_nai.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="31" column="46" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="46" />
+        <state relative-caret-position="209">
+          <caret line="40" column="31" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Card/Basic/Decade_Attack.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="61" column="88" selection-start-line="61" selection-start-column="88" selection-end-line="61" selection-end-column="88" />
+        <state relative-caret-position="190">
+          <caret line="19" column="49" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

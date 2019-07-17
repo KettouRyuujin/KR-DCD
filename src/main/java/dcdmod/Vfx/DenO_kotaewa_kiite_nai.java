@@ -22,6 +22,7 @@ public class DenO_kotaewa_kiite_nai extends AbstractGameEffect {
 	private float y;
 	private Texture img = null;
 	boolean start = true;
+	boolean A1 = true;
 
 	public DenO_kotaewa_kiite_nai() {
 		if (this.img == null) {
@@ -30,14 +31,14 @@ public class DenO_kotaewa_kiite_nai extends AbstractGameEffect {
 
 		this.x = AbstractDungeon.player.drawX;
 		this.y = AbstractDungeon.player.drawY;
-		this.duration = 2.1F;//倒数时间
-		this.startingDuration = 2.1F;//持续时间
+		this.duration = 2.5F;//倒数时间
+		this.startingDuration = 2.5F;//持续时间
 		this.color = Color.WHITE.cpy();
 	}
 
 	public void update() {
 		this.duration -= Gdx.graphics.getDeltaTime();
-		if (this.duration < 0.6F) {
+		if (this.duration < 1.0F) {
 			if(start) {
 				final Decade Decade = (Decade)AbstractDungeon.player;
 				Decade.Trickster(69);//切换模型
@@ -57,6 +58,10 @@ public class DenO_kotaewa_kiite_nai extends AbstractGameEffect {
 	public void render(SpriteBatch sb) {
 		sb.setColor(this.color);
 		sb.draw(this.img, this.x, this.y);
+		if(A1){
+			CardCrawlGame.sound.playA("attackride", 0.0f);
+			A1 = false;
+		}
 	}
 
 	public void dispose() {
