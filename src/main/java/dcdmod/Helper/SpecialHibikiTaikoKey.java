@@ -25,26 +25,26 @@ public class SpecialHibikiTaikoKey
 	public static int img4 = 0;
 	public static String[] img = {
 			"img/1024/orb-dark.png",//0
-			"img/char/DCD_Animational/hibiki/taiko/CHAKA1.png",//1
-			"img/char/DCD_Animational/hibiki/taiko/PON1.png",//2
-			"img/char/DCD_Animational/hibiki/taiko/DON1.png",//3
-			"img/char/DCD_Animational/hibiki/taiko/PATA1.png",//4
-			"img/char/DCD_Animational/hibiki/taiko/CHAKA2.png",//5
-			"img/char/DCD_Animational/hibiki/taiko/PON2.png",//6
-			"img/char/DCD_Animational/hibiki/taiko/DON2.png",//7
-			"img/char/DCD_Animational/hibiki/taiko/PATA2.png",//8
-			"img/char/DCD_Animational/hibiki/taiko/CHAKA3.png",//9
-			"img/char/DCD_Animational/hibiki/taiko/PON3.png",//10
-			"img/char/DCD_Animational/hibiki/taiko/DON3.png",//11
-			"img/char/DCD_Animational/hibiki/taiko/PATA3.png",//12
-			"img/char/DCD_Animational/hibiki/taiko/CHAKA4.png",//13
-			"img/char/DCD_Animational/hibiki/taiko/PON4.png",//14
-			"img/char/DCD_Animational/hibiki/taiko/DON4.png",//15
-			"img/char/DCD_Animational/hibiki/taiko/PATA4.png",//16
-			"img/char/DCD_Animational/hibiki/taiko/CHAKA5.png",//17
-			"img/char/DCD_Animational/hibiki/taiko/PON5.png",//18
-			"img/char/DCD_Animational/hibiki/taiko/DON5.png",//19
-			"img/char/DCD_Animational/hibiki/taiko/PATA5.png"};//20
+			"img/char/DCD_Animation/hibiki/taiko/CHAKA1.png",//1
+			"img/char/DCD_Animation/hibiki/taiko/PON1.png",//2
+			"img/char/DCD_Animation/hibiki/taiko/DON1.png",//3
+			"img/char/DCD_Animation/hibiki/taiko/PATA1.png",//4
+			"img/char/DCD_Animation/hibiki/taiko/CHAKA2.png",//5
+			"img/char/DCD_Animation/hibiki/taiko/PON2.png",//6
+			"img/char/DCD_Animation/hibiki/taiko/DON2.png",//7
+			"img/char/DCD_Animation/hibiki/taiko/PATA2.png",//8
+			"img/char/DCD_Animation/hibiki/taiko/CHAKA3.png",//9
+			"img/char/DCD_Animation/hibiki/taiko/PON3.png",//10
+			"img/char/DCD_Animation/hibiki/taiko/DON3.png",//11
+			"img/char/DCD_Animation/hibiki/taiko/PATA3.png",//12
+			"img/char/DCD_Animation/hibiki/taiko/CHAKA4.png",//13
+			"img/char/DCD_Animation/hibiki/taiko/PON4.png",//14
+			"img/char/DCD_Animation/hibiki/taiko/DON4.png",//15
+			"img/char/DCD_Animation/hibiki/taiko/PATA4.png",//16
+			"img/char/DCD_Animation/hibiki/taiko/CHAKA5.png",//17
+			"img/char/DCD_Animation/hibiki/taiko/PON5.png",//18
+			"img/char/DCD_Animation/hibiki/taiko/DON5.png",//19
+			"img/char/DCD_Animation/hibiki/taiko/PATA5.png"};//20
 	public static Texture img00 = ImageMaster.loadImage(img[img0]);
 	public static Texture img11 = ImageMaster.loadImage(img[img1]);
 	public static Texture img22 = ImageMaster.loadImage(img[img2]);

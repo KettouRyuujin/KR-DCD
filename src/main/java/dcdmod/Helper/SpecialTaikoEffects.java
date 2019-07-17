@@ -24,12 +24,12 @@ public class SpecialTaikoEffects
     public static boolean TAIKOTrigger2 = true;
     public static int a;
     public static int cf;
-    public static String TAIKO_ATLAS1 = "img/char/DCD_Animational/hibiki/taiko_appear.atlas";
-    public static String TAIKO_ATLAS2 = "img/char/DCD_Animational/hibiki/taiko_p.atlas";
-    public static String TAIKO_JSON1 = "img/char/DCD_Animational/hibiki/taiko_appear_appear.json";
-    public static String TAIKO_JSON2 = "img/char/DCD_Animational/hibiki/taiko_p_taiko.json";
-    public static String TAIKO_JSON3 = "img/char/DCD_Animational/hibiki/taiko_p_stop.json";
-    public static String TAIKO_JSON4 = "img/char/DCD_Animational/hibiki/taiko_appear_disappear.json";
+    public static String TAIKO_ATLAS1 = "img/char/DCD_Animation/hibiki/taiko_appear.atlas";
+    public static String TAIKO_ATLAS2 = "img/char/DCD_Animation/hibiki/taiko_p.atlas";
+    public static String TAIKO_JSON1 = "img/char/DCD_Animation/hibiki/taiko_appear_appear.json";
+    public static String TAIKO_JSON2 = "img/char/DCD_Animation/hibiki/taiko_p_taiko.json";
+    public static String TAIKO_JSON3 = "img/char/DCD_Animation/hibiki/taiko_p_stop.json";
+    public static String TAIKO_JSON4 = "img/char/DCD_Animation/hibiki/taiko_appear_disappear.json";
     public static AnimationLoader Taiko1 = new AnimationLoader(TAIKO_ATLAS1, TAIKO_JSON1,  0.8f);
     public static AnimationLoader Taiko2 = new AnimationLoader(TAIKO_ATLAS2, TAIKO_JSON2,  0.8f);
     public static AnimationLoader Taiko3 = new AnimationLoader(TAIKO_ATLAS2, TAIKO_JSON3,  0.8f);

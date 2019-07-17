@@ -32,8 +32,8 @@ public class Faiz_PunchingUnit extends AbstractGameEffect {
 	boolean Start = true;
 	private AbstractCreature m;
 	private int damage;
-    public static String FAIZ_ATLAS = "img/char/DCD_Animational/faiz/faiz_FAR3.atlas";
-    public static String FAIZ_JSON1 = "img/char/DCD_Animational/faiz/faiz_FAR3.json";
+    public static String FAIZ_ATLAS = "img/char/DCD_Animation/faiz/faiz_FAR3.atlas";
+    public static String FAIZ_JSON1 = "img/char/DCD_Animation/faiz/faiz_FAR3.json";
     
 	public Faiz_PunchingUnit(float x, float y,AbstractCreature m,int d) {
 		if (this.img == null) {

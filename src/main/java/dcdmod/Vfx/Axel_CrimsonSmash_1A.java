@@ -31,8 +31,8 @@ public class Axel_CrimsonSmash_1A extends AbstractGameEffect {
 	private int damage;
 	boolean Animation = true;
 	private AbstractAnimation AXEL1;
-    public static String AXEL_ATLAS = "img/char/DCD_Animational/faiz_Axel/Axel_CrimsonSmash.atlas";
-    public static String AXEL_JSON1 = "img/char/DCD_Animational/faiz_Axel/Axel_CrimsonSmash_1A.json";
+    public static String AXEL_ATLAS = "img/char/DCD_Animation/faiz_Axel/Axel_CrimsonSmash.atlas";
+    public static String AXEL_JSON1 = "img/char/DCD_Animation/faiz_Axel/Axel_CrimsonSmash_1A.json";
 
 	public Axel_CrimsonSmash_1A(int d) {
 		if (this.img == null) {

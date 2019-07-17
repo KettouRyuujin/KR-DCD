@@ -21,8 +21,8 @@ public class Jack_henshin extends AbstractGameEffect {
 	boolean jackStart = true;
 	boolean jackEnd = true;
 	boolean tojack = true;
-	public static String HENSHIN2_ATLAS = "img/char/DCD_Animational/blade/jack_henshin2.atlas";
-	public static String JSON1 = "img/char/DCD_Animational/blade/jack_henshin2.json";
+	public static String HENSHIN2_ATLAS = "img/char/DCD_Animation/blade/jack_henshin2.atlas";
+	public static String JSON1 = "img/char/DCD_Animation/blade/jack_henshin2.json";
 	
 	public Jack_henshin(float x, float y) {
 		if (this.img == null) {

@@ -44,10 +44,10 @@ public class Decade extends CustomPlayer {
 	public static boolean haskamenpower = false;
 	
 	//人物模型
-	public static String FAR_ATLAS = "img/char/DCD_Animational/FAR/FAR.atlas";
-    public static String FAR_JSON0 = "img/char/DCD_Animational/FAR/FAR_FAR0.json";
-    public static String FAR_JSON1 = "img/char/DCD_Animational/FAR/FAR_FAR1.json";
-    public static String FAR_JSON2 = "img/char/DCD_Animational/FAR/FAR_FAR2.json";
+	public static String FAR_ATLAS = "img/char/DCD_Animation/FAR/FAR.atlas";
+    public static String FAR_JSON0 = "img/char/DCD_Animation/FAR/FAR_FAR0.json";
+    public static String FAR_JSON1 = "img/char/DCD_Animation/FAR/FAR_FAR1.json";
+    public static String FAR_JSON2 = "img/char/DCD_Animation/FAR/FAR_FAR2.json";
     public static AnimationLoader FAR0 = new AnimationLoader(FAR_ATLAS, FAR_JSON0,  1.0f);
     public static AnimationLoader FAR1 = new AnimationLoader(FAR_ATLAS, FAR_JSON1,  1.0f);
     public static AnimationLoader FAR2 = new AnimationLoader(FAR_ATLAS, FAR_JSON2,  1.0f);

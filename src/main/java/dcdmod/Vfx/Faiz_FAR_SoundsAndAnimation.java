@@ -23,10 +23,10 @@ public class Faiz_FAR_SoundsAndAnimation extends AbstractGameEffect {
 	boolean FAR2Start = true;
 	boolean FAR_faizStart = true;
 	boolean start = true;
-	public static String FAR_ATLAS = "img/char/DCD_Animational/FAR/FAR.atlas";
-	public static String FAIZ2_ATLAS = "img/char/DCD_Animational/faiz/faiz2.atlas";
-	public static String JSON36 = "img/char/DCD_Animational/faiz/faiz2_FAR0.json";
-	public static String FAR_JSON3 = "img/char/DCD_Animational/FAR/FAR_FAR_faiz.json";
+	public static String FAR_ATLAS = "img/char/DCD_Animation/FAR/FAR.atlas";
+	public static String FAIZ2_ATLAS = "img/char/DCD_Animation/faiz/faiz2.atlas";
+	public static String JSON36 = "img/char/DCD_Animation/faiz/faiz2_FAR0.json";
+	public static String FAR_JSON3 = "img/char/DCD_Animation/FAR/FAR_FAR_faiz.json";
 
 	
 	public Faiz_FAR_SoundsAndAnimation(float x, float y) {

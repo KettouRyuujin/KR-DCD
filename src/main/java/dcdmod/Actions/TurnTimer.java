@@ -73,7 +73,7 @@ public class TurnTimer {
 				SpecialTaikoEffects.update();
 			}
 		}
-		SpecialHibikiTaikoScore.img = ImageMaster.loadImage("img/char/DCD_Animational/hibiki/taikoscore/Score.png");
+		SpecialHibikiTaikoScore.img = ImageMaster.loadImage("img/char/DCD_Animation/hibiki/taikoscore/Score.png");
 		SpecialHibikiTaikoScore.draw_height = 19.0f;
 		SpecialHibikiTaikoScore.draw_width = 235.0f;
 		SpecialHibikiTaikoScore.ishide = true;

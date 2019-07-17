@@ -19,10 +19,10 @@ public class Hibiki_Kurenai_henshin_SoundsAndAnimation extends AbstractGameEffec
 	boolean HENSHIN2Start = true;
 	boolean HENSHIN3Start = true;
 	boolean HENSHIN4Start = true;
-	public static String HENSHIN1_ATLAS = "img/char/DCD_Animational/hibiki/hibiki_kurenai_r.atlas";
-	public static String HENSHIN2_ATLAS = "img/char/DCD_Animational/hibiki/hibiki_kurenai_henshin.atlas";
-	public static String JSON1 = "img/char/DCD_Animational/hibiki/hibiki_kurenai_r.json";
-	public static String JSON2 = "img/char/DCD_Animational/hibiki/hibiki_kurenai_henshin.json";
+	public static String HENSHIN1_ATLAS = "img/char/DCD_Animation/hibiki/hibiki_kurenai_r.atlas";
+	public static String HENSHIN2_ATLAS = "img/char/DCD_Animation/hibiki/hibiki_kurenai_henshin.atlas";
+	public static String JSON1 = "img/char/DCD_Animation/hibiki/hibiki_kurenai_r.json";
+	public static String JSON2 = "img/char/DCD_Animation/hibiki/hibiki_kurenai_henshin.json";
 
 	
 	public Hibiki_Kurenai_henshin_SoundsAndAnimation(float x, float y) {

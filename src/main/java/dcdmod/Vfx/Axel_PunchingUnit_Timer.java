@@ -27,8 +27,8 @@ public class Axel_PunchingUnit_Timer extends AbstractGameEffect {
 	boolean Final = false;
 	int n = 0;
 	AbstractAnimation AXEL4 = null;
-    public static String FAIZ_ATLAS = "img/char/DCD_Animational/faiz_Axel/Axel_PunchingUnit.atlas";
-    public static String FAIZ_JSON1 = "img/char/DCD_Animational/faiz_Axel/Axel_PunchingUnit.json";
+    public static String FAIZ_ATLAS = "img/char/DCD_Animation/faiz_Axel/Axel_PunchingUnit.atlas";
+    public static String FAIZ_JSON1 = "img/char/DCD_Animation/faiz_Axel/Axel_PunchingUnit.json";
 	
 	
 	public Axel_PunchingUnit_Timer(int d) {

@@ -34,7 +34,7 @@ public class Axel_SparkleCut extends AbstractGameEffect {
 		this.duration -= Gdx.graphics.getDeltaTime();
 		if(!EnterButtonAction.AxelForm) {
 			if(Start) {
-				this.img =new Texture(Gdx.files.internal("img/char/DCD_Animational/faiz_Axel/SparkleCut.png"));
+				this.img =new Texture(Gdx.files.internal("img/char/DCD_Animation/faiz_Axel/SparkleCut.png"));
 				this.x = x- (float)this.img.getWidth() / 2.0F;
 				for(int i=0;i<EnterButtonAction.EdgePoint;i++) {
 					if(n != EnterButtonAction.EdgePoint) {

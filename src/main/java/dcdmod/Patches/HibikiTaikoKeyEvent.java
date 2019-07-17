@@ -112,7 +112,7 @@ public class HibikiTaikoKeyEvent {
 		if(ComboPoint >= 10 && !Fever) {
 			CardCrawlGame.sound.playA("Fever", 0.0f);
 			Fever = true;
-			SpecialHibikiTaikoScore.img = ImageMaster.loadImage("img/char/DCD_Animational/hibiki/taikoscore/FeverScore.png");
+			SpecialHibikiTaikoScore.img = ImageMaster.loadImage("img/char/DCD_Animation/hibiki/taikoscore/FeverScore.png");
 			SpecialHibikiTaikoScore.draw_height = 284.0f;
 			SpecialHibikiTaikoScore.draw_width = 235.0f;
 			SpecialHibikiTaikoScore.ishide = false;
@@ -141,7 +141,7 @@ public class HibikiTaikoKeyEvent {
 		}
 		if(ComboPoint<10 && Fever) {
 			Fever = false;
-			SpecialHibikiTaikoScore.img = ImageMaster.loadImage("img/char/DCD_Animational/hibiki/taikoscore/UnfeverScore.png");
+			SpecialHibikiTaikoScore.img = ImageMaster.loadImage("img/char/DCD_Animation/hibiki/taikoscore/UnfeverScore.png");
 			SpecialHibikiTaikoScore.draw_height = 284.0f;
 			SpecialHibikiTaikoScore.draw_width = 235.0f;
 			SpecialHibikiTaikoScore.ishide = false;

@@ -49,7 +49,7 @@ public class SpecialHibikiTaikoScore
         currentmY = 0;
         SpecialHibikiTaikoScore.hb = new Hitbox(235.0F * Settings.scale, 284.0F * Settings.scale);
         SpecialHibikiTaikoScore.hb.move(200F * Settings.scale, AbstractDungeon.floorY + 350.0F * Settings.scale);
-        SpecialHibikiTaikoScore.img = ImageMaster.loadImage("img/char/DCD_Animational/hibiki/taikoscore/Score.png");
+        SpecialHibikiTaikoScore.img = ImageMaster.loadImage("img/char/DCD_Animation/hibiki/taikoscore/Score.png");
 		if (Settings.language == Settings.GameLanguage.ZHS||Settings.language == Settings.GameLanguage.ZHT) {
             name = "乐谱提示";
             hide = "左键点击可展开查看或收起 NL 右键可拖动卷轴";
@@ -125,20 +125,20 @@ public class SpecialHibikiTaikoScore
     public static void hidescore() {
 		if(ishide) {
 			if(HibikiTaikoKeyEvent.Fever) {
-				SpecialHibikiTaikoScore.img = ImageMaster.loadImage("img/char/DCD_Animational/hibiki/taikoscore/FeverScore.png");
+				SpecialHibikiTaikoScore.img = ImageMaster.loadImage("img/char/DCD_Animation/hibiki/taikoscore/FeverScore.png");
 		        draw_height = 284.0f;
 		        draw_width = 235.0f;
 		        ishide = false;
 			}
 			else {
-				SpecialHibikiTaikoScore.img = ImageMaster.loadImage("img/char/DCD_Animational/hibiki/taikoscore/UnfeverScore.png");
+				SpecialHibikiTaikoScore.img = ImageMaster.loadImage("img/char/DCD_Animation/hibiki/taikoscore/UnfeverScore.png");
 		        draw_height = 284.0f;
 		        draw_width = 235.0f;
 		        ishide = false;
 			}
 		}
 		else {
-			SpecialHibikiTaikoScore.img = ImageMaster.loadImage("img/char/DCD_Animational/hibiki/taikoscore/Score.png");
+			SpecialHibikiTaikoScore.img = ImageMaster.loadImage("img/char/DCD_Animation/hibiki/taikoscore/Score.png");
 	        draw_height = 19.0f;
 	        draw_width = 235.0f;
 	        ishide = true;

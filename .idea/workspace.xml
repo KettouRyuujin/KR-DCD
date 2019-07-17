@@ -1,7 +1,485 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bfa8c3e3-a842-4585-b2de-638422707007" name="Default Changelist" comment="" />
+    <list default="true" id="bfa8c3e3-a842-4585-b2de-638422707007" name="Default Changelist" comment="更新电王动画">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/541257877.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/DenO_backtodcd.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/DenO_henshin_SoundsAndAnimation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/sounds/deno_henshin.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dcdmod/Actions/DecadeAnimationAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dcdmod/Actions/DecadeAnimationAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dcdmod/Actions/FaizAnimationAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dcdmod/Actions/FaizAnimationAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dcdmod/Actions/TurnTimer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dcdmod/Actions/TurnTimer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dcdmod/Characters/Decade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dcdmod/Characters/Decade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dcdmod/DCDmod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dcdmod/DCDmod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dcdmod/Helper/SpecialAutoVajin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dcdmod/Helper/SpecialAutoVajin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dcdmod/Helper/SpecialDragreder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dcdmod/Helper/SpecialDragreder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dcdmod/Helper/SpecialHibikiTaiko.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dcdmod/Helper/SpecialHibikiTaiko.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dcdmod/Helper/SpecialHibikiTaikoKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dcdmod/Helper/SpecialHibikiTaikoKey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dcdmod/Helper/SpecialHibikiTaikoScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dcdmod/Helper/SpecialHibikiTaikoScore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dcdmod/Helper/SpecialTaikoEffects.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dcdmod/Helper/SpecialTaikoEffects.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dcdmod/Patches/HibikiTaikoKeyEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dcdmod/Patches/HibikiTaikoKeyEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/Axel_CrimsonSmash_1A.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/Axel_CrimsonSmash_1A.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/Axel_CrimsonSmash_2A.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/Axel_CrimsonSmash_2A.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/Axel_CrimsonSmash_3A.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/Axel_CrimsonSmash_3A.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/Axel_PunchingUnit_Timer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/Axel_PunchingUnit_Timer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/Axel_SparkleCut.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/Axel_SparkleCut.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/Blade_henshin_SoundsAndAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/Blade_henshin_SoundsAndAnimation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/Faiz_Axel_Timer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/Faiz_Axel_Timer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/Faiz_CrimsonSmash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/Faiz_CrimsonSmash.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/Faiz_FAR_SoundsAndAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/Faiz_FAR_SoundsAndAnimation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/Faiz_PunchingUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/Faiz_PunchingUnit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/Faiz_SparkleCut.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/Faiz_SparkleCut.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/Hibiki_FAR_SoundsAndAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/Hibiki_FAR_SoundsAndAnimation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/Hibiki_Kurenai_henshin_SoundsAndAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/Hibiki_Kurenai_henshin_SoundsAndAnimation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/Hibiki_henshin_SoundsAndAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/Hibiki_henshin_SoundsAndAnimation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/Hibiki_taikoL1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/Hibiki_taikoL1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/Hibiki_taikoL2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/Hibiki_taikoL2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/Hibiki_taikoR1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/Hibiki_taikoR1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/Hibiki_taikoR2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/Hibiki_taikoR2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/Jack_henshin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/Jack_henshin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/Kabuto_henshin_SoundsAndAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/Kabuto_henshin_SoundsAndAnimation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/FAR/FAR.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/FAR/FAR.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/FAR/FAR.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/FAR/FAR.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/FAR/FAR_FAR0.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/FAR/FAR_FAR0.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/FAR/FAR_FAR1.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/FAR/FAR_FAR1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/FAR/FAR_FAR2.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/FAR/FAR_FAR2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/FAR/FAR_FAR_faiz.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/FAR/FAR_FAR_faiz.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/agito/agito_backtodcd.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/agito/agito_backtodcd.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/agito/agito_backtodcd.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/agito/agito_backtodcd.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/agito/agito_backtodcd.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/agito/agito_backtodcd.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/agito/agito_dcdtoagito.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/agito/agito_dcdtoagito.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/agito/agito_dcdtoagito.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/agito/agito_dcdtoagito.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/agito/agito_dcdtoagito.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/agito/agito_dcdtoagito.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/agito/agito_flame.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/agito/agito_flame.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/agito/agito_flame.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/agito/agito_flame.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/agito/agito_flame.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/agito/agito_flame.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/agito/agito_normal.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/agito/agito_normal.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/agito/agito_normal.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/agito/agito_normal.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/agito/agito_normal.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/agito/agito_normal.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/agito/agito_normal_p.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/agito/agito_normal_p.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/agito/agito_normal_p.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/agito/agito_normal_p.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/agito/agito_normal_p.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/agito/agito_normal_p.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/agito/agito_normal_t.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/agito/agito_normal_t.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/agito/agito_normal_t.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/agito/agito_normal_t.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/agito/agito_normal_t.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/agito/agito_normal_t.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/agito/agito_normal_tp.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/agito/agito_normal_tp.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/agito/agito_normal_tp.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/agito/agito_normal_tp.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/agito/agito_normal_tp.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/agito/agito_normal_tp.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/agito/agito_power.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/agito/agito_power.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/agito/agito_power.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/agito/agito_power.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/agito/agito_power.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/agito/agito_power.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/agito/agito_power_t.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/agito/agito_power_t.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/agito/agito_power_t.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/agito/agito_power_t.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/agito/agito_power_t.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/agito/agito_power_t.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/agito/agito_storm.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/agito/agito_storm.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/agito/agito_storm.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/agito/agito_storm.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/agito/agito_storm.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/agito/agito_storm.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/agito/agito_trinity.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/agito/agito_trinity.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/agito/agito_trinity.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/agito/agito_trinity.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/agito/agito_trinity.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/agito/agito_trinity.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/autovajin/autovajin.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/autovajin/autovajin.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/autovajin/autovajin.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/autovajin/autovajin.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/autovajin/autovajin_appear.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/autovajin/autovajin_appear.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/autovajin/autovajin_attack.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/autovajin/autovajin_attack.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/autovajin/autovajin_defend.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/autovajin/autovajin_defend.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/autovajin/autovajin_disappear.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/autovajin/autovajin_disappear.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/autovajin/autovajin_stop.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/autovajin/autovajin_stop.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/blade/blade_backtodcd.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/blade/blade_backtodcd.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/blade/blade_backtodcd.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/blade/blade_backtodcd.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/blade/blade_backtodcd.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/blade/blade_backtodcd.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/blade/blade_henshin1.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/blade/blade_henshin1.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/blade/blade_henshin1.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/blade/blade_henshin1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/blade/blade_henshin1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/blade/blade_henshin1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/blade/blade_henshin2.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/blade/blade_henshin2.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/blade/blade_henshin2.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/blade/blade_henshin2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/blade/blade_henshin2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/blade/blade_henshin2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/blade/blade_henshin_P.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/blade/blade_henshin_P.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/blade/blade_henshin_P.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/blade/blade_henshin_P.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/blade/blade_henshin_P.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/blade/blade_henshin_P.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/blade/blade_henshin_card.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/blade/blade_henshin_card.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/blade/blade_henshin_card.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/blade/blade_henshin_card.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/blade/blade_henshin_card.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/blade/blade_henshin_card.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/blade/blade_normal.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/blade/blade_normal.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/blade/blade_normal.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/blade/blade_normal.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/blade/blade_normal.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/blade/blade_normal.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/blade/jack_henshin1.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/blade/jack_henshin1.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/blade/jack_henshin1.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/blade/jack_henshin1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/blade/jack_henshin1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/blade/jack_henshin1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/blade/jack_henshin2.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/blade/jack_henshin2.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/blade/jack_henshin2.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/blade/jack_henshin2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/blade/jack_henshin2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/blade/jack_henshin2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/blade/jackform_normal.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/blade/jackform_normal.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/blade/jackform_normal.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/blade/jackform_normal.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/blade/jackform_normal.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/blade/jackform_normal.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/decade/decade_henshin.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/decade/decade_henshin.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/decade/decade_henshin.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/decade/decade_henshin.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/decade/decade_henshin.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/decade/decade_henshin.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/decade/decade_kamenride.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/decade/decade_kamenride.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/decade/decade_kamenride.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/decade/decade_kamenride.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/decade/decade_kamenride_kamenride.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/decade/decade_kamenride_kamenride.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/decade/decade_kamenride_timer.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/decade/decade_kamenride_timer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/decade/decade_normal.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/decade/decade_normal.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/decade/decade_normal.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/decade/decade_normal.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/decade/decade_normal.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/decade/decade_normal.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/decade/decade_victory.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/decade/decade_victory.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/decade/decade_victory.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/decade/decade_victory.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/decade/decade_victory.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/decade/decade_victory.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/deno/deno_backtodcd.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/deno/deno_backtodcd.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/deno/deno_backtodcd.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/deno/deno_backtodcd.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/deno/deno_backtodcd.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/deno/deno_backtodcd.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/deno/deno_bokuni_tsurarete_miru.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/deno/deno_bokuni_tsurarete_miru.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/deno/deno_bokuni_tsurarete_miru.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/deno/deno_bokuni_tsurarete_miru.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/deno/deno_bokuni_tsurarete_miru.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/deno/deno_bokuni_tsurarete_miru.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/deno/deno_henshin.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/deno/deno_henshin.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/deno/deno_henshin.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/deno/deno_henshin.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/deno/deno_henshin.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/deno/deno_henshin.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/deno/deno_henshin_P.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/deno/deno_henshin_P.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/deno/deno_henshin_P.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/deno/deno_henshin_P.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/deno/deno_henshin_P.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/deno/deno_henshin_P.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/deno/deno_henshin_card.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/deno/deno_henshin_card.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/deno/deno_henshin_card.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/deno/deno_henshin_card.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/deno/deno_henshin_card.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/deno/deno_henshin_card.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/deno/deno_kotaewa_kiite_nai.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/deno/deno_kotaewa_kiite_nai.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/deno/deno_kotaewa_kiite_nai.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/deno/deno_kotaewa_kiite_nai.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/deno/deno_kotaewa_kiite_nai.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/deno/deno_kotaewa_kiite_nai.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/deno/deno_nakerude.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/deno/deno_nakerude.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/deno/deno_nakerude.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/deno/deno_nakerude.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/deno/deno_nakerude.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/deno/deno_nakerude.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/deno/deno_normal.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/deno/deno_normal.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/deno/deno_normal.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/deno/deno_normal.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/deno/deno_normal.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/deno/deno_normal.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/dragreder/dragreder.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/dragreder/dragreder.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/dragreder/dragreder.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/dragreder/dragreder.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/dragreder/dragreder_appear.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/dragreder/dragreder_appear.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/dragreder/dragreder_attack.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/dragreder/dragreder_attack.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/dragreder/dragreder_defendtonormal.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/dragreder/dragreder_defendtonormal.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/dragreder/dragreder_disappear.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/dragreder/dragreder_disappear.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/dragreder/dragreder_normal.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/dragreder/dragreder_normal.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/dragreder/dragreder_normaltodefend.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/dragreder/dragreder_normaltodefend.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz/faiz_FAR0.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz/faiz_FAR0.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz/faiz_FAR0.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz/faiz_FAR0.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz/faiz_FAR0.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz/faiz_FAR0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz/faiz_FAR1.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz/faiz_FAR1.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz/faiz_FAR1.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz/faiz_FAR1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz/faiz_FAR1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz/faiz_FAR1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz/faiz_FAR2.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz/faiz_FAR2.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz/faiz_FAR2.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz/faiz_FAR2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz/faiz_FAR2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz/faiz_FAR2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz/faiz_FAR3.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz/faiz_FAR3.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz/faiz_FAR3.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz/faiz_FAR3.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz/faiz_FAR3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz/faiz_FAR3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz/faiz_backtodcd.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz/faiz_backtodcd.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz/faiz_backtodcd.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz/faiz_backtodcd.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz/faiz_backtodcd.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz/faiz_backtodcd.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz/faiz_gunattack.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz/faiz_gunattack.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz/faiz_gunattack.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz/faiz_gunattack.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz/faiz_gunattack.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz/faiz_gunattack.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz/faiz_henshin.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz/faiz_henshin.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz/faiz_henshin.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz/faiz_henshin.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz/faiz_henshin.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz/faiz_henshin.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz/faiz_normal.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz/faiz_normal.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz/faiz_normal.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz/faiz_normal.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz/faiz_normal.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz/faiz_normal.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz/faiz_punchingunit.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz/faiz_punchingunit.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz/faiz_punchingunit.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz/faiz_punchingunit.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz/faiz_punchingunit.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz/faiz_punchingunit.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz/faiz_sparklecut.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz/faiz_sparklecut.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz/faiz_sparklecut.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz/faiz_sparklecut.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz/faiz_sparklecut.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz/faiz_sparklecut.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/Axel_CrimsonSmash.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/Axel_CrimsonSmash.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/Axel_CrimsonSmash.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/Axel_CrimsonSmash.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/Axel_CrimsonSmash_1A.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/Axel_CrimsonSmash_1A.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/Axel_CrimsonSmash_2A.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/Axel_CrimsonSmash_2A.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/Axel_CrimsonSmash_3A.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/Axel_CrimsonSmash_3A.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/Axel_PunchingUnit.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/Axel_PunchingUnit.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/Axel_PunchingUnit.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/Axel_PunchingUnit.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/Axel_PunchingUnit.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/Axel_PunchingUnit.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/Axel_backtofaiz.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/Axel_backtofaiz.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/Axel_backtofaiz.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/Axel_backtofaiz.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/Axel_backtofaiz.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/Axel_backtofaiz.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/Axel_henshin.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/Axel_henshin.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/Axel_henshin.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/Axel_henshin.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/Axel_henshin.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/Axel_henshin.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/Axel_normal.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/Axel_normal.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/Axel_normal.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/Axel_normal.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/Axel_normal.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/Axel_normal.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/SparkleCut.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/SparkleCut.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/faiz_Axel_attack.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/faiz_Axel_attack.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/faiz_Axel_attack.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/faiz_Axel_attack.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/faiz_Axel_attack.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/faiz_Axel_attack.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-0.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-10.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-10.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-100.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-100.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-101.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-101.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-102.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-102.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-103.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-103.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-104.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-104.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-105.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-105.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-106.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-106.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-107.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-107.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-108.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-108.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-11.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-11.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-114.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-114.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-115.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-115.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-116.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-116.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-117.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-117.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-12.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-12.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-13.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-13.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-14.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-14.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-15.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-15.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-16.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-16.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-17.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-17.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-18.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-18.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-19.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-19.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-190.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-190.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-20.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-20.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-21.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-21.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-22.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-22.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-23.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-23.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-24.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-24.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-25.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-25.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-26.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-26.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-27.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-27.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-28.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-28.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-29.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-29.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-30.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-30.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-31.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-31.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-32.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-32.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-33.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-33.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-34.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-34.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-35.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-35.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-36.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-36.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-37.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-37.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-38.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-38.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-39.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-39.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-40.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-40.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-41.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-41.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-42.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-42.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-43.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-43.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-44.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-44.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-45.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-45.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-46.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-46.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-47.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-47.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-48.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-48.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-49.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-49.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-5.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-50.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-50.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-51.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-51.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-52.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-52.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-53.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-53.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-54.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-54.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-55.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-55.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-56.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-56.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-57.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-57.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-58.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-58.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-59.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-59.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-6.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-60.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-60.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-61.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-61.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-62.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-62.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-63.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-63.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-64.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-64.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-65.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-65.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-66.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-66.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-67.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-67.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-68.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-68.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-69.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-69.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-7.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-7.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-70.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-70.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-71.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-71.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-72.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-72.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-73.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-73.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-74.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-74.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-75.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-75.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-76.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-76.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-77.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-77.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-78.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-78.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-79.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-79.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-8.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-8.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-80.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-80.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-81.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-81.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-82.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-82.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-83.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-83.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-84.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-84.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-85.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-85.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-86.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-86.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-87.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-87.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-88.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-88.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-89.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-89.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-9.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-9.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-90.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-90.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-91.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-91.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-92.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-92.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-93.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-93.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-94.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-94.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-95.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-95.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-96.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-96.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-97.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-97.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-98.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-98.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/faiz_Axel/timer/Axel_Timer_16810-99.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-99.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/hibiki_attack1.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/hibiki_attack1.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/hibiki_attack1.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/hibiki_attack1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/hibiki_attack1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/hibiki_attack1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/hibiki_attack2.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/hibiki_attack2.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/hibiki_attack2.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/hibiki_attack2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/hibiki_attack2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/hibiki_attack2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/hibiki_attack3.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/hibiki_attack3.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/hibiki_attack3.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/hibiki_attack3.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/hibiki_attack3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/hibiki_attack3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/hibiki_backtodcd.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/hibiki_backtodcd.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/hibiki_backtodcd.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/hibiki_backtodcd.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/hibiki_backtodcd.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/hibiki_backtodcd.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/hibiki_henshin.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/hibiki_henshin.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/hibiki_henshin.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/hibiki_henshin.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/hibiki_henshin.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/hibiki_henshin.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/hibiki_henshin_P.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/hibiki_henshin_P.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/hibiki_henshin_P.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/hibiki_henshin_P.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/hibiki_henshin_P.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/hibiki_henshin_P.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/hibiki_henshin_card.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/hibiki_henshin_card.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/hibiki_henshin_card.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/hibiki_henshin_card.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/hibiki_henshin_card.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/hibiki_henshin_card.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/hibiki_kurenai_henshin.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/hibiki_kurenai_henshin.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/hibiki_kurenai_henshin.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/hibiki_kurenai_henshin.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/hibiki_kurenai_henshin.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/hibiki_kurenai_henshin.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/hibiki_kurenai_henshin0.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/hibiki_kurenai_henshin0.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/hibiki_kurenai_henshin0.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/hibiki_kurenai_henshin0.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/hibiki_kurenai_henshin0.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/hibiki_kurenai_henshin0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/hibiki_kurenai_normal.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/hibiki_kurenai_normal.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/hibiki_kurenai_normal.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/hibiki_kurenai_normal.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/hibiki_kurenai_normal.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/hibiki_kurenai_normal.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/hibiki_kurenai_r.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/hibiki_kurenai_r.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/hibiki_kurenai_r.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/hibiki_kurenai_r.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/hibiki_kurenai_r.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/hibiki_kurenai_r.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/hibiki_normal.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/hibiki_normal.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/hibiki_normal.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/hibiki_normal.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/hibiki_normal.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/hibiki_normal.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/hibiki_taikoprepare.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/hibiki_taikoprepare.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/hibiki_taikoprepare.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/hibiki_taikoprepare.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/hibiki_taikoprepare.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/hibiki_taikoprepare.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/hibiki_taikoprepare2.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/hibiki_taikoprepare2.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/hibiki_taikoprepare2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/hibiki_taikoprepare2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/hibiki_taikoprepare2_prepare.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/hibiki_taikoprepare2_prepare.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/hibiki_taikoprepare2_stop.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/hibiki_taikoprepare2_stop.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/taiko/CHAKA1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/taiko/CHAKA1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/taiko/CHAKA2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/taiko/CHAKA2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/taiko/CHAKA3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/taiko/CHAKA3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/taiko/CHAKA4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/taiko/CHAKA4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/taiko/CHAKA5.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/taiko/CHAKA5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/taiko/DON1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/taiko/DON1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/taiko/DON2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/taiko/DON2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/taiko/DON3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/taiko/DON3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/taiko/DON4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/taiko/DON4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/taiko/DON5.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/taiko/DON5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/taiko/PATA1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/taiko/PATA1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/taiko/PATA2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/taiko/PATA2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/taiko/PATA3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/taiko/PATA3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/taiko/PATA4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/taiko/PATA4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/taiko/PATA5.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/taiko/PATA5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/taiko/PON1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/taiko/PON1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/taiko/PON2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/taiko/PON2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/taiko/PON3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/taiko/PON3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/taiko/PON4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/taiko/PON4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/taiko/PON5.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/taiko/PON5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/taiko/taiko1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/taiko/taiko1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/taiko/taikoL1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/taiko/taikoL1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/taiko/taikoL2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/taiko/taikoL2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/taiko/taikoR1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/taiko/taikoR1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/taiko/taikoR2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/taiko/taikoR2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/taiko_appear.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/taiko_appear.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/taiko_appear.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/taiko_appear.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/taiko_appear.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/taiko_appear.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/taiko_appear_appear.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/taiko_appear_appear.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/taiko_appear_disappear.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/taiko_appear_disappear.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/taiko_p.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/taiko_p.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/taiko_p.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/taiko_p.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/taiko_p_stop.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/taiko_p_stop.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/taiko_p_taiko.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/taiko_p_taiko.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/taikoscore/FeverScore.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/taikoscore/FeverScore.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/taikoscore/Score.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/taikoscore/Score.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/hibiki/taikoscore/UnfeverScore.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/hibiki/taikoscore/UnfeverScore.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/kabuto/kabuto_backtodcd.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/kabuto/kabuto_backtodcd.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/kabuto/kabuto_backtodcd.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/kabuto/kabuto_backtodcd.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/kabuto/kabuto_backtodcd.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/kabuto/kabuto_backtodcd.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/kabuto/kabuto_henshin.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/kabuto/kabuto_henshin.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/kabuto/kabuto_henshin.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/kabuto/kabuto_henshin.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/kabuto/kabuto_henshin.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/kabuto/kabuto_henshin.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/kabuto/kabuto_henshin_P.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/kabuto/kabuto_henshin_P.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/kabuto/kabuto_henshin_P.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/kabuto/kabuto_henshin_P.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/kabuto/kabuto_henshin_P.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/kabuto/kabuto_henshin_P.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/kabuto/kabuto_henshin_card.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/kabuto/kabuto_henshin_card.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/kabuto/kabuto_henshin_card.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/kabuto/kabuto_henshin_card.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/kabuto/kabuto_henshin_card.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/kabuto/kabuto_henshin_card.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/kabuto/kabuto_normal.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/kabuto/kabuto_normal.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/kabuto/kabuto_normal.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/kabuto/kabuto_normal.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/kabuto/kabuto_normal.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/kabuto/kabuto_normal.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/kabuto/kamenform_normal.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/kabuto/kamenform_normal.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/kabuto/kamenform_normal.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/kabuto/kamenform_normal.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/kabuto/kamenform_normal.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/kabuto/kamenform_normal.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/kabuto/kamenriderswitch.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/kabuto/kamenriderswitch.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/kabuto/kamenriderswitch.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/kabuto/kamenriderswitch.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/kabuto/kamenriderswitch_tokamenform.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/kabuto/kamenriderswitch_tokamenform.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/kabuto/kamenriderswitch_toriderform.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/kabuto/kamenriderswitch_toriderform.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/kuuga/kuuga_Dragon.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/kuuga/kuuga_Dragon.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/kuuga/kuuga_Dragon.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/kuuga/kuuga_Dragon.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/kuuga/kuuga_Dragon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/kuuga/kuuga_Dragon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/kuuga/kuuga_Pegasus.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/kuuga/kuuga_Pegasus.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/kuuga/kuuga_Pegasus.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/kuuga/kuuga_Pegasus.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/kuuga/kuuga_Pegasus.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/kuuga/kuuga_Pegasus.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/kuuga/kuuga_Titan.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/kuuga/kuuga_Titan.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/kuuga/kuuga_Titan.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/kuuga/kuuga_Titan.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/kuuga/kuuga_Titan.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/kuuga/kuuga_Titan.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/kuuga/kuuga_allformbacktodcd.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/kuuga/kuuga_allformbacktodcd.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/kuuga/kuuga_allformbacktodcd.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/kuuga/kuuga_allformbacktodcd.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/kuuga/kuuga_allformbacktodcd.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/kuuga/kuuga_allformbacktodcd.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/kuuga/kuuga_backtodcd.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/kuuga/kuuga_backtodcd.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/kuuga/kuuga_backtodcd.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/kuuga/kuuga_backtodcd.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/kuuga/kuuga_backtodcd.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/kuuga/kuuga_backtodcd.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/kuuga/kuuga_dcdtokuuga.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/kuuga/kuuga_dcdtokuuga.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/kuuga/kuuga_dcdtokuuga.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/kuuga/kuuga_dcdtokuuga.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/kuuga/kuuga_dcdtokuuga.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/kuuga/kuuga_dcdtokuuga.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/kuuga/kuuga_normal.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/kuuga/kuuga_normal.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/kuuga/kuuga_normal.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/kuuga/kuuga_normal.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/kuuga/kuuga_normal.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/kuuga/kuuga_normal.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/ryuki/ryuki_attack.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/ryuki/ryuki_attack.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/ryuki/ryuki_attack.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/ryuki/ryuki_attack.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/ryuki/ryuki_attack.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/ryuki/ryuki_attack.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/ryuki/ryuki_backtodcd.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/ryuki/ryuki_backtodcd.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/ryuki/ryuki_backtodcd.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/ryuki/ryuki_backtodcd.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/ryuki/ryuki_backtodcd.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/ryuki/ryuki_backtodcd.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/ryuki/ryuki_defend.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/ryuki/ryuki_defend.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/ryuki/ryuki_defend.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/ryuki/ryuki_defend.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/ryuki/ryuki_defend.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/ryuki/ryuki_defend.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/ryuki/ryuki_guard.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/ryuki/ryuki_guard.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/ryuki/ryuki_guard.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/ryuki/ryuki_guard.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/ryuki/ryuki_guard.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/ryuki/ryuki_guard.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/ryuki/ryuki_guardattack.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/ryuki/ryuki_guardattack.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/ryuki/ryuki_guardattack.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/ryuki/ryuki_guardattack.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/ryuki/ryuki_guardattack.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/ryuki/ryuki_guardattack.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/ryuki/ryuki_guardstrike.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/ryuki/ryuki_guardstrike.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/ryuki/ryuki_guardstrike.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/ryuki/ryuki_guardstrike.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/ryuki/ryuki_guardstrike.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/ryuki/ryuki_guardstrike.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/ryuki/ryuki_henshin.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/ryuki/ryuki_henshin.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/ryuki/ryuki_henshin.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/ryuki/ryuki_henshin.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/ryuki/ryuki_henshin.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/ryuki/ryuki_henshin.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/ryuki/ryuki_henshintonormal.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/ryuki/ryuki_henshintonormal.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/ryuki/ryuki_henshintonormal.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/ryuki/ryuki_henshintonormal.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/ryuki/ryuki_henshintonormal.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/ryuki/ryuki_henshintonormal.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/ryuki/ryuki_normal.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/ryuki/ryuki_normal.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/ryuki/ryuki_normal.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/ryuki/ryuki_normal.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/ryuki/ryuki_normal.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/ryuki/ryuki_normal.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/ryuki/ryuki_strike.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/ryuki/ryuki_strike.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/ryuki/ryuki_strike.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/ryuki/ryuki_strike.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/ryuki/ryuki_strike.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/ryuki/ryuki_strike.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/ryuki/ryuki_strikeattack.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/ryuki/ryuki_strikeattack.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/ryuki/ryuki_strikeattack.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/ryuki/ryuki_strikeattack.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/ryuki/ryuki_strikeattack.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/ryuki/ryuki_strikeattack.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sounds/agito_strom.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sounds/agito_storm.mp3" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,47 +494,51 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/DCDmod.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="619">
-              <caret line="55" column="44" selection-start-line="55" selection-start-column="44" selection-end-line="55" selection-end-column="44" />
+            <state relative-caret-position="123">
+              <caret line="333" column="36" selection-start-line="333" selection-start-column="36" selection-end-line="333" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Vfx/DenO_backtodcd.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="580">
+              <caret line="50" column="31" selection-start-line="50" selection-start-column="31" selection-end-line="50" selection-end-column="31" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Card/Basic/Decade_Attack.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Vfx/Jack_henshin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="50" column="133" selection-start-line="50" selection-start-column="133" selection-end-line="50" selection-end-column="133" />
-              <folding>
-                <element signature="e#2892#2893#0" expanded="true" />
-                <element signature="e#2984#2985#0" expanded="true" />
-                <element signature="e#3056#3057#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="190">
+              <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Card/Common/UnarmedAttack1.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Actions/DecadeAnimationAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-456">
-              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/localization/zhs/DCDCards.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+            <state relative-caret-position="1340">
+              <caret line="144" column="57" selection-start-line="144" selection-start-column="57" selection-end-line="144" selection-end-column="57" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>/kabuto/kabuto_</find>
+      <find>DCD_Animation</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>/deno/deno_</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
@@ -74,6 +556,11 @@
         <option value="$PROJECT_DIR$/src/main/java/dcdmod/Actions/TaikoAttackAction.java" />
         <option value="$PROJECT_DIR$/src/main/resources/localization/zhs/DCDCards.json" />
         <option value="$PROJECT_DIR$/src/main/java/dcdmod/Card/Basic/Decade_Attack.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dcdmod/DCDmod.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/DenO_henshin_SoundsAndAnimation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dcdmod/Actions/DecadeAnimationAction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/Kabuto_henshin_SoundsAndAnimation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/DenO_backtodcd.java" />
       </list>
     </option>
   </component>
@@ -105,8 +592,53 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="DCD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DCD" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DCD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DCD" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DCD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DCD" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DCD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DCD" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DCD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DCD" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dcdmod" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DCD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DCD" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dcdmod" type="462c0819:PsiDirectoryNode" />
+              <item name="Vfx" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope" />
-      <pane id="ProjectPane" />
       <pane id="PackagesPane">
         <subPane>
           <expand>
@@ -122,13 +654,20 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animational/deno" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/sounds" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.spelling" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\杀戮尖塔MOD\MKB-Mod\KR-DCD\DCD\src\main\resources\sounds" />
+      <recent name="E:\杀戮尖塔MOD\MKB-Mod\KR-DCD\DCD\src\main\resources\img\char\DCD_Animational\deno" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="dcdmod.Vfx" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\杀戮尖塔MOD\MKB-Mod\KR-DCD\DCD\src\main\resources" />
       <recent name="E:\杀戮尖塔MOD\MKB-Mod\KR-DCD\DCD\src\main" />
@@ -188,13 +727,27 @@
       <option name="project" value="LOCAL" />
       <updated>1563293182318</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="更新电王动画">
+      <created>1563332447010</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1563332447010</updated>
+    </task>
+    <task id="LOCAL-00006" summary="更新电王动画">
+      <created>1563333463838</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1563333463838</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23793566" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24128686" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -210,14 +763,14 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50067025" side_tool="true" weight="0.3555241" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3286119" />
       <window_info anchor="bottom" id="GitHub Pull Requests" order="10" sideWeight="0.49932975" weight="0.3286119" />
       <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49932975" weight="0.3045326" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven" order="4" visible="true" weight="0.29624665" />
+      <window_info anchor="right" id="Maven" order="4" weight="0.29624665" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
@@ -226,7 +779,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="重构项目结构" />
     <MESSAGE value="bug修复" />
-    <option name="LAST_COMMIT_MESSAGE" value="bug修复" />
+    <MESSAGE value="更新电王动画" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新电王动画" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/Actions/ApotheosisAction.java" />
@@ -295,8 +849,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="619">
+        <state relative-caret-position="1045">
           <caret line="55" column="44" selection-start-line="55" selection-start-column="44" selection-end-line="55" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Card/Common/UnarmedAttack1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -304,13 +865,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Card/Common/UnarmedAttack1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-456">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -323,6 +877,104 @@
             <element signature="e#2984#2985#0" expanded="true" />
             <element signature="e#3056#3057#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Vfx/DenO_henshin_SoundsAndAnimation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Interfaces/PostCreateCommonStartingRelicsSubscriber.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Manager/ModSaverFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Manager/PlayerManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="16" column="11" lean-forward="true" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Patches/HibikiTaikoKeyEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1733">
+          <caret line="245" column="28" lean-forward="true" selection-start-line="245" selection-start-column="28" selection-end-line="245" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Patches/ModBaseClassForSLExample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-446">
+          <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Patches/OpenFix.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Patches/TypePatch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Vfx/Blade_henshin_SoundsAndAnimation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="21" column="33" lean-forward="true" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/DCDmod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="333" column="36" selection-start-line="333" selection-start-column="36" selection-end-line="333" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Vfx/Kabuto_henshin_SoundsAndAnimation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-80">
+          <caret line="26" column="70" selection-start-line="26" selection-start-column="70" selection-end-line="26" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Actions/DecadeAnimationAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1340">
+          <caret line="144" column="57" selection-start-line="144" selection-start-column="57" selection-end-line="144" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Vfx/DenO_backtodcd.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="50" column="31" selection-start-line="50" selection-start-column="31" selection-end-line="50" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Vfx/Jack_henshin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
         </state>
       </provider>
     </entry>

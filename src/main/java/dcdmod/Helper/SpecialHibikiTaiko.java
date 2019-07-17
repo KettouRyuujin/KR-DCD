@@ -37,7 +37,7 @@ public class SpecialHibikiTaiko
         currentmY = 0;
         SpecialHibikiTaiko.hb = new Hitbox(709.0f, 126.0F);
         SpecialHibikiTaiko.hb.move(500.0F * Settings.scale, AbstractDungeon.floorY + 463.0F * Settings.scale);
-        SpecialHibikiTaiko.img = ImageMaster.loadImage("img/char/DCD_Animational/hibiki/taiko/taiko1.png");
+        SpecialHibikiTaiko.img = ImageMaster.loadImage("img/char/DCD_Animation/hibiki/taiko/taiko1.png");
 		if (Settings.language == Settings.GameLanguage.ZHS||Settings.language == Settings.GameLanguage.ZHT) {
             name = "鼓动界面";
             firstline = "通过按键U、I、O、P敲出不同的音色，通过特定的敲击顺序触发效果 NL ";

@@ -23,14 +23,14 @@ public class Blade_henshin_SoundsAndAnimation extends AbstractGameEffect {
 	boolean HENSHIN4Start = true;
 	boolean timer = true;
 	boolean start = true;
-	public static String HENSHIN1_ATLAS = "img/char/DCD_Animational/blade/blade_henshin_card.atlas";
-	public static String HENSHIN2_ATLAS = "img/char/DCD_Animational/blade/blade_henshin_P.atlas";
-	public static String HENSHIN3_ATLAS = "img/char/DCD_Animational/blade/blade_henshin1.atlas";
-	public static String HENSHIN4_ATLAS = "img/char/DCD_Animational/blade/blade_henshin2.atlas";
-	public static String JSON1 = "img/char/DCD_Animational/blade/blade_henshin_card.json";
-	public static String JSON2 = "img/char/DCD_Animational/blade/blade_henshin_P.json";
-	public static String JSON3 = "img/char/DCD_Animational/blade/blade_henshin1.json";
-	public static String JSON4 = "img/char/DCD_Animational/blade/blade_henshin2.json";
+	public static String HENSHIN1_ATLAS = "img/char/DCD_Animation/blade/blade_henshin_card.atlas";
+	public static String HENSHIN2_ATLAS = "img/char/DCD_Animation/blade/blade_henshin_P.atlas";
+	public static String HENSHIN3_ATLAS = "img/char/DCD_Animation/blade/blade_henshin1.atlas";
+	public static String HENSHIN4_ATLAS = "img/char/DCD_Animation/blade/blade_henshin2.atlas";
+	public static String JSON1 = "img/char/DCD_Animation/blade/blade_henshin_card.json";
+	public static String JSON2 = "img/char/DCD_Animation/blade/blade_henshin_P.json";
+	public static String JSON3 = "img/char/DCD_Animation/blade/blade_henshin1.json";
+	public static String JSON4 = "img/char/DCD_Animation/blade/blade_henshin2.json";
 
 	
 	public Blade_henshin_SoundsAndAnimation(float x, float y) {

@@ -196,12 +196,9 @@ public class DCDmod implements PostInitializeSubscriber,EditCharactersSubscriber
     	logger.info("========================== 正在注入新的关键字 ==========================");
         String keywordsPath = null;
         switch (Settings.language) {
-            case ZHT: {
-                keywordsPath = "localization/zhs/DCDKeywords.json";
-                break;
-            }
+            case ZHT:
             case ZHS: {
-           	 keywordsPath = "localization/zhs/DCDKeywords.json";
+                keywordsPath = "localization/zhs/DCDKeywords.json";
                 break;
             }
             default: {
@@ -270,7 +267,7 @@ public class DCDmod implements PostInitializeSubscriber,EditCharactersSubscriber
     	reflectedMap.put("titan", new Sfx("sounds/kuuga_titan.mp3"));
     	reflectedMap.put("dragon", new Sfx("sounds/kuuga_dragon.mp3"));
     	reflectedMap.put("flame", new Sfx("sounds/agito_flame.mp3"));
-    	reflectedMap.put("storm", new Sfx("sounds/agito_strom.mp3"));
+    	reflectedMap.put("storm", new Sfx("sounds/agito_storm.mp3"));
     	reflectedMap.put("FAR", new Sfx("sounds/final_attack_ride.mp3"));
     	reflectedMap.put("FAR_DCD", new Sfx("sounds/decade_final.mp3"));
     	reflectedMap.put("FAR_KUUGA", new Sfx("sounds/kuuga_final.mp3"));
@@ -339,6 +336,7 @@ public class DCDmod implements PostInitializeSubscriber,EditCharactersSubscriber
     	reflectedMap.put("agito_BGM1", new Sfx("sounds/agito_BGM1.mp3"));
     	reflectedMap.put("agito_BGM2", new Sfx("sounds/agito_BGM2.mp3"));
     	reflectedMap.put("faiz_BGM2", new Sfx("sounds/agito_BGM2.mp3"));
+        reflectedMap.put("deno_henshin", new Sfx("sounds/deno_henshin.wav"));
 	}
     
 	@SuppressWarnings("unchecked")

@@ -24,12 +24,12 @@ public class SpecialAutoVajin
     public static boolean AutoVajinTrigger2 = true;
     public static int a;
     public static int cf;
-    public static String AUTOVAJIN_ATLAS = "img/char/DCD_Animational/autovajin/autovajin.atlas";
-    public static String AUTOVAJIN_JSON1 = "img/char/DCD_Animational/autovajin/autovajin_appear.json";
-    public static String AUTOVAJIN_JSON2 = "img/char/DCD_Animational/autovajin/autovajin_attack.json";
-    public static String AUTOVAJIN_JSON3 = "img/char/DCD_Animational/autovajin/autovajin_disappear.json";
-    public static String AUTOVAJIN_JSON4 = "img/char/DCD_Animational/autovajin/autovajin_defend.json";
-    public static String AUTOVAJIN_JSON5 = "img/char/DCD_Animational/autovajin/autovajin_stop.json";
+    public static String AUTOVAJIN_ATLAS = "img/char/DCD_Animation/autovajin/autovajin.atlas";
+    public static String AUTOVAJIN_JSON1 = "img/char/DCD_Animation/autovajin/autovajin_appear.json";
+    public static String AUTOVAJIN_JSON2 = "img/char/DCD_Animation/autovajin/autovajin_attack.json";
+    public static String AUTOVAJIN_JSON3 = "img/char/DCD_Animation/autovajin/autovajin_disappear.json";
+    public static String AUTOVAJIN_JSON4 = "img/char/DCD_Animation/autovajin/autovajin_defend.json";
+    public static String AUTOVAJIN_JSON5 = "img/char/DCD_Animation/autovajin/autovajin_stop.json";
     public static AnimationLoader AutoVajin1 = new AnimationLoader(AUTOVAJIN_ATLAS, AUTOVAJIN_JSON1,  0.8f);
     public static AnimationLoader AutoVajin2 = new AnimationLoader(AUTOVAJIN_ATLAS, AUTOVAJIN_JSON2,  0.8f);
     public static AnimationLoader AutoVajin3 = new AnimationLoader(AUTOVAJIN_ATLAS, AUTOVAJIN_JSON3,  0.8f);

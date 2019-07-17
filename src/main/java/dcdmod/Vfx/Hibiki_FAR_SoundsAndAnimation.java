@@ -34,8 +34,8 @@ public class Hibiki_FAR_SoundsAndAnimation extends AbstractGameEffect {
 	boolean FAR = true;
 	private int damage;
 	private DamageType damageType;
-	public static String TAIKO_ATLAS2 = "img/char/DCD_Animational/hibiki/taiko_p.atlas";
-	public static String TAIKO_JSON2 = "img/char/DCD_Animational/hibiki/taiko_p_taiko.json";
+	public static String TAIKO_ATLAS2 = "img/char/DCD_Animation/hibiki/taiko_p.atlas";
+	public static String TAIKO_JSON2 = "img/char/DCD_Animation/hibiki/taiko_p_taiko.json";
 	public static AnimationLoader Taiko2 = new AnimationLoader(TAIKO_ATLAS2, TAIKO_JSON2,  0.8f);
 
 	public Hibiki_FAR_SoundsAndAnimation(int d,DamageType damageType) {

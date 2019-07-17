@@ -13,7 +13,7 @@ public class Hibiki_taikoR1 extends AbstractGameEffect {
 
 	public Hibiki_taikoR1(float x, float y) {
 		if (this.img == null) {
-			this.img =new Texture(Gdx.files.internal("img/char/DCD_Animational/hibiki/taiko/taikoR1.png"));
+			this.img =new Texture(Gdx.files.internal("img/char/DCD_Animation/hibiki/taiko/taikoR1.png"));
 		}
 
 		this.x = x;
