@@ -53,7 +53,7 @@
                         <phase>package</phase>
                         <configuration>
                             <target>
-                                <copy file="target/DCD.jar" tofile="../lib/DCD.jar"/>
+                                <copy file="target/DCD.jar" tofile="F:\steam\steamapps\common\SlayTheSpire\mods\DCD.jar"/>
                             </target>
                         </configuration>
                         <goals>

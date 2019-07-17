@@ -337,6 +337,8 @@ public class DCDmod implements PostInitializeSubscriber,EditCharactersSubscriber
     	reflectedMap.put("agito_BGM2", new Sfx("sounds/agito_BGM2.mp3"));
     	reflectedMap.put("faiz_BGM2", new Sfx("sounds/agito_BGM2.mp3"));
         reflectedMap.put("deno_henshin", new Sfx("sounds/deno_henshin.wav"));
+        reflectedMap.put("deno_kotaewa_kiite_nai", new Sfx("deno_kotaewa_kiite_nai.mp3"));
+
 	}
     
 	@SuppressWarnings("unchecked")

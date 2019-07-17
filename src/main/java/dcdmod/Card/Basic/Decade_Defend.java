@@ -1,5 +1,6 @@
 package dcdmod.Card.Basic;
 
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -12,7 +13,7 @@ import dcdmod.DCDmod;
 import dcdmod.Patches.AbstractCardEnum;
 import dcdmod.Patches.AbstractCustomCardWithType;
 import dcdmod.Power.Rollpower;
-
+import dcdmod.Vfx.DenO_backtodcd;
 
 
 public class Decade_Defend extends AbstractCustomCardWithType{
@@ -40,6 +41,7 @@ public class Decade_Defend extends AbstractCustomCardWithType{
     public void use(AbstractPlayer p, AbstractMonster m) {
 		AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Rollpower(p, 1), 1));
+		//AbstractDungeon.actionManager.addToBottom(new VFXAction(new DenO_backtodcd(AbstractDungeon.player.drawX - 200.00f, AbstractDungeon.player.drawY + 250.00f), 2F));
 	}
 	
 	@Override
