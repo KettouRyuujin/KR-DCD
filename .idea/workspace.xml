@@ -2,17 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bfa8c3e3-a842-4585-b2de-638422707007" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/DenO_bokuni_tsurarete_miru.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sounds/deno_bokuni_tsurarete_miru.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sounds/deno_nakerude.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/decade/FAR/Decade_FAR1.atlas" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/decade/FAR/Decade_FAR1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/decade/FAR/Decade_FAR1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/decade/FAR/Decade_FAR2.atlas" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/decade/FAR/Decade_FAR2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/decade/FAR/Decade_FAR2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/decade/FAR/Decade_FAR3.atlas" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/decade/FAR/Decade_FAR3.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/decade/FAR/Decade_FAR3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/decade/FAR/Decade_FAR_kick.atlas" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/decade/FAR/Decade_FAR_kick.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/decade/FAR/Decade_FAR_kick.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/decade/FAR/FAR_decade.atlas" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/decade/FAR/FAR_decade.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/decade/FAR/FAR_decade.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/decade/FAR/FAR_decade_card1.atlas" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/decade/FAR/FAR_decade_card1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/decade/FAR/FAR_decade_card1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/decade/FAR/FAR_decade_card2.atlas" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/decade/FAR/FAR_decade_card2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/decade/FAR/FAR_decade_card2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/decade/FAR/card.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dcdmod/DCDmod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dcdmod/DCDmod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/deno/deno_bokuni_tsurarete_miru.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/deno/deno_bokuni_tsurarete_miru.atlas" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/deno/deno_bokuni_tsurarete_miru.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/deno/deno_bokuni_tsurarete_miru.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/deno/deno_bokuni_tsurarete_miru.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/deno/deno_bokuni_tsurarete_miru.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/deno/deno_nakerude.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/deno/deno_nakerude.atlas" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/deno/deno_nakerude.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/deno/deno_nakerude.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/deno/deno_nakerude.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/deno/deno_nakerude.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dcdmod/Power/KuugaDragonPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dcdmod/Power/KuugaDragonPower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dcdmod/Power/RisingDragonPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dcdmod/Power/RisingDragonPower.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -28,88 +42,78 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Card/Basic/Decade_Attack.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-494">
-              <caret line="19" column="49" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="49" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
+            <state relative-caret-position="1045">
               <caret line="55" column="80" selection-start-line="55" selection-start-column="80" selection-end-line="55" selection-end-column="80" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Card/Basic/Decade_Defend.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Card/Common/FormRideDragon.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="43" column="10" selection-start-line="43" selection-start-column="10" selection-end-line="43" selection-end-column="10" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="114">
+              <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Vfx/DenO_kotaewa_kiite_nai.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Card/Common/FormRidePegasus.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="40" column="31" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
+            <state relative-caret-position="95">
+              <caret line="5" column="70" selection-start-line="5" selection-start-column="70" selection-end-line="5" selection-end-column="70" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/DCDmod.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Power/KuugaDragonPower.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="341" column="58" lean-forward="true" selection-start-line="341" selection-start-column="58" selection-end-line="341" selection-end-column="58" />
+            <state relative-caret-position="608">
+              <caret line="45" column="21" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Power/RisingDragonPower.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="380">
+              <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Vfx/DenO_bokuni_tsurarete_miru.java">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/decade/FAR/Decade_FAR_kick.atlas">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Power/KamenRideKuugaPower.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="36" column="35" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
+            <state relative-caret-position="494">
+              <caret line="41" column="7" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="31" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Card/Common/Hibiki_Attack2.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Power/DragShieldPower.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="988">
-              <caret line="76" column="81" selection-start-line="76" selection-start-column="81" selection-end-line="76" selection-end-column="81" />
+            <state relative-caret-position="798">
+              <caret line="51" column="12" selection-start-line="51" selection-start-column="12" selection-end-line="51" selection-end-column="123" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Vfx/Hibiki_Attack2_sounds.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Card/Common/Hibiki_Attack1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
-              <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="62" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Actions/DecadeAnimationAction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="147" column="59" selection-start-line="147" selection-start-column="59" selection-end-line="147" selection-end-column="59" />
+            <state relative-caret-position="114">
+              <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -129,6 +133,12 @@
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--follow-tags" />
+        <option name="title" value="Current Branch" />
+      </GitPushTagMode>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -152,6 +162,10 @@
         <option value="$PROJECT_DIR$/src/main/java/dcdmod/Card/Basic/Decade_Attack.java" />
         <option value="$PROJECT_DIR$/src/main/java/dcdmod/DCDmod.java" />
         <option value="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/DenO_bokuni_tsurarete_miru.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dcdmod/Vfx/DenO_nakerude.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dcdmod/Card/Common/FormRidePegasus.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dcdmod/Power/RisingDragonPower.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dcdmod/Power/KuugaDragonPower.java" />
       </list>
     </option>
   </component>
@@ -191,6 +205,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -242,7 +257,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="dcdmod" type="462c0819:PsiDirectoryNode" />
-              <item name="Vfx" type="462c0819:PsiDirectoryNode" />
+              <item name="Card" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DCD" type="b2602c69:ProjectViewProjectNode" />
@@ -265,18 +280,51 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="sounds" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+              <item name="char" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DCD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DCD" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+              <item name="char" type="462c0819:PsiDirectoryNode" />
+              <item name="DCD_Animation" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DCD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DCD" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+              <item name="char" type="462c0819:PsiDirectoryNode" />
+              <item name="DCD_Animation" type="462c0819:PsiDirectoryNode" />
+              <item name="decade" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DCD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DCD" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+              <item name="char" type="462c0819:PsiDirectoryNode" />
+              <item name="DCD_Animation" type="462c0819:PsiDirectoryNode" />
+              <item name="decade" type="462c0819:PsiDirectoryNode" />
+              <item name="FAR" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/sounds" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/decade/FAR" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -416,14 +464,20 @@
       <option name="project" value="LOCAL" />
       <updated>1563377552918</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="更新电王动画">
+      <created>1563377927334</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1563377927334</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24463807" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -432,7 +486,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32956153" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932975" visible="true" weight="0.3555241" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932975" weight="0.3555241" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -459,30 +513,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="更新电王动画" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/Actions/ApotheosisAction.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/DCDmod.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Actions/AdventCardAction.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/ModTheSpire.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/ModTheSpire.config">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Actions/AdventCardAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-399">
-          <caret line="19" column="35" lean-forward="true" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Actions/ApotheosisAction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -649,17 +679,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Card/Common/Hibiki_Attack1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-228">
-          <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Vfx/Hibiki_attack2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-722">
           <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Card/Basic/Decade_Attack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="19" column="49" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Vfx/DenO_nakerude.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="36" column="35" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Card/Common/Hibiki_Attack2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="988">
+          <caret line="76" column="81" selection-start-line="76" selection-start-column="81" selection-end-line="76" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Vfx/Hibiki_Attack2_sounds.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Actions/DecadeAnimationAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2793">
+          <caret line="147" column="59" selection-start-line="147" selection-start-column="59" selection-end-line="147" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Vfx/DenO_bokuni_tsurarete_miru.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="52" column="42" selection-start-line="52" selection-start-column="42" selection-end-line="52" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/DCDmod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8">
+          <caret line="121" column="14" lean-forward="true" selection-start-line="121" selection-start-column="14" selection-end-line="121" selection-end-column="14" />
+          <folding>
+            <element signature="e#20624#20654#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Vfx/DenO_kotaewa_kiite_nai.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="40" column="31" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -673,64 +758,90 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Card/Common/Hibiki_Attack2.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Power/KuugaSpecialPower.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="988">
-          <caret line="76" column="81" selection-start-line="76" selection-start-column="81" selection-end-line="76" selection-end-column="81" />
+        <state relative-caret-position="-201">
+          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Vfx/Hibiki_Attack2_sounds.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Card/Common/FormRideStorm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Vfx/DenO_kotaewa_kiite_nai.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="40" column="31" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Card/Basic/Decade_Attack.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-494">
-          <caret line="19" column="49" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="114">
+          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
+        <state relative-caret-position="1045">
           <caret line="55" column="80" selection-start-line="55" selection-start-column="80" selection-end-line="55" selection-end-column="80" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/DCDmod.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Card/Common/FormRideDragon.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="341" column="58" lean-forward="true" selection-start-line="341" selection-start-column="58" selection-end-line="341" selection-end-column="58" />
+        <state relative-caret-position="114">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Actions/DecadeAnimationAction.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Card/Common/FormRidePegasus.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="147" column="59" selection-start-line="147" selection-start-column="59" selection-end-line="147" selection-end-column="59" />
+        <state relative-caret-position="95">
+          <caret line="5" column="70" selection-start-line="5" selection-start-column="70" selection-end-line="5" selection-end-column="70" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Vfx/DenO_bokuni_tsurarete_miru.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Power/KuugaDragonPower.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="36" column="35" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
+        <state relative-caret-position="608">
+          <caret line="45" column="21" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Power/KamenRideKuugaPower.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="41" column="7" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Power/DragShieldPower.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="798">
+          <caret line="51" column="12" selection-start-line="51" selection-start-column="12" selection-end-line="51" selection-end-column="123" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Card/Common/Hibiki_Attack1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dcdmod/Power/RisingDragonPower.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/decade/FAR/Decade_FAR1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/decade/FAR/Decade_FAR3.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/decade/FAR/Decade_FAR_kick.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/decade/FAR/FAR_decade.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/img/char/DCD_Animation/decade/FAR/Decade_FAR_kick.atlas">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
   <component name="masterDetails">
