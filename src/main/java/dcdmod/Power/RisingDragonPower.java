@@ -1,7 +1,6 @@
  package dcdmod.Power;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -9,7 +8,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.BufferPower;
 
@@ -35,16 +33,6 @@ import dcdmod.Actions.ReturnRandomNumberAction2;
 	    this.img = ImageMaster.loadImage("img/powers/RisingDragonPower.png");
 	   updateDescription();
 	   loadRegion("RisingDragonPower");
-	   }
-
-	 public void onRemove() {
-		   for(AbstractMonster monster:AbstractDungeon.getMonsters().monsters){
-			   if( !monster.isDead && !monster.isDying && monster.hasPower("KuugaSpecialPower") && monster.getPower("KuugaSpecialPower").amount>3){
-				   int x = monster.getPower("KuugaSpecialPower").amount - 3;
-				   AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(monster, monster, "KuugaSpecialPower", x));
-			   }
-
-		   }
 	   }
 	   
 	    public int onAttacked(final DamageInfo info, final int damageAmount) {
