@@ -73,7 +73,11 @@ public class DecadeAnimationAction {
 			"img/char/DCD_Animation/deno/deno_henshin.json",//67
 			"img/char/DCD_Animation/deno/deno_bokuni_tsurarete_miru.json",//68
 			"img/char/DCD_Animation/deno/deno_kotaewa_kiite_nai.json",//69
-			"img/char/DCD_Animation/deno/deno_nakerude.json"//70
+			"img/char/DCD_Animation/deno/deno_nakerude.json",//70
+			"img/char/DCD_Animation/decade/FAR/Decade_FAR1.json",//71
+			"img/char/DCD_Animation/decade/FAR/Decade_FAR2.json",//72
+			"img/char/DCD_Animation/decade/FAR/Decade_FAR3.json",//73
+			"img/char/DCD_Animation/decade/FAR/Decade_FAR_kick.json"//74
     		};
 	
 	public static String [] ATLAS = {
@@ -147,13 +151,17 @@ public class DecadeAnimationAction {
 			"img/char/DCD_Animation/deno/deno_henshin.atlas",//67
 			"img/char/DCD_Animation/deno/deno_bokuni_tsurarete_miru.atlas",//68
 			"img/char/DCD_Animation/deno/deno_kotaewa_kiite_nai.atlas",//69
-			"img/char/DCD_Animation/deno/deno_nakerude.atlas"//70
+			"img/char/DCD_Animation/deno/deno_nakerude.atlas",//70
+			"img/char/DCD_Animation/decade/FAR/Decade_FAR1.atlas",//71
+			"img/char/DCD_Animation/decade/FAR/Decade_FAR2.atlas",//72
+			"img/char/DCD_Animation/decade/FAR/Decade_FAR3.atlas",//73
+			"img/char/DCD_Animation/decade/FAR/Decade_FAR_kick.atlas"//74
     		};
 	
 	public static String [] NAME = {
 			"",//0
 			"normal",//1
-			"hensin",//2
+			"henshin",//2
 			"victory",//3
 			"normal",//4
 			"dcdtokuuga",//5
@@ -221,7 +229,11 @@ public class DecadeAnimationAction {
 			"henshin",//67
 			"bokunitsuraretemiru",//68
 			"kotaewa_kiite_nai",//69
-			"nakerude"//70
+			"nakerude",//70
+			"FAR1",//71
+			"FAR2",//72
+			"FAR3",//73
+			"kick"//74
 	};
     
 }

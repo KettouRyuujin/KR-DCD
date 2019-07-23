@@ -16,7 +16,7 @@ import dcdmod.Helper.SpecialRideBooker;
 import dcdmod.Patches.AbstractCardEnum;
 import dcdmod.Patches.AbstractCustomCardWithType;
 import dcdmod.Power.KamenRideDecadePower;
-import dcdmod.Vfx.Decade_hensin;
+import dcdmod.Vfx.Decade_henshin;
 
 
 
@@ -56,7 +56,7 @@ public class KamenRideDecade extends AbstractCustomCardWithType{
 		else {
 			CardCrawlGame.sound.playA("decade_hensin", 0.0f);
 			CardCrawlGame.sound.playA("people_hensin", 0.0f);
-			AbstractDungeon.actionManager.addToBottom(new VFXAction(new Decade_hensin(p.drawX - 200.00f, p.drawY + 250.00f), 7F));
+			AbstractDungeon.actionManager.addToBottom(new VFXAction(new Decade_henshin(p.drawX - 200.00f, p.drawY + 250.00f), 6.2F));
 		}
 	}
 	

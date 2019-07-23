@@ -12,7 +12,7 @@ import dcdmod.Actions.RemoveKamenRideAction;
 import dcdmod.Helper.SpecialRideBooker;
 import dcdmod.Patches.AbstractClickRelic;
 import dcdmod.Power.KamenRideDecadePower;
-import dcdmod.Vfx.Decade_hensin;
+import dcdmod.Vfx.Decade_henshin;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
@@ -133,7 +133,7 @@ public class Decaderiver extends AbstractClickRelic{
 		   CardCrawlGame.sound.playA("people_hensin", 0.0f);
 		   CardCrawlGame.sound.playA("decade_hensin", 0.0f);
 		   AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new KamenRideDecadePower(AbstractDungeon.player,1),1));
-		   AbstractDungeon.actionManager.addToBottom(new VFXAction(new Decade_hensin(AbstractDungeon.player.drawX - 200.00f, AbstractDungeon.player.drawY + 250.00f), 7F));
+		   AbstractDungeon.actionManager.addToBottom(new VFXAction(new Decade_henshin(AbstractDungeon.player.drawX - 200.00f, AbstractDungeon.player.drawY + 250.00f), 6.2F));
 		   ishensin = true;
 	   }
    }  
