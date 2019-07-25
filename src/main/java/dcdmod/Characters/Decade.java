@@ -37,27 +37,24 @@ import dcdmod.Patches.*;
 import java.util.ArrayList;
 
 public class Decade extends CustomPlayer {
-	public static final int ENERGY_PER_TURN = 3;
-	public static final String[] orbTextures = { "img/character/orb/enabled/layer1.png", "img/character/orb/enabled/layer2.png", "img/character/orb/enabled/layer3.png", "img/character/orb/enabled/layer4.png", "img/character/orb/enabled/layer5.png", "img/character/orb/enabled/layer6.png", "img/character/orb/disabled/layer1d.png", "img/character/orb/disabled/layer2d.png", "img/character/orb/disabled/layer3d.png", "img/character/orb/disabled/layer4d.png", "img/character/orb/disabled/layer5d.png" };
+	private static final int ENERGY_PER_TURN = 3;
+	private static final String[] orbTextures = { "img/character/orb/enabled/layer1.png", "img/character/orb/enabled/layer2.png", "img/character/orb/enabled/layer3.png", "img/character/orb/enabled/layer4.png", "img/character/orb/enabled/layer5.png", "img/character/orb/enabled/layer6.png", "img/character/orb/disabled/layer1d.png", "img/character/orb/disabled/layer2d.png", "img/character/orb/disabled/layer3d.png", "img/character/orb/disabled/layer4d.png", "img/character/orb/disabled/layer5d.png" };
 	public static int cf;
-	public static String mx;
-	public static boolean haskamenpower = false;
-	
+
 	//人物模型
-	public static String FAR_ATLAS = "img/char/DCD_Animation/FAR/FAR.atlas";
+	private static String FAR_ATLAS = "img/char/DCD_Animation/FAR/FAR.atlas";
     public static String FAR_JSON0 = "img/char/DCD_Animation/FAR/FAR_FAR0.json";
-    public static String FAR_JSON1 = "img/char/DCD_Animation/FAR/FAR_FAR1.json";
-    public static String FAR_JSON2 = "img/char/DCD_Animation/FAR/FAR_FAR2.json";
+    private static String FAR_JSON1 = "img/char/DCD_Animation/FAR/FAR_FAR1.json";
+    private static String FAR_JSON2 = "img/char/DCD_Animation/FAR/FAR_FAR2.json";
     public static AnimationLoader FAR0 = new AnimationLoader(FAR_ATLAS, FAR_JSON0,  1.0f);
     public static AnimationLoader FAR1 = new AnimationLoader(FAR_ATLAS, FAR_JSON1,  1.0f);
     public static AnimationLoader FAR2 = new AnimationLoader(FAR_ATLAS, FAR_JSON2,  1.0f);
-    public static AnimationLoader Animation = null;
-    public static int [] ban = {13,15,19,20,21,22,24,25,26,27,31,32,33,36,38,42,51,52,53,56,57,58};
+	private static int [] ban = {13,15,19,20,21,22,24,25,26,27,31,32,33,36,38,42,51,52,53,56,57,58,71,72,73,74,76,78,79};
 
 	
 	public Decade(String name) {
 		
-		super(name, CharacterEnum.Decade, orbTextures, "img/character/orb/vfx.png", (String)null, (String)null);
+		super(name, CharacterEnum.Decade, orbTextures, "img/character/orb/vfx.png", null, (String)null);
 		Decade.cf = 0;
 		this.dialogX = (this.drawX + 0.0F * Settings.scale);
 		this.dialogY = (this.drawY + 220.0F * Settings.scale);
@@ -77,7 +74,7 @@ public class Decade extends CustomPlayer {
 		
 		if(((AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT || AbstractDungeon.getCurrRoom() instanceof MonsterRoom) &&AbstractDungeon.player != null && !AbstractDungeon.player.isDead)) {
 			for(AbstractCard c : AbstractDungeon.player.discardPile.group) {
-				if(c.cardID == "TimeVent" && c.upgraded != true && !TimeVent.TimeVentUpgraded) {
+				if(c.cardID.equals("TimeVent") && !c.upgraded && !TimeVent.TimeVentUpgraded) {
 					AbstractDungeon.player.discardPile.removeCard(c);
 					TimeVent.TimeVentUpgraded = true;
 					break;
@@ -92,7 +89,7 @@ public class Decade extends CustomPlayer {
 			   group.group.addAll(AbstractDungeon.player.hand.group);
 			   group.group.addAll(AbstractDungeon.player.exhaustPile.group);
 			for(AbstractCard c : group.group) {
-				if(c.cardID == "NMDAZYYGL") {
+				if(c.cardID.equals("NMDAZYYGL")) {
 					x++;
 				}
 			}
@@ -100,7 +97,7 @@ public class Decade extends CustomPlayer {
 				AbstractCard rc = null;
 				for(int i=0;i<x;i++){
 					for(AbstractCard c : AbstractDungeon.player.drawPile.group) {
-						if(c.cardID == "NMDAZYYGL") {
+						if(c.cardID.equals("NMDAZYYGL")) {
 							AbstractDungeon.player.drawPile.group.remove(c);
 							rc = c;
 							break;
@@ -117,14 +114,14 @@ public class Decade extends CustomPlayer {
 			int cards = 0;
 			int cards2 = 0;
 			for(AbstractCard c : AbstractDungeon.player.masterDeck.group) {
-				if(c.cardID == "NMDAZYYGL") {
+				if(c.cardID.equals("NMDAZYYGL")) {
 					cards++;
 				}
 			}
 			if(cards>1) {
 				for(int i = 0;i<(cards-1);i++) {
 					for(AbstractCard c : AbstractDungeon.player.masterDeck.group) {
-						if(c.cardID == "NMDAZYYGL") {
+						if(c.cardID.equals("NMDAZYYGL")) {
 							AbstractDungeon.player.masterDeck.group.remove(c);
 							break;
 						}
@@ -132,22 +129,22 @@ public class Decade extends CustomPlayer {
 				}
 			}
 			for(AbstractCard c : AbstractDungeon.player.hand.group) {
-				if(c.cardID == "NMDAZYYGL") {
+				if(c.cardID.equals("NMDAZYYGL")) {
 					cards2++;
 				}
 			}
 			for(AbstractCard c : AbstractDungeon.player.drawPile.group) {
-				if(c.cardID == "NMDAZYYGL") {
+				if(c.cardID.equals("NMDAZYYGL")) {
 					cards2++;
 				}
 			}
 			for(AbstractCard c : AbstractDungeon.player.discardPile.group) {
-				if(c.cardID == "NMDAZYYGL") {
+				if(c.cardID.equals("NMDAZYYGL")) {
 					cards2++;
 				}
 			}
 			for(AbstractCard c : AbstractDungeon.player.exhaustPile.group) {
-				if(c.cardID == "NMDAZYYGL") {
+				if(c.cardID.equals("NMDAZYYGL")) {
 					cards2++;
 				}
 			}
@@ -155,28 +152,28 @@ public class Decade extends CustomPlayer {
 				AbstractCard rc = null;
 				for(int i = 0;i<cards;i++) {		
 					for(AbstractCard c : AbstractDungeon.player.hand.group) {
-						if(c.cardID == "NMDAZYYGL") {
+						if(c.cardID.equals("NMDAZYYGL")) {
 							AbstractDungeon.player.hand.group.remove(c);
 							rc = c;
 							break;
 						}
 					}
 					for(AbstractCard c : AbstractDungeon.player.drawPile.group) {
-						if(c.cardID == "NMDAZYYGL") {
+						if(c.cardID.equals("NMDAZYYGL")) {
 							AbstractDungeon.player.hand.group.remove(c);
 							rc = c;
 							break;
 						}
 					}
 					for(AbstractCard c : AbstractDungeon.player.discardPile.group) {
-						if(c.cardID == "NMDAZYYGL") {
+						if(c.cardID.equals("NMDAZYYGL")) {
 							AbstractDungeon.player.hand.group.remove(c);
 							rc = c;
 							break;
 						}
 					}
 					for(AbstractCard c : AbstractDungeon.player.exhaustPile.group) {
-						if(c.cardID == "NMDAZYYGL") {
+						if(c.cardID.equals("NMDAZYYGL")) {
 							AbstractDungeon.player.hand.group.remove(c);
 							rc = c;
 							break;
@@ -191,7 +188,7 @@ public class Decade extends CustomPlayer {
 
 	
 	public void Trickster(final int a) {
-	    boolean banAnimationa = false;
+	    boolean banAnimation = false;
 	    boolean loop = false;
 	    System.out.println("模型" + Decade.cf);
         if (a == Decade.cf) {
@@ -204,31 +201,24 @@ public class Decade extends CustomPlayer {
         }
         Decade.cf = a;
     	if(DCDmod.AnimationTrigger) {
-			for(int i=0;i<ban.length;i++) {
-    			if(a == ban[i]) {
-    				banAnimationa = true;
-    				break;
-    			}
-    			else if(a != ban[i]) {
-    				banAnimationa = false;
-    			}
-    		}
+			for (int value : ban) {
+				if (a == value) {
+					banAnimation = true;
+					break;
+				}
+			}
     	}
-    	if(banAnimationa) {
+    	if(banAnimation) {
             System.out.println("==ban");
-            return;
-    	}
-    	else if(!banAnimationa) {
+		}
+    	else{
 			String AnimationName = DecadeAnimationAction.NAME[a];
-			Animation = new AnimationLoader(DecadeAnimationAction.ATLAS[a], DecadeAnimationAction.JSON[a],  0.8f);
-			if(AnimationName == "normal" || AnimationName == "normal_p" || AnimationName == "normal_t" || AnimationName == "normal_tp"
-					 || AnimationName == "Dragon" || AnimationName == "Pegasus" || AnimationName == "Titan") {
+			AnimationLoader animation1 = new AnimationLoader(DecadeAnimationAction.ATLAS[a], DecadeAnimationAction.JSON[a], 0.8f);
+			if(AnimationName.equals("normal") || AnimationName.equals("normal_p") || AnimationName.equals("normal_t") || AnimationName.equals("normal_tp")
+					 || AnimationName.equals("Dragon") || AnimationName.equals("Pegasus") || AnimationName.equals("Titan")) {
 				loop = true;
 			}
-			else {
-				loop = false;
-			}
-			AnimationLoader.loadAnimation(AbstractDungeon.player,Animation);
+			AnimationLoader.loadAnimation(AbstractDungeon.player, animation1);
 			this.state.setAnimation(0, AnimationName, loop);
 			switch(a) {
 	        case 2:
@@ -315,7 +305,7 @@ public class Decade extends CustomPlayer {
 		new SpecialFaizButton();
 		new SpecialHibikiTaiko();
 		new SpecialHibikiTaikoScore();
-		ArrayList<String> retVal = new ArrayList<String>();
+		ArrayList<String> retVal = new ArrayList<>();
 		retVal.add("Decade_Attack");
 		retVal.add("Decade_Attack");
 		retVal.add("Decade_Attack");
@@ -342,7 +332,7 @@ public class Decade extends CustomPlayer {
 	}
 
 	public ArrayList<String> getStartingRelics() {
-		ArrayList<String> retVal = new ArrayList<String>();
+		ArrayList<String> retVal = new ArrayList<>();
 		retVal.add("Decadriver");
 		UnlockTracker.markRelicAsSeen("Decadriver");
 		return retVal;
@@ -365,7 +355,7 @@ public class Decade extends CustomPlayer {
         }
 		return new CharSelectInfo(title, flavor,
 				70, 70, 0, 99, 5,
-				(AbstractPlayer)this, getStartingRelics(), getStartingDeck(), false);
+				this, getStartingRelics(), getStartingDeck(), false);
 	}
 	
 	@Override
@@ -452,7 +442,7 @@ public class Decade extends CustomPlayer {
 
 	@Override
 	public AbstractCard getStartCardForEvent() {
-		return (AbstractCard)new KamenRideDecade();
+		return new KamenRideDecade();
 	}
 
 

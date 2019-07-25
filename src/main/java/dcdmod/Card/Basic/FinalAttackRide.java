@@ -35,19 +35,7 @@ import dcdmod.Patches.AbstractCardEnum;
 import dcdmod.Patches.AbstractCustomCardWithType;
 import dcdmod.Patches.HibikiTaikoKeyEvent;
 import dcdmod.Power.KamenRideDecadePower;
-import dcdmod.Vfx.Agito_FAR_sounds;
-import dcdmod.Vfx.Axel_CrimsonSmash_Timer;
-import dcdmod.Vfx.Blade_FAR_sounds1;
-import dcdmod.Vfx.Blade_FAR_sounds2;
-import dcdmod.Vfx.Blade_FAR_sounds3;
-import dcdmod.Vfx.Decade_FAR_sounds;
-import dcdmod.Vfx.Faiz_CrimsonSmash;
-import dcdmod.Vfx.Faiz_FAR_SoundsAndAnimation;
-import dcdmod.Vfx.Hibiki_FAR_SoundsAndAnimation;
-import dcdmod.Vfx.Kabuto_FAR_sounds;
-import dcdmod.Vfx.Kuuga_FAR_sounds;
-import dcdmod.Vfx.Ryuki_FAR_sounds;
-
+import dcdmod.Vfx.*;
 
 
 public class FinalAttackRide extends AbstractCustomCardWithType{
@@ -60,11 +48,11 @@ public class FinalAttackRide extends AbstractCustomCardWithType{
 	public static final String IMG_PATH = "img/cards/FinalAttackRide.png";
 	private static final int COST = 2;
 	private static final int ATTACK_DMG = 11;
-	public static boolean Kick = true;
-	int FARDCD = 0;
-	int t = 0;
-	int s = 0;
-	int FARnumber = 0;
+	private static boolean Kick = true;
+	private int FARDCD = 0;
+	private int t = 0;
+	private int s = 0;
+	private int FARnumber = 0;
 	private List<TooltipInfo> tips;
 	
 	
@@ -75,7 +63,7 @@ public class FinalAttackRide extends AbstractCustomCardWithType{
 		this.tags.add(DCDmod.RiderCard);
 		this.baseDamage = ATTACK_DMG;
 		setBackgroundTexture("img/512/FAR.png", "img/1024/FAR.png");
-		this.tips = new ArrayList<TooltipInfo>();
+		this.tips = new ArrayList<>();
 		this.tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[30], EXTENDED_DESCRIPTION[31]));
 	}
 	
@@ -114,8 +102,8 @@ public class FinalAttackRide extends AbstractCustomCardWithType{
 			        }
 				}
 				else if(p.hasPower("RisingMightyPower")){
-						AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, (int) (this.damage*2), DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-						AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, (int) (this.damage*2), DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+						AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage*2, DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+						AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage*2, DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
 						AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(p, p, "KuugaSpecialPower"));
 				}
 				else {
@@ -170,10 +158,10 @@ public class FinalAttackRide extends AbstractCustomCardWithType{
 				}
 				break;
 			case 5:
-				if(this.name == EXTENDED_DESCRIPTION[37]||this.name == EXTENDED_DESCRIPTION[39]) {
+				if(this.name.equals(EXTENDED_DESCRIPTION[37]) || this.name.equals(EXTENDED_DESCRIPTION[39])) {
 					AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_HEAVY"));
 			        AbstractDungeon.actionManager.addToBottom(new VFXAction(p, new CleaveEffect(), 0.1F));  
-			        if(this.name == EXTENDED_DESCRIPTION[39]) {
+			        if(this.name.equals(EXTENDED_DESCRIPTION[39])) {
 			        	AbstractDungeon.actionManager.addToTop(new VFXAction(new Blade_FAR_sounds1(p.drawX - 200.00f, p.drawY + 250.00f), 4F));
 			    		for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
 			   			 	if ((!monster.isDead) && (!monster.isDying)) {
@@ -184,14 +172,14 @@ public class FinalAttackRide extends AbstractCustomCardWithType{
 			        }
 			        AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(this.damage,true), DamageInfo.DamageType.NORMAL, AttackEffect.NONE));
 				}
-				else if(this.name == EXTENDED_DESCRIPTION[41]) {
+				else if(this.name.equals(EXTENDED_DESCRIPTION[41])) {
 			        for(int i = 0;i < 5; i++) {
 			        	AbstractDungeon.actionManager.addToTop(new DamageAction(AbstractDungeon.getMonsters().getRandomMonster(true),new DamageInfo(p, this.damage, DamageType.NORMAL), AttackEffect.SLASH_DIAGONAL));
 			        }
 				}
-				else if(this.name == EXTENDED_DESCRIPTION[22]||this.name == EXTENDED_DESCRIPTION[43]||this.name == EXTENDED_DESCRIPTION[45]) {
-			        if(this.name == EXTENDED_DESCRIPTION[43]||this.name == EXTENDED_DESCRIPTION[45]) {
-			        	if(this.name == EXTENDED_DESCRIPTION[43]) {
+				else if(this.name.equals(EXTENDED_DESCRIPTION[22]) || this.name.equals(EXTENDED_DESCRIPTION[43]) || this.name.equals(EXTENDED_DESCRIPTION[45])) {
+			        if(this.name.equals(EXTENDED_DESCRIPTION[43]) || this.name.equals(EXTENDED_DESCRIPTION[45])) {
+			        	if(this.name.equals(EXTENDED_DESCRIPTION[43])) {
 			        		AbstractDungeon.actionManager.addToTop(new VFXAction(new Blade_FAR_sounds2(p.drawX - 200.00f, p.drawY + 250.00f), 4F));
 			        	}
 			        	else {
@@ -223,9 +211,14 @@ public class FinalAttackRide extends AbstractCustomCardWithType{
 			case 9:
 				break;
 			case 10:
-				AbstractDungeon.actionManager.addToTop(new VFXAction(new Decade_FAR_sounds(p.drawX - 200.00f, p.drawY + 250.00f), 4F));
-				AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage + FARDCD, DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-				AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage + FARDCD, DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+				AbstractDungeon.actionManager.addToTop(new VFXAction(new Decade_FAR_SoundsAndAnimation(p.drawX, p.drawY), 4F));
+				if(!DCDmod.AnimationTrigger){
+					AbstractDungeon.actionManager.addToBottom(new VFXAction(new Decade_FAR_kick(p, m,this.damage + FARDCD), 0F));
+				}
+				else{
+					AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage + FARDCD, DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+					AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage + FARDCD, DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+				}
 				break;
 		}
 	}
@@ -234,7 +227,7 @@ public class FinalAttackRide extends AbstractCustomCardWithType{
 	public void calculateCardDamage(AbstractMonster arg0)
 	{
 		super.calculateCardDamage(arg0);
-		if(this.name == EXTENDED_DESCRIPTION[45]&&AbstractDungeon.player.hasPower("Dexterity") && AbstractDungeon.player.getPower("Dexterity").amount>0) {
+		if(this.name.equals(EXTENDED_DESCRIPTION[45]) &&AbstractDungeon.player.hasPower("Dexterity") && AbstractDungeon.player.getPower("Dexterity").amount>0) {
 			this.damage += AbstractDungeon.player.getPower("Dexterity").amount;
 			this.isDamageModified = true;
 		}
@@ -262,7 +255,7 @@ public class FinalAttackRide extends AbstractCustomCardWithType{
 		Kick = true;
 		this.target = CardTarget.ENEMY;
 		this.baseDamage = 11;
-		this.rawDescription = EXTENDED_DESCRIPTION[0] + EXTENDED_DESCRIPTION[1] +EXTENDED_DESCRIPTION[2] + FARDCD + EXTENDED_DESCRIPTION[3];
+		this.rawDescription = EXTENDED_DESCRIPTION[0] + EXTENDED_DESCRIPTION[2] + FARDCD + EXTENDED_DESCRIPTION[3] +  EXTENDED_DESCRIPTION[1];
 		this.name = EXTENDED_DESCRIPTION[21];
 		initializeDescription();
 	}
@@ -505,7 +498,7 @@ public class FinalAttackRide extends AbstractCustomCardWithType{
 		if(!canUse) return false;
 		if(p.hasPower("KuugaDragonPower") || p.hasPower("KuugaTitanPower")|| p.hasPower("KamenRideKuugaPower")|| p.hasPower("RisingTitanPower")) {
 			if(p.hasPower("KuugaPegasusPower")||p.hasPower("RisingPegasusPower")) {
-				return canUse = true;
+				return true;
 			}
 			else {
 				if(m !=null && m.hasPower("KuugaSpecialPower")) {

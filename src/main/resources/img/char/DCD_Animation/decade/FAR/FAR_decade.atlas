@@ -6,14 +6,14 @@ filter: Linear,Linear
 repeat: none
 FAR0/FAR0003
   rotate: false
-  xy: 1, 389
+  xy: 265, 389
   size: 86, 74
   orig: 86, 74
   offset: 0, 0
   index: -1
-FAR0/FAR0001
+FAR0/FAR0002
   rotate: false
-  xy: 89, 389
+  xy: 1, 313
   size: 86, 74
   orig: 86, 74
   offset: 0, 0
@@ -25,6 +25,27 @@ FAR0/FAR0058
   orig: 86, 74
   offset: 0, 0
   index: -1
+FAR0/FAR0000
+  rotate: false
+  xy: 89, 389
+  size: 86, 74
+  orig: 86, 74
+  offset: 0, 0
+  index: -1
+FAR0/FAR0057
+  rotate: false
+  xy: 177, 389
+  size: 86, 74
+  orig: 86, 74
+  offset: 0, 0
+  index: -1
+FAR0/FAR0059
+  rotate: false
+  xy: 177, 313
+  size: 86, 74
+  orig: 86, 74
+  offset: 0, 0
+  index: -1
 FAR0/16
   rotate: false
   xy: 1, 1
@@ -32,37 +53,16 @@ FAR0/16
   orig: 206, 310
   offset: 0, 0
   index: -1
-FAR0/FAR0057
+FAR0/FAR0001
   rotate: false
   xy: 89, 313
   size: 86, 74
   orig: 86, 74
   offset: 0, 0
   index: -1
-FAR0/FAR0059
-  rotate: false
-  xy: 177, 389
-  size: 86, 74
-  orig: 86, 74
-  offset: 0, 0
-  index: -1
-FAR0/FAR0000
-  rotate: false
-  xy: 1, 313
-  size: 86, 74
-  orig: 86, 74
-  offset: 0, 0
-  index: -1
 FAR0/FAR0056
   rotate: false
-  xy: 265, 389
-  size: 86, 74
-  orig: 86, 74
-  offset: 0, 0
-  index: -1
-FAR0/FAR0002
-  rotate: false
-  xy: 177, 313
+  xy: 1, 389
   size: 86, 74
   orig: 86, 74
   offset: 0, 0

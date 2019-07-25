@@ -18,15 +18,13 @@ public class Faiz_FAR_SoundsAndAnimation extends AbstractGameEffect {
 	private float x;
 	private float y;
 	private Texture img = null;
-	boolean FAR0Start = true;
-	boolean FAR1Start = true;
-	boolean FAR2Start = true;
-	boolean FAR_faizStart = true;
-	boolean start = true;
-	public static String FAR_ATLAS = "img/char/DCD_Animation/FAR/FAR.atlas";
-	public static String FAIZ2_ATLAS = "img/char/DCD_Animation/faiz/faiz2.atlas";
-	public static String JSON36 = "img/char/DCD_Animation/faiz/faiz2_FAR0.json";
-	public static String FAR_JSON3 = "img/char/DCD_Animation/FAR/FAR_FAR_faiz.json";
+	private boolean FAR0Start = true;
+	private boolean FAR1Start = true;
+	private boolean FAR2Start = true;
+	private boolean FAR_faizStart = true;
+	private boolean start = true;
+	private static String FAR_ATLAS = "img/char/DCD_Animation/FAR/FAR.atlas";
+	private static String FAR_JSON3 = "img/char/DCD_Animation/FAR/FAR_FAR_faiz.json";
 
 	
 	public Faiz_FAR_SoundsAndAnimation(float x, float y) {
@@ -74,7 +72,7 @@ public class Faiz_FAR_SoundsAndAnimation extends AbstractGameEffect {
 					AbstractAnimation faiz =  AbstractAnimation.getAnimation("faiz");
 					faiz.setMovable(false);
 					AbstractAnimation.changeAnimation(faiz, FaizAnimationAction.FAR_faiz);
-					faiz.state.setAnimation(0, "FAR_faiz", false);
+					//faiz.state.setAnimation(0, "FAR_faiz", false);
 		        	FAR_faizStart = false;
 		        	CardCrawlGame.sound.playA("FAR_FAIZ", 0F);
 				}

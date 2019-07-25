@@ -3,7 +3,6 @@ package dcdmod.Actions;
 import dcdmod.Patches.AnimationLoader;
 
 public class FaizAnimationAction {
-    public static String FAR_ATLAS = "img/char/DCD_Animation/FAR/FAR.atlas";
     public static String AXEL5_ATLAS = "img/char/DCD_Animation/faiz_Axel/Axel_CrimsonSmash.atlas";
     public static String AXEL6_ATLAS = "img/char/DCD_Animation/faiz_Axel/Axel_PunchingUnit.atlas";
     public static String AXEL_FAR_JSON1 = "img/char/DCD_Animation/faiz_Axel/Axel_CrimsonSmash_1A.json";

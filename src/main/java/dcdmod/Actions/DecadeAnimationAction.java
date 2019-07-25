@@ -77,7 +77,12 @@ public class DecadeAnimationAction {
 			"img/char/DCD_Animation/decade/FAR/Decade_FAR1.json",//71
 			"img/char/DCD_Animation/decade/FAR/Decade_FAR2.json",//72
 			"img/char/DCD_Animation/decade/FAR/Decade_FAR3.json",//73
-			"img/char/DCD_Animation/decade/FAR/Decade_FAR_kick.json"//74
+			"img/char/DCD_Animation/decade/FAR/Decade_FAR_kick.json",//74
+			"img/char/DCD_Animation/decade/decade_FAR.json",//75
+			"img/char/DCD_Animation/decade/decade_attack.json",//76
+			"img/char/DCD_Animation/decade/decade_attacked.json",//77
+			"img/char/DCD_Animation/decade/riderbooker_attack.json",//78
+			"img/char/DCD_Animation/decade/riderbooker_shoot.json"//79
     		};
 	
 	public static String [] ATLAS = {
@@ -155,7 +160,12 @@ public class DecadeAnimationAction {
 			"img/char/DCD_Animation/decade/FAR/Decade_FAR1.atlas",//71
 			"img/char/DCD_Animation/decade/FAR/Decade_FAR2.atlas",//72
 			"img/char/DCD_Animation/decade/FAR/Decade_FAR3.atlas",//73
-			"img/char/DCD_Animation/decade/FAR/Decade_FAR_kick.atlas"//74
+			"img/char/DCD_Animation/decade/FAR/Decade_FAR_kick.atlas",//74
+			"img/char/DCD_Animation/decade/decade_FAR.atlas",//75
+			"img/char/DCD_Animation/decade/decade_attack.atlas",//76
+			"img/char/DCD_Animation/decade/decade_attacked.atlas",//77
+			"img/char/DCD_Animation/decade/riderbooker_attack.atlas",//78
+			"img/char/DCD_Animation/decade/riderbooker_shoot.atlas"//79
     		};
 	
 	public static String [] NAME = {
@@ -233,7 +243,12 @@ public class DecadeAnimationAction {
 			"FAR1",//71
 			"FAR2",//72
 			"FAR3",//73
-			"kick"//74
+			"kick",//74
+			"FAR",//75
+			"attack",//76
+			"attacked",//77
+			"attack",//78
+			"shoot"//79
 	};
     
 }

@@ -1,6 +1,7 @@
 package dcdmod.Card.Special;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -10,11 +11,10 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-
 import dcdmod.DCDmod;
 import dcdmod.Patches.AbstractCardEnum;
 import dcdmod.Patches.AbstractCustomCardWithType;
-
+import dcdmod.Vfx.RiderBooker_shoot;
 
 
 public class RideBooker_Shoot extends AbstractCustomCardWithType{
@@ -39,6 +39,7 @@ public class RideBooker_Shoot extends AbstractCustomCardWithType{
 	
 	@Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+		AbstractDungeon.actionManager.addToTop(new VFXAction(new RiderBooker_shoot(), 0F));
 		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
 	}
 	
@@ -47,7 +48,7 @@ public class RideBooker_Shoot extends AbstractCustomCardWithType{
 	{
 		super.calculateCardDamage(arg0);
 		if(AbstractDungeon.player.hasPower("BladeSlashPower")) {
-			int x = 0;
+			int x;
 			x = AbstractDungeon.player.getPower("BladeSlashPower").amount * 2;
 			this.damage += x;
 			this.isDamageModified = true;

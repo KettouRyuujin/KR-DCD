@@ -133,7 +133,7 @@ public class Decaderiver extends AbstractClickRelic{
 		   CardCrawlGame.sound.playA("people_hensin", 0.0f);
 		   CardCrawlGame.sound.playA("decade_hensin", 0.0f);
 		   AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new KamenRideDecadePower(AbstractDungeon.player,1),1));
-		   AbstractDungeon.actionManager.addToBottom(new VFXAction(new Decade_henshin(AbstractDungeon.player.drawX - 200.00f, AbstractDungeon.player.drawY + 250.00f), 6.2F));
+		   AbstractDungeon.actionManager.addToBottom(new VFXAction(new Decade_henshin(AbstractDungeon.player.drawX - 200.00f, AbstractDungeon.player.drawY + 250.00f), 5.0F));
 		   ishensin = true;
 	   }
    }  

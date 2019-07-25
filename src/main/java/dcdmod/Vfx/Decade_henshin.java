@@ -21,8 +21,8 @@ public class Decade_henshin extends AbstractGameEffect {
 
 		this.x = x- (float)this.img.getWidth() / 2.0F;
 		this.y = y;
-		this.duration = 6.2F;//倒数时间
-		this.startingDuration = 6.2F;//持续时间
+		this.duration = 5.0F;//倒数时间
+		this.startingDuration = 5.0F;//持续时间
 		this.color = Color.WHITE.cpy();
 	}
 

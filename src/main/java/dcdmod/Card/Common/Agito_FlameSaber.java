@@ -41,7 +41,7 @@ public class Agito_FlameSaber extends AbstractCustomCardWithType{
         		AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY,CardColorType.Agito);
 		this.tags.add(DCDmod.RiderCard);
 		this.baseMagicNumber = this.magicNumber = MAGIC_NUM;
-		this.tips = new ArrayList<TooltipInfo>();
+		this.tips = new ArrayList<>();
 		this.tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[1], EXTENDED_DESCRIPTION[2]));
 	}
 	
@@ -56,7 +56,7 @@ public class Agito_FlameSaber extends AbstractCustomCardWithType{
 		if(p.hasPower("AgitoFlamePower")) {
 			boolean Flame = true;
 			for(AbstractCard c : AbstractDungeon.player.discardPile.group) {
-				   if(c.cardID == "FormRideFlame" && Flame!=false) {
+				   if(c.cardID.equals("FormRideFlame") && Flame) {
 					   AbstractDungeon.player.discardPile.removeCard(c);
 					   AbstractDungeon.player.hand.addToTop(c);
 					   AbstractDungeon.player.hand.refreshHandLayout();
@@ -66,7 +66,7 @@ public class Agito_FlameSaber extends AbstractCustomCardWithType{
 				   }
 			   }
 			for(AbstractCard c : AbstractDungeon.player.drawPile.group) {
-				if(c.cardID == "FormRideFlame" && Flame!=false) {
+				if(c.cardID.equals("FormRideFlame") && Flame) {
 					AbstractDungeon.player.drawPile.removeCard(c);
 					AbstractDungeon.player.hand.addToTop(c);
 					AbstractDungeon.player.hand.refreshHandLayout();
@@ -76,7 +76,7 @@ public class Agito_FlameSaber extends AbstractCustomCardWithType{
 				}
 			}
 			for(AbstractCard c : AbstractDungeon.player.exhaustPile.group) {
-				if(c.cardID == "FormRideFlame" && Flame!=false) {
+				if(c.cardID.equals("FormRideFlame") && Flame) {
 					AbstractDungeon.player.exhaustPile.removeCard(c);
 					AbstractDungeon.player.hand.addToTop(c.makeCopy());
 					AbstractDungeon.player.hand.refreshHandLayout();

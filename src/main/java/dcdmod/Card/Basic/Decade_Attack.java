@@ -1,9 +1,8 @@
 package dcdmod.Card.Basic;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -14,10 +13,12 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
-import basemod.helpers.TooltipInfo;
 import dcdmod.DCDmod;
 import dcdmod.Patches.AbstractCardEnum;
 import dcdmod.Patches.AbstractCustomCardWithType;
+import dcdmod.Vfx.Decade_attack;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class Decade_Attack extends AbstractCustomCardWithType{
@@ -40,7 +41,7 @@ public class Decade_Attack extends AbstractCustomCardWithType{
 		this.tags.add(DCDmod.RiderCard);
 		this.baseDamage = ATTACK_DMG;
 		this.baseMagicNumber = this.magicNumber = 1;
-		this.tips = new ArrayList<TooltipInfo>();
+		this.tips = new ArrayList<>();
 		this.tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[1], EXTENDED_DESCRIPTION[2]));
 	}
 	
@@ -53,6 +54,7 @@ public class Decade_Attack extends AbstractCustomCardWithType{
 			AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
 		}
 		if(p.hasPower("KamenRideDecadePower")) {
+			AbstractDungeon.actionManager.addToTop(new VFXAction(new Decade_attack(), 0F));
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, new VulnerablePower(m, this.magicNumber, false), this.magicNumber));
 		}
 		//AbstractDungeon.actionManager.addToTop(new VFXAction(new DenO_henshin_SoundsAndAnimation(p.drawX, p.drawY), 6.0F));
