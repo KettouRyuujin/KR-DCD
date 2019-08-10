@@ -24,8 +24,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 	  private static final PowerStrings powerStrings;
 	  public static final String NAME;
 	  public static final String[] DESCRIPTIONS;
-	  int x = 0;
-	  int y = 0;
+	  private int y = 0;
 	   
 	   public RisingTitanPower(AbstractCreature owner, int amt)
 	   {
@@ -43,10 +42,10 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 	    	if(card.type == CardType.ATTACK) {
 	    		AbstractDungeon.actionManager.addToBottom(new RemoveAllBlockAction(this.owner, this.owner));
 	    	}
-	    	AbstractDungeon.actionManager.addToBottom(new DamageAction(this.owner,new DamageInfo(this.owner, 2, DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+	    	AbstractDungeon.actionManager.addToBottom(new DamageAction(this.owner,new DamageInfo(this.owner, 2, DamageType.THORNS), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
 	    	this.amount += 2 ;
 	    	updateDescription();
-	    	if(card.cardID == "FinalAttackRide") {
+	    	if(card.cardID.equals("FinalAttackRide")) {
 	    		this.amount = 0;
 	    		//x=0;
 	    		updateDescription();

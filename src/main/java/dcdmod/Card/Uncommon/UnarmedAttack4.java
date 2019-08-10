@@ -1,6 +1,7 @@
 package dcdmod.Card.Uncommon;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -15,8 +16,9 @@ import dcdmod.DCDmod;
 import dcdmod.Actions.ReturnRandomNumberAction2;
 import dcdmod.Patches.AbstractCardEnum;
 import dcdmod.Patches.AbstractCustomCardWithType;
+import dcdmod.Power.KuugaSpecialPower;
 import dcdmod.Power.XuanyunPower;
-
+import dcdmod.Vfx.Kuuga_UnarmedAttack4;
 
 
 public class UnarmedAttack4 extends AbstractCustomCardWithType{
@@ -36,6 +38,7 @@ public class UnarmedAttack4 extends AbstractCustomCardWithType{
         		AbstractCard.CardType.ATTACK, AbstractCardEnum.DCD,
         		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY,CardColorType.Decade);
 		this.tags.add(DCDmod.RiderCard);
+		this.tags.add(DCDmod.UnarmedCard);
 		this.baseDamage = ATTACK_DMG;
 	}
 	
@@ -60,7 +63,18 @@ public class UnarmedAttack4 extends AbstractCustomCardWithType{
 				}
 			}
 		}
-		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, this.damageType), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+		if(p.hasPower("KamenRideKuugaPower")){
+			AbstractDungeon.actionManager.addToTop(new VFXAction(new Kuuga_UnarmedAttack4(m),0.0F));
+			AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, this.damageType)));
+			if(p.hasPower("RisingMightyPower")){
+				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m,p, new KuugaSpecialPower(m,1), 1));
+			}
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m,p, new KuugaSpecialPower(m,1), 1));
+		}
+		else{
+			AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, this.damageType), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+
+		}
 	}
 	
 	@Override

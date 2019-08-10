@@ -14,11 +14,11 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
-import dcdmod.Helper.SpecialAutoVajin;
 import dcdmod.Vfx.AutoVajin_attack;
 import dcdmod.Vfx.AutoVajin_defend;
+import dcdmod.Vfx.AutoVajin_disappear;
 
- 
+
  public class AutoVajinPower extends AbstractPower
  {
 	  public static final String POWER_ID = "AutoVajinPower";
@@ -26,7 +26,7 @@ import dcdmod.Vfx.AutoVajin_defend;
 	  public static final String NAME;
 	  public static final String[] DESCRIPTIONS;
 	  public static boolean AutoVajinAttack = false;
-	  boolean noformme;
+	  private boolean noformme;
 	   
 	   public AutoVajinPower(AbstractCreature owner, int amt)
 	   {
@@ -41,9 +41,7 @@ import dcdmod.Vfx.AutoVajin_defend;
 	   }
 	   
 	   public void onRemove() {
-			SpecialAutoVajin.a = 3;
-			SpecialAutoVajin.update();
-			CardCrawlGame.sound.playA("autovajindisappear", 0.0f); 
+			AbstractDungeon.actionManager.addToBottom(new VFXAction(new AutoVajin_disappear(), 0F));
 	   }
 	   
 	    public void atStartOfTurn() {
@@ -63,12 +61,13 @@ import dcdmod.Vfx.AutoVajin_defend;
 	   
 	   public void onAttack(final DamageInfo info, final int damageAmount, final AbstractCreature target) {
 		   if(target != this.owner && AutoVajinAttack) {
-			   AbstractDungeon.actionManager.addToBottom(new VFXAction(new AutoVajin_attack(AbstractDungeon.player.drawX, AbstractDungeon.player.drawY), 0F));
+			   AbstractDungeon.actionManager.addToBottom(new VFXAction(new AutoVajin_attack(), 0F));
 				for(int i=0;i<3;i++) {
 					CardCrawlGame.sound.playA("autovajinattack", 0.0f); 
-					AbstractDungeon.actionManager.addToTop(new VFXAction(this.owner, new CleaveEffect(), 0.0F));
-					AbstractDungeon.actionManager.addToTop(new DamageAction(AbstractDungeon.getMonsters().getRandomMonster(true),new DamageInfo(this.owner, 3, DamageType.NORMAL)));	
+					AbstractDungeon.actionManager.addToBottom(new VFXAction(this.owner, new CleaveEffect(), 0.0F));
+					AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.getMonsters().getRandomMonster(true),new DamageInfo(this.owner, 3, DamageType.THORNS)));
 				}
+
 				AutoVajinAttack = false;
 		   }
 	   }
@@ -90,8 +89,8 @@ import dcdmod.Vfx.AutoVajin_defend;
 	    }
 	   
 	   public void onVictory() {
-			SpecialAutoVajin.a = 3;
-			SpecialAutoVajin.update();
+		   AbstractDungeon.actionManager.addToBottom(new VFXAction(new AutoVajin_disappear(), 0F));
+		   CardCrawlGame.sound.playA("autovajindisappear", 0.0f);
 	   }
 
 	  

@@ -25,7 +25,6 @@ public class Decade_Invisible extends AbstractCustomCardWithType{
 	public static final String IMG_PATH = "img/cards/Decade_Invisible.png";
 	private static final int COST = 2;
 	private static final int BLOCK_AMT = 15;
-
 	
 	
 	public Decade_Invisible() {
@@ -39,7 +38,7 @@ public class Decade_Invisible extends AbstractCustomCardWithType{
 	@Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 		int x = 0;
-		if(p.hasPower("Dexterity")) {
+		if(p.hasPower("Dexterity") && p.getPower("Dexterity").amount > 0) {
 			x = p.getPower("Dexterity").amount;
 		}
 		if(upgraded) {
@@ -48,9 +47,7 @@ public class Decade_Invisible extends AbstractCustomCardWithType{
 		AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block + x));
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new EntanglePower(p), 1));
 	}
-	
-	
-	
+
 	@Override
     public AbstractCard makeCopy() {
         return new Decade_Invisible();
@@ -130,6 +127,20 @@ public class Decade_Invisible extends AbstractCustomCardWithType{
 
 	@Override
 	public void energychange() {
+		if(AbstractDungeon.player != null) {
+			int x = 0;
+			if(AbstractDungeon.player.hasPower("Dexterity")) {
+				x = AbstractDungeon.player.getPower("Dexterity").amount;
+			}
+			if(upgraded) {
+				x = x*2;
+				this.rawDescription = EXTENDED_DESCRIPTION[3] + EXTENDED_DESCRIPTION[1] + x + EXTENDED_DESCRIPTION[2] + EXTENDED_DESCRIPTION[5];
+			}
+			else{
+				this.rawDescription = EXTENDED_DESCRIPTION[3] + EXTENDED_DESCRIPTION[1] + x + EXTENDED_DESCRIPTION[2] + EXTENDED_DESCRIPTION[4];
+			}
+			initializeDescription();
+		}
 		if(this.freeToPlayOnce){
 			setBannerTexture(DCDmod.UNCOMMON[0], DCDmod.UNCOMMON_P[0]);
 		}

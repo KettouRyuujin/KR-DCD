@@ -17,7 +17,7 @@ import dcdmod.Patches.AbstractCardEnum;
 import dcdmod.Patches.AbstractCustomCardWithType;
 import dcdmod.Power.KuugaDragonPower;
 import dcdmod.Power.RisingDragonPower;
-import dcdmod.Vfx.Kuuga_dragonsounds;
+import dcdmod.Vfx.Kuuga_DragonSoundsAndAnimation;
 
 
 
@@ -45,25 +45,34 @@ public class FormRideDragon extends AbstractCustomCardWithType{
 	
 	@Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber));
+		CardCrawlGame.sound.playA("formride", 0.0f);
 		if((p.hasPower("RisingMightyPower")||p.hasPower("RisingPegasusPower")||p.hasPower("RisingTitanPower"))&&!p.hasPower("KuugaDragonPower")&&!p.hasPower("RisingDragonPower")) {
 			AbstractDungeon.actionManager.addToTop(new RemoveHalfAttributeAction(p, p));
 			AbstractDungeon.actionManager.addToBottom(new RemoveFormRideAction(p, p));
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RisingDragonPower(p,1),1));
-			CardCrawlGame.sound.playA("formride", 0.0f);
-			AbstractDungeon.actionManager.addToBottom(new VFXAction(new Kuuga_dragonsounds(p.drawX - 200.00f, p.drawY + 250.00f), 0F));
-			final Decade Decade = (Decade)p;
-			Decade.Trickster(7);
+			if(DCDmod.AnimationTrigger){
+				final Decade Decade = (Decade)p;
+				Decade.Trickster(7);
+				AbstractDungeon.actionManager.addToBottom(new VFXAction(new Kuuga_DragonSoundsAndAnimation(), 0.5F));
+			}
+			else{
+				AbstractDungeon.actionManager.addToBottom(new VFXAction(new Kuuga_DragonSoundsAndAnimation(), 1.62F));
+			}
 		}
 		else if(!p.hasPower("KuugaDragonPower")&&!p.hasPower("RisingDragonPower")) {
 			AbstractDungeon.actionManager.addToTop(new RemoveHalfAttributeAction(p, p));
 			AbstractDungeon.actionManager.addToBottom(new RemoveFormRideAction(p, p));
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new KuugaDragonPower(p,1),1));
-			CardCrawlGame.sound.playA("formride", 0.0f);
-			AbstractDungeon.actionManager.addToBottom(new VFXAction(new Kuuga_dragonsounds(p.drawX - 200.00f, p.drawY + 250.00f), 0F));
-			final Decade Decade = (Decade)p;
-			Decade.Trickster(7);
+			if(DCDmod.AnimationTrigger){
+				final Decade Decade = (Decade)p;
+				Decade.Trickster(7);
+				AbstractDungeon.actionManager.addToBottom(new VFXAction(new Kuuga_DragonSoundsAndAnimation(), 0.5F));
+			}
+			else{
+				AbstractDungeon.actionManager.addToBottom(new VFXAction(new Kuuga_DragonSoundsAndAnimation(), 1.62F));
+			}
 		}
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber));
 	}
 	
 	public boolean canUse(AbstractPlayer p, AbstractMonster m) {

@@ -269,7 +269,7 @@ public class TurnTimer {
 		
 	}
 	
-	public static void StopBGM() {
+	public static void StopBGM(boolean isBattleStartOrEnd) {
 		//BGM控制
 		CardCrawlGame.sound.stop("faiz_BGM");
 		CardCrawlGame.sound.stop("faiz_BGM2");
@@ -280,6 +280,12 @@ public class TurnTimer {
 		CardCrawlGame.sound.stop("kabuto_BGM");
 		CardCrawlGame.sound.stop("agito_BGM1");
 		CardCrawlGame.sound.stop("agito_BGM2");
+		CardCrawlGame.sound.stop("decade_BGM");
+		if(!isBattleStartOrEnd){
+			CardCrawlGame.music.silenceBGM();
+			CardCrawlGame.music.silenceBGMInstantly();
+			CardCrawlGame.music.silenceTempBgmInstantly();
+		}
 	}
 }
 

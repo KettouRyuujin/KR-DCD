@@ -39,8 +39,12 @@ public class RideBooker_Attack extends AbstractCustomCardWithType{
 	
 	@Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToTop(new VFXAction(new RiderBooker_attack(), 0F));
-		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, this.damageType), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+		if(p.hasPower("KamenRideDecadePower")){
+			AbstractDungeon.actionManager.addToTop(new VFXAction(new RiderBooker_attack(m,this.damage,this.damageType), 0F));
+		}
+		else{
+			AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, this.damageType), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+		}
 	}
 	
 	@Override

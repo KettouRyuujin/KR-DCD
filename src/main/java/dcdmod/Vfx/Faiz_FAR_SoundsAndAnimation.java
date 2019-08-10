@@ -1,46 +1,36 @@
 package dcdmod.Vfx;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
-
 import dcdmod.DCDmod;
 import dcdmod.Actions.FaizAnimationAction;
 import dcdmod.Characters.Decade;
 import dcdmod.Patches.AbstractAnimation;
-import com.badlogic.gdx.graphics.Color;
 
 public class Faiz_FAR_SoundsAndAnimation extends AbstractGameEffect {
 	private float x;
 	private float y;
-	private Texture img = null;
 	private boolean FAR0Start = true;
 	private boolean FAR1Start = true;
 	private boolean FAR2Start = true;
 	private boolean FAR_faizStart = true;
 	private boolean start = true;
-	private static String FAR_ATLAS = "img/char/DCD_Animation/FAR/FAR.atlas";
-	private static String FAR_JSON3 = "img/char/DCD_Animation/FAR/FAR_FAR_faiz.json";
 
-	
+
 	public Faiz_FAR_SoundsAndAnimation(float x, float y) {
-		if (this.img == null) {
-			this.img =new Texture(Gdx.files.internal("img/1024/orb-dark.png"));
-			//new AbstractAnimation("FAR0",FAIZ2_ATLAS,JSON36, 0.8f, x , y, 120.0F * Settings.scale, 120.0F * Settings.scale, 1.0f);
-			if(!DCDmod.AnimationTrigger && AbstractDungeon.player.hasPower("KamenRideFaizPower")) {
-				new AbstractAnimation("FAR",FAR_ATLAS,Decade.FAR_JSON0, 1.0f, x , y+15.0f, 120.0F * Settings.scale, 120.0F * Settings.scale, 1.0f);
-			}			
+		//new AbstractAnimation("FAR0",FAIZ2_ATLAS,JSON36, 0.8f, x , y, 120.0F * Settings.scale, 120.0F * Settings.scale, 1.0f);
+		if(!DCDmod.AnimationTrigger && AbstractDungeon.player.hasPower("KamenRideFaizPower")) {
+			new AbstractAnimation("FAR","img/char/DCD_Animation/FAR/FAR0.atlas","img/char/DCD_Animation/FAR/FAR0.json", 1.0f, x , y+15.0f, 120.0F * Settings.scale, 120.0F * Settings.scale, 1.0f);
 		}
 
 		this.x = x;
 		this.y = y;
 		this.duration = 4.425F;//倒数时间
 		this.startingDuration = 4.425F;//持续时间
-		this.color = Color.WHITE.cpy();
 	}
 
 	public void update() {
@@ -68,11 +58,12 @@ public class Faiz_FAR_SoundsAndAnimation extends AbstractGameEffect {
 			}
 			if(this.duration < 2.075F){
 				if(FAR_faizStart) {
-					new AbstractAnimation("faiz",FAR_ATLAS,FAR_JSON3, 1.0f, x, y+15.0f, 120.0F * Settings.scale, 120.0F * Settings.scale, 1.0f);
+					String FAR_FAIZ_ATLAS = "img/char/DCD_Animation/faiz/FAR_faiz.atlas";
+					String FAR_FAIZ_JSON = "img/char/DCD_Animation/faiz/FAR_faiz.json";
+					new AbstractAnimation("faiz", FAR_FAIZ_ATLAS, FAR_FAIZ_JSON, 1.0f, x, y+15.0f, 120.0F * Settings.scale, 120.0F * Settings.scale, 1.0f);
 					AbstractAnimation faiz =  AbstractAnimation.getAnimation("faiz");
 					faiz.setMovable(false);
-					AbstractAnimation.changeAnimation(faiz, FaizAnimationAction.FAR_faiz);
-					//faiz.state.setAnimation(0, "FAR_faiz", false);
+					faiz.state.setAnimation(0, "FAR_faiz", false);
 		        	FAR_faizStart = false;
 		        	CardCrawlGame.sound.playA("FAR_FAIZ", 0F);
 				}
@@ -86,6 +77,8 @@ public class Faiz_FAR_SoundsAndAnimation extends AbstractGameEffect {
 			}
 			if (this.duration < 0.092F) {
 				this.isDone = true;
+				AbstractAnimation.clear("faiz");
+				AbstractAnimation.clear("FAR");
 				final Decade Decade = (Decade)AbstractDungeon.player;
 				Decade.Trickster(33);//切换模型
 			}
@@ -108,8 +101,6 @@ public class Faiz_FAR_SoundsAndAnimation extends AbstractGameEffect {
 	}
 
 	public void render(SpriteBatch sb) {
-		sb.setColor(this.color);
-		sb.draw(this.img, this.x, this.y);
 		if(start) {
 			final Decade Decade = (Decade)AbstractDungeon.player;
 			Decade.Trickster(36);//切换模型

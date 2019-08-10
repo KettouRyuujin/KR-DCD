@@ -40,7 +40,7 @@ public class DragShield_s extends AbstractCustomCardWithType{
         		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF,CardColorType.Ryuki);
 		this.tags.add(DCDmod.RiderCard);
 		this.baseMagicNumber = this.magicNumber = MAGIC_NUM;
-		this.tips = new ArrayList<TooltipInfo>();
+		this.tips = new ArrayList<>();
 		this.tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[1], EXTENDED_DESCRIPTION[2]));
 		this.exhaust = true;
 	}
@@ -49,7 +49,7 @@ public class DragShield_s extends AbstractCustomCardWithType{
     public void use(AbstractPlayer p, AbstractMonster m) {
 		CardCrawlGame.sound.playA("attackride", 0.0f);
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DragShieldPower(p, this.magicNumber), this.magicNumber));
-		if(!p.hasPower("DragShieldPower")) {
+		if(!p.hasPower("DragShieldPower") && p.hasPower("KamenRideRyukiPower")) {
 			AbstractDungeon.actionManager.addToTop(new VFXAction(new Ryuki_guard(AbstractDungeon.player.drawX - 200.00f, AbstractDungeon.player.drawY + 250.00f), 0.8F));
 		}
 		AbstractDungeon.actionManager.addToTop(new VFXAction(new DragShield_sounds(p.drawX - 200.00f, p.drawY + 250.00f), 1.5F));

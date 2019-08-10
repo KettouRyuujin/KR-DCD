@@ -39,7 +39,9 @@ public class RideBooker_Shoot extends AbstractCustomCardWithType{
 	
 	@Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToTop(new VFXAction(new RiderBooker_shoot(), 0F));
+		if(p.hasPower("KamenRideDecadePower")){
+			AbstractDungeon.actionManager.addToTop(new VFXAction(new RiderBooker_shoot(), 0F));
+		}
 		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
 	}
 	

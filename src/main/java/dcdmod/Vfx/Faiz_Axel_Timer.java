@@ -130,10 +130,10 @@ public class Faiz_Axel_Timer extends AbstractGameEffect {
     
 	public Faiz_Axel_Timer(float x, float y) {
 		if (Faiz_Axel_Timer.img1 == null) {
-			Faiz_Axel_Timer.img1 =new Texture(Gdx.files.internal("img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-0.png"));
+			Faiz_Axel_Timer.img1 = new Texture(Gdx.files.internal("img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-0.png"));
 		}
 		if (this.img2 == null) {
-			this.img2 =new Texture(Gdx.files.internal("img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-190.png"));
+			this.img2 = new Texture(Gdx.files.internal("img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-190.png"));
 		}
 		this.x = x;
 		this.y = y;
@@ -179,27 +179,15 @@ public class Faiz_Axel_Timer extends AbstractGameEffect {
 			img1 = ImageMaster.loadImage(Timer[Faiz_Axel_Timer.img]);
 			switch(Faiz_Axel_Timer.img) {
 			case 99:
-				CardCrawlGame.sound.playA("axel_timer", 0F);
+				case 90:
+				case 80:
+				case 70:
+				case 60:
+				case 50:
+				case 40:
+					CardCrawlGame.sound.playA("axel_timer", 0F);
 				break;
-			case 90:
-				CardCrawlGame.sound.playA("axel_timer", 0F);
-				break;
-			case 80:
-				CardCrawlGame.sound.playA("axel_timer", 0F);
-				break;
-			case 70:
-				CardCrawlGame.sound.playA("axel_timer", 0F);
-				break;
-			case 60:
-				CardCrawlGame.sound.playA("axel_timer", 0F);
-				break;
-			case 50:
-				CardCrawlGame.sound.playA("axel_timer", 0F);
-				break;
-			case 40:
-				CardCrawlGame.sound.playA("axel_timer", 0F);
-				break;
-			case 30:
+				case 30:
 				CardCrawlGame.sound.playA("axel_3", 0F);
 				break;
 			case 20:

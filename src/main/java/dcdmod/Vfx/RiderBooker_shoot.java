@@ -12,8 +12,8 @@ public class RiderBooker_shoot extends AbstractGameEffect {
 	private boolean start = true;
 
 	public RiderBooker_shoot() {
-		this.duration = 0.25F;//倒数时间
-		this.startingDuration = 0.25F;//持续时间
+		this.duration = 0.54F;//倒数时间
+		this.startingDuration = 0.54F;//持续时间
 		this.color = Color.WHITE.cpy();
 	}
 

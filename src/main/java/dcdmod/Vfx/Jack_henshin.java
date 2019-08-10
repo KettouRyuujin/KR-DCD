@@ -57,7 +57,7 @@ public class Jack_henshin extends AbstractGameEffect {
 		}
 		if(this.duration < 0.0F) {
 			this.isDone = true;
-            TurnTimer.StopBGM();
+            TurnTimer.StopBGM(false);
             CardCrawlGame.sound.playA("blade_BGM2", 0.0f);
 		}
 	}

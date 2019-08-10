@@ -1,5 +1,6 @@
  package dcdmod.Power;
 
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -11,21 +12,19 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.BufferPower;
 
 import dcdmod.Actions.ReturnRandomNumberAction2;
+import dcdmod.Vfx.Kuuga_dash;
 
- 
+
  public class RisingDragonPower extends AbstractPower
  {
 	  public static final String POWER_ID = "RisingDragonPower";
 	  private static final PowerStrings powerStrings;
 	  public static final String NAME;
 	  public static final String[] DESCRIPTIONS;
-	  int power;
-	  int x = 0;
-	   
-	   public RisingDragonPower(AbstractCreature owner, int amt)
+
+	 public RisingDragonPower(AbstractCreature owner, int amt)
 	   {
 		   
 	    this.name = NAME;
@@ -50,10 +49,11 @@ import dcdmod.Actions.ReturnRandomNumberAction2;
 	    public int onAttacked(final DamageInfo info, final int damageAmount) {
 	        if(info.type != DamageType.HP_LOSS && info.owner != this.owner  && info.owner != null) {
 	        	if(this.owner.hasPower("Dexterity")) {
-	        		power = this.owner.getPower("Dexterity").amount;
-	        		power = power*3;
-	        		if(ReturnRandomNumberAction2.ReturnRandomNumber()<power) {
+					int power = this.owner.getPower("Dexterity").amount;
+	        		power = power *3;
+	        		if(ReturnRandomNumberAction2.ReturnRandomNumber()< power) {
 	        			flash();
+						AbstractDungeon.actionManager.addToTop(new VFXAction(new Kuuga_dash(), 0F));
 	        			return 0;
 	        		}
 	        	}
@@ -62,11 +62,12 @@ import dcdmod.Actions.ReturnRandomNumberAction2;
 	    }
 	   
 	   public void onAttack(final DamageInfo info, final int damageAmount, final AbstractCreature target) {
-		   x = this.amount;
-		   if(x<6) {x++;}
+		   int x = this.amount;
+		   if(x <6) {
+			   x++;}
 		   if(x == 6){
 			   x = -1;
-			   AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new BufferPower(this.owner, 1), 1));
+			   AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new DragonDashPower(this.owner, 1), 1));
 		   }
 		   this.amount = x;
 		   updateDescription();

@@ -42,6 +42,7 @@ public class AutoVajin_defend extends AbstractGameEffect {
 		if(Start) {
 			SpecialAutoVajin.a = 4;
 			SpecialAutoVajin.update();
+			Start = false;
 		}
 	}
 

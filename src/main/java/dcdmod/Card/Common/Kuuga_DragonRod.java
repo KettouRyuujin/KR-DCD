@@ -1,9 +1,8 @@
 package dcdmod.Card.Common;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -14,12 +13,14 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import basemod.helpers.TooltipInfo;
 import dcdmod.DCDmod;
 import dcdmod.Patches.AbstractCardEnum;
 import dcdmod.Patches.AbstractCustomCardWithType;
 import dcdmod.Power.KuugaRollpower;
-
+import dcdmod.Power.KuugaSpecialPower;
+import dcdmod.Vfx.Kuuga_DragonAttack;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class Kuuga_DragonRod extends AbstractCustomCardWithType{
@@ -43,7 +44,7 @@ public class Kuuga_DragonRod extends AbstractCustomCardWithType{
 		this.tags.add(DCDmod.RiderCard);
 		this.baseDamage = ATTACK_DMG;
 		this.baseMagicNumber = this.magicNumber = MAGIC_NUM;
-		this.tips = new ArrayList<TooltipInfo>();
+		this.tips = new ArrayList<>();
 		this.tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[3], EXTENDED_DESCRIPTION[4]));
 	}
 	
@@ -51,12 +52,31 @@ public class Kuuga_DragonRod extends AbstractCustomCardWithType{
     public void use(AbstractPlayer p, AbstractMonster m) {
 		if(p.hasPower("KuugaDragonPower")||p.hasPower("RisingDragonPower")) {
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new KuugaRollpower(p, 1), 1));
-			if(p.hasPower("RisingDragonPower")&&m.hasPower("KuugaSpecialPower")&&m.getPower("KuugaSpecialPower").amount>5) {
+			if(p.hasPower("RisingDragonPower") && m.hasPower("KuugaSpecialPower")&&m.getPower("KuugaSpecialPower").amount>5) {
 				this.magicNumber = this.magicNumber + (m.getPower("KuugaSpecialPower").amount/5);
 			}
+			if(!DCDmod.AnimationTrigger){
+				AbstractDungeon.actionManager.addToTop(new VFXAction(new Kuuga_DragonAttack(m,this.damage,this.magicNumber,false,p.drawX,p.drawY), 0F));
+			}
+			else{
+				for(int i=0;i<this.magicNumber;i++) {
+					AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+				}
+			}
 		}
-		for(int i=0;i<this.magicNumber;i++) {
-			AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+		else{
+			for(int i=0;i<this.magicNumber;i++) {
+				AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+			}
+		}
+		if(p.hasPower("KamenRideKuugaPower")){
+			int x = this.magicNumber;
+			if(p.hasPower("RisingMightyPower")){
+				x = this.magicNumber * 2;
+			}
+			for(int i=0;i<x;i++) {
+				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m,p, new KuugaSpecialPower(m,1), 1));
+			}
 		}
 	}
 	

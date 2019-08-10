@@ -16,7 +16,11 @@ import com.megacrit.cardcrawl.powers.VulnerablePower;
 import dcdmod.DCDmod;
 import dcdmod.Patches.AbstractCardEnum;
 import dcdmod.Patches.AbstractCustomCardWithType;
+import dcdmod.Power.KuugaSpecialPower;
 import dcdmod.Vfx.Decade_attack;
+import dcdmod.Vfx.Kuuga_DragonAttack;
+import dcdmod.Vfx.Kuuga_attack;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,6 +36,7 @@ public class Decade_Attack extends AbstractCustomCardWithType{
 	private static final int COST = 1;
 	private static final int ATTACK_DMG = 6;
 	private static final int UPGRADE_PLUS_DMG = 3;
+	private int KRnumber = 0;
 	private List<TooltipInfo> tips;
 	
 	public Decade_Attack() {
@@ -39,6 +44,7 @@ public class Decade_Attack extends AbstractCustomCardWithType{
         		AbstractCard.CardType.ATTACK, AbstractCardEnum.DCD,
         		AbstractCard.CardRarity.BASIC, AbstractCard.CardTarget.ENEMY,CardColorType.Decade);
 		this.tags.add(DCDmod.RiderCard);
+		this.tags.add(DCDmod.UnarmedCard);
 		this.baseDamage = ATTACK_DMG;
 		this.baseMagicNumber = this.magicNumber = 1;
 		this.tips = new ArrayList<>();
@@ -47,15 +53,28 @@ public class Decade_Attack extends AbstractCustomCardWithType{
 	
 	@Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-		if(p.hasPower("KuugaPegasusPower")||p.hasPower("RisingPegasusPower")){
-			AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-		}
-		else{
+		if(!p.hasPower("KamenRideKuugaPower")){
 			AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
 		}
-		if(p.hasPower("KamenRideDecadePower")) {
-			AbstractDungeon.actionManager.addToTop(new VFXAction(new Decade_attack(), 0F));
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, new VulnerablePower(m, this.magicNumber, false), this.magicNumber));
+		switch(KRnumber){
+			case 10:
+				AbstractDungeon.actionManager.addToTop(new VFXAction(new Decade_attack(), 0F));
+				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, new VulnerablePower(m, this.magicNumber, false), this.magicNumber));
+				break;
+			case 1:
+				AbstractDungeon.actionManager.addToTop(new VFXAction(new Kuuga_attack(m), 0F));
+				if(p.hasPower("KuugaPegasusPower")||p.hasPower("RisingPegasusPower")){
+					AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, DamageInfo.DamageType.HP_LOSS)));
+				}
+				else{
+					AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, this.damageTypeForTurn)));
+				}
+				int x = 1;
+				if(p.hasPower("RisingMightyPower")){
+					x += 1;
+				}
+				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m,p, new KuugaSpecialPower(m,x), x));
+				break;
 		}
 		//AbstractDungeon.actionManager.addToTop(new VFXAction(new DenO_henshin_SoundsAndAnimation(p.drawX, p.drawY), 6.0F));
 		//AbstractDungeon.actionManager.addToTop(new VFXAction(new DenO_kotaewa_kiite_nai(), 2.5F));
@@ -88,6 +107,7 @@ public class Decade_Attack extends AbstractCustomCardWithType{
 	
 	@Override
 	public void optionDecade() {
+		KRnumber = 10;
 		this.rawDescription = EXTENDED_DESCRIPTION[0];
 		initializeDescription();
 		setBackgroundTexture("img/512/attack_decade.png", "img/1024/attack_decade.png");
@@ -95,6 +115,7 @@ public class Decade_Attack extends AbstractCustomCardWithType{
 
 	@Override
 	public void optionKuuga() {
+		KRnumber = 1;
 		if(AbstractDungeon.player.hasPower("KuugaPegasusPower")||AbstractDungeon.player.hasPower("RisingPegasusPower")){
 			this.rawDescription = EXTENDED_DESCRIPTION[3];
 		}
@@ -107,6 +128,7 @@ public class Decade_Attack extends AbstractCustomCardWithType{
 
 	@Override
 	public void optionAgito() {
+		KRnumber = 2;
 		this.rawDescription = DESCRIPTION;
 		initializeDescription();
 	    setBackgroundTexture("img/512/attack_agito.png", "img/1024/attack_agito.png");
@@ -114,6 +136,7 @@ public class Decade_Attack extends AbstractCustomCardWithType{
 
 	@Override
 	public void optionRyuki() {
+		KRnumber = 3;
 		this.rawDescription = DESCRIPTION;
 		initializeDescription();
 	    setBackgroundTexture("img/512/attack_ryuki.png", "img/1024/attack_ryuki.png");
@@ -121,6 +144,7 @@ public class Decade_Attack extends AbstractCustomCardWithType{
 
 	@Override
 	public void optionFaiz() {
+		KRnumber = 4;
 		this.rawDescription = DESCRIPTION;
 		initializeDescription();
 	    setBackgroundTexture("img/512/attack_faiz.png", "img/1024/attack_faiz.png");
@@ -128,6 +152,7 @@ public class Decade_Attack extends AbstractCustomCardWithType{
 
 	@Override
 	public void optionBlade() {
+		KRnumber = 5;
 		this.rawDescription = DESCRIPTION;
 		initializeDescription();
 	    setBackgroundTexture("img/512/attack_blade.png", "img/1024/attack_blade.png");
@@ -135,6 +160,7 @@ public class Decade_Attack extends AbstractCustomCardWithType{
 
 	@Override
 	public void optionHibiki() {
+		KRnumber = 6;
 		this.rawDescription = DESCRIPTION;
 		initializeDescription();
 	    setBackgroundTexture("img/512/attack_hibiki.png", "img/1024/attack_hibiki.png");
@@ -142,6 +168,7 @@ public class Decade_Attack extends AbstractCustomCardWithType{
 
 	@Override
 	public void optionKabuto() {
+		KRnumber = 7;
 		this.rawDescription = DESCRIPTION;
 		initializeDescription();
 	    setBackgroundTexture("img/512/attack_kabuto.png", "img/1024/attack_kabuto.png");
@@ -149,6 +176,7 @@ public class Decade_Attack extends AbstractCustomCardWithType{
 
 	@Override
 	public void optionDenO() {
+		KRnumber = 8;
 		this.rawDescription = DESCRIPTION;
 		initializeDescription();
 	    setBackgroundTexture("img/512/attack_deno.png", "img/1024/attack_deno.png");
@@ -156,6 +184,7 @@ public class Decade_Attack extends AbstractCustomCardWithType{
 
 	@Override
 	public void optionKiva() {
+		KRnumber = 9;
 		this.rawDescription = DESCRIPTION;
 		initializeDescription();
 	    setBackgroundTexture("img/512/attack_kiva.png", "img/1024/attack_kiva.png");
@@ -163,6 +192,7 @@ public class Decade_Attack extends AbstractCustomCardWithType{
 
 	@Override
 	public void optionNeutral() {
+		KRnumber = 0;
 		this.rawDescription = DESCRIPTION;
 		initializeDescription();
 		setBackgroundTexture("img/512/attack_decade.png", "img/1024/attack_decade.png");

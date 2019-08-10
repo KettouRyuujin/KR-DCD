@@ -9,6 +9,8 @@ import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import dcdmod.Helper.SpecialDragreder;
 
 import com.badlogic.gdx.graphics.Color;
+import dcdmod.Patches.AbstractAnimation;
+import dcdmod.Patches.AbstractSummonedAnimation;
 
 public class Dragreder_disappear extends AbstractGameEffect {
 	private float x;
@@ -31,6 +33,7 @@ public class Dragreder_disappear extends AbstractGameEffect {
 	public void update() {
 		this.duration -= Gdx.graphics.getDeltaTime();
 		if (this.duration < 0.0F) {
+			AbstractSummonedAnimation.clear("DRAGREDER");
 			this.isDone = true;
 		}
 	}

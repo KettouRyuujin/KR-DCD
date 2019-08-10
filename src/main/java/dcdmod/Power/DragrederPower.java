@@ -63,7 +63,7 @@ import dcdmod.Vfx.Ryuki_defend;
 	    public int onAttacked(final DamageInfo info, final int damageAmount) {
 	        if(this.owner.hasPower("DragShieldPower")&&info.owner!=this.owner) {
 	        	AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, "DragShieldPower", 1));
-	        	if(Decade.cf != 24) {
+	        	if(Decade.cf != 24 && this.owner.hasPower("KamenRideRyukiPower")) {
 	        		AbstractDungeon.actionManager.addToTop(new VFXAction(new Ryuki_defend(AbstractDungeon.player.drawX - 200.00f, AbstractDungeon.player.drawY + 250.00f), 0F));
 	        		AbstractDungeon.actionManager.addToTop(new VFXAction(new Dragreder_defend(this.owner.drawX - 200.00f, this.owner.drawY + 250.00f), 0F));
 	        	}
@@ -87,7 +87,7 @@ import dcdmod.Vfx.Ryuki_defend;
 			CardCrawlGame.sound.playA("dragreder_attack", 0.0f);
 			for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
 				 if ((!monster.isDead) && (!monster.isDying)) {
-					 AbstractDungeon.actionManager.addToBottom(new DamageAction(monster,new DamageInfo(this.owner, d, DamageType.NORMAL), AbstractGameAction.AttackEffect.FIRE));
+					 AbstractDungeon.actionManager.addToBottom(new DamageAction(monster,new DamageInfo(this.owner, d, DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
 					 if(this.owner.hasPower("MirrorWorldPower")) {
 						 x+=2;
 					 }

@@ -45,8 +45,6 @@ public class KamenRideDecade extends AbstractCustomCardWithType{
 	
 	@Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber), this.magicNumber));
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber));
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new KamenRideDecadePower(p,1),1));
 		if(SpecialRideBooker.nodecade) {
 			CardCrawlGame.sound.playA("driversounds", 0.0f);
@@ -58,6 +56,8 @@ public class KamenRideDecade extends AbstractCustomCardWithType{
 			CardCrawlGame.sound.playA("people_hensin", 0.0f);
 			AbstractDungeon.actionManager.addToBottom(new VFXAction(new Decade_henshin(p.drawX - 200.00f, p.drawY + 250.00f), 5.0F));
 		}
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber), this.magicNumber));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber));
 	}
 	
 	public boolean canUse(AbstractPlayer p, AbstractMonster m) {

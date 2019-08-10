@@ -1,6 +1,8 @@
 package dcdmod.Card.Rare;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -13,7 +15,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dcdmod.DCDmod;
 import dcdmod.Patches.AbstractCardEnum;
 import dcdmod.Patches.AbstractCustomCardWithType;
-
+import dcdmod.Power.KuugaSpecialPower;
+import dcdmod.Vfx.Kuuga_UnarmedAttack9;
 
 
 public class UnarmedAttack9 extends AbstractCustomCardWithType{
@@ -25,20 +28,21 @@ public class UnarmedAttack9 extends AbstractCustomCardWithType{
 	public static final String UPGRADE_DESCRIPTION;
 	public static final String IMG_PATH = "img/cards/UnarmedAttack9.png";
 	private static final int COST = 1;
-	int s = 0;
-	int d = 0;
+	private int s = 0;
+	private int d = 0;
 	
 	public UnarmedAttack9() {
 		super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
         		AbstractCard.CardType.ATTACK, AbstractCardEnum.DCD,
         		AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.ENEMY,CardColorType.Decade);
 		this.tags.add(DCDmod.RiderCard);
+		this.tags.add(DCDmod.UnarmedCard);
 		this.exhaust = true;
 	}
 	
 	@Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-		int x = 0;
+		int x;
 		if(upgraded) {
 			if(p.hasPower("Strength")) {
 				s = p.getPower("Strength").amount;
@@ -75,7 +79,17 @@ public class UnarmedAttack9 extends AbstractCustomCardWithType{
 			}
 			m.currentHealth -= x;
 		}
-		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, 0, DamageType.HP_LOSS), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+		if(p.hasPower("KamenRideKuugaPower")){
+			AbstractDungeon.actionManager.addToTop(new VFXAction(new Kuuga_UnarmedAttack9(m),0.0F));
+			AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, 0, DamageType.HP_LOSS)));
+			if(p.hasPower("RisingMightyPower")){
+				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m,p, new KuugaSpecialPower(m,1), 1));
+			}
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m,p, new KuugaSpecialPower(m,1), 1));
+		}
+		else{
+			AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, 0, DamageType.HP_LOSS), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+		}
 	}
 	
 	

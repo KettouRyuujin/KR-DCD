@@ -2,6 +2,7 @@ package dcdmod.Card.Common;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -16,8 +17,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dcdmod.DCDmod;
 import dcdmod.Patches.AbstractCardEnum;
 import dcdmod.Patches.AbstractCustomCardWithType;
+import dcdmod.Power.KuugaSpecialPower;
 import dcdmod.Power.UnarmedAttack3Power;
-
+import dcdmod.Vfx.Kuuga_UnarmedAttack3;
+import dcdmod.Vfx.Kuuga_UnarmedAttack3_U;
 
 
 public class UnarmedAttack3 extends AbstractCustomCardWithType{
@@ -37,6 +40,7 @@ public class UnarmedAttack3 extends AbstractCustomCardWithType{
         		AbstractCard.CardType.ATTACK, AbstractCardEnum.DCD,
         		AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY,CardColorType.Decade);
 		this.tags.add(DCDmod.RiderCard);
+		this.tags.add(DCDmod.UnarmedCard);
 		this.baseDamage = ATTACK_DMG;
 		this.baseMagicNumber = this.magicNumber = 2;
 	}
@@ -44,15 +48,39 @@ public class UnarmedAttack3 extends AbstractCustomCardWithType{
 	@Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 		if(upgraded) {
-			AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(this.damage,true), this.damageType, AttackEffect.BLUNT_HEAVY));
+			if(p.hasPower("KamenRideKuugaPower")){
+				AbstractDungeon.actionManager.addToTop(new VFXAction(new Kuuga_UnarmedAttack3_U(),0.0F));
+				AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(this.damage,true), this.damageType, AttackEffect.NONE));
+				for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
+					if ((!monster.isDead) && (!monster.isDying)) {
+						if(p.hasPower("RisingMightyPower")){
+							AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster,p, new KuugaSpecialPower(monster,1), 1));
+						}
+						AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster,p, new KuugaSpecialPower(monster,1), 1));
+					}
+				}
+			}
+			else{
+				AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(this.damage,true), this.damageType, AttackEffect.BLUNT_HEAVY));
+			}
 			for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
-				 if ((!monster.isDead) && (!monster.isDying)) {
-					 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, monster, new UnarmedAttack3Power(monster, 1), 1));
-				 }
+				if ((!monster.isDead) && (!monster.isDying)) {
+					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, monster, new UnarmedAttack3Power(monster, 1), 1));
+				}
 			}
 		}
 		else {
-			AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, this.damageType), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+			if(p.hasPower("KamenRideKuugaPower")){
+				AbstractDungeon.actionManager.addToTop(new VFXAction(new Kuuga_UnarmedAttack3(m),0.0F));
+				AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, this.damageType)));
+				if(p.hasPower("RisingMightyPower")){
+					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m,p, new KuugaSpecialPower(m,1), 1));
+				}
+				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m,p, new KuugaSpecialPower(m,1), 1));
+			}
+			else{
+				AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, this.damageType), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+			}
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, new UnarmedAttack3Power(m, 1), 1));
 		}
 	}

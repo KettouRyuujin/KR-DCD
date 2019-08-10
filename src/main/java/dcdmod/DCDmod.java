@@ -1,5 +1,13 @@
 package dcdmod;
 
+import basemod.BaseMod;
+import basemod.ModLabeledToggleButton;
+import basemod.ModPanel;
+import basemod.ReflectionHacks;
+import basemod.interfaces.*;
+import basemod.patches.com.megacrit.cardcrawl.helpers.CardLibrary.BlueCardsPatch;
+import basemod.patches.com.megacrit.cardcrawl.helpers.CardLibrary.GreenCardsPatch;
+import basemod.patches.com.megacrit.cardcrawl.helpers.CardLibrary.RedCardsPatch;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Color;
@@ -12,42 +20,19 @@ import com.megacrit.cardcrawl.audio.Sfx;
 import com.megacrit.cardcrawl.audio.SoundMaster;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardType;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
-import com.megacrit.cardcrawl.localization.CardStrings;
-import com.megacrit.cardcrawl.localization.Keyword;
-import com.megacrit.cardcrawl.localization.OrbStrings;
-import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.megacrit.cardcrawl.localization.RelicStrings;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
-import java.nio.charset.StandardCharsets;
-import java.util.HashMap;
-import java.util.Properties;
-
-import basemod.BaseMod;
-import basemod.ModLabeledToggleButton;
-import basemod.ModPanel;
-import basemod.ReflectionHacks;
-import basemod.interfaces.EditCardsSubscriber;
-import basemod.interfaces.EditCharactersSubscriber;
-import basemod.interfaces.EditKeywordsSubscriber;
-import basemod.interfaces.EditRelicsSubscriber;
-import basemod.interfaces.EditStringsSubscriber;
-import basemod.interfaces.OnCardUseSubscriber;
-import basemod.interfaces.OnStartBattleSubscriber;
-import basemod.interfaces.PostInitializeSubscriber;
-import basemod.interfaces.StartGameSubscriber;
-import basemod.patches.com.megacrit.cardcrawl.helpers.CardLibrary.BlueCardsPatch;
-import basemod.patches.com.megacrit.cardcrawl.helpers.CardLibrary.GreenCardsPatch;
-import basemod.patches.com.megacrit.cardcrawl.helpers.CardLibrary.RedCardsPatch;
 import dcdmod.Actions.TurnTimer;
-import dcdmod.Card.Basic.*;
+import dcdmod.Card.Basic.Decade_Attack;
+import dcdmod.Card.Basic.Decade_Defend;
+import dcdmod.Card.Basic.FinalAttackRide;
+import dcdmod.Card.Basic.KamenRide;
 import dcdmod.Card.Common.*;
 import dcdmod.Card.Rare.*;
 import dcdmod.Card.Special.*;
@@ -56,7 +41,12 @@ import dcdmod.Characters.Decade;
 import dcdmod.Patches.AbstractCardEnum;
 import dcdmod.Patches.CharacterEnum;
 import dcdmod.Power.AutoVajinPower;
-import dcdmod.Relic.*;
+import dcdmod.Relic.Decaderiver;
+
+import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
+import java.util.Properties;
+
 import static basemod.DevConsole.logger;
 
 @SpireInitializer
@@ -66,8 +56,8 @@ public class DCDmod implements PostInitializeSubscriber,EditCharactersSubscriber
     public static final Color DCD = CardHelper.getColor(208, 45, 150);
 
     //卡面能量样式
-    public static final String[] ENERGY_ORB = {"img/512/orb.png" , "img/512/orb-ice.png" , "img/512/orb-fire.png" , "img/512/orb-dark.png" };
-    public static final String[] ENERGY_ORB_P = {"img/1024/orb.png" , "img/1024/orb-ice.png" , "img/1024/orb-fire.png" , "img/1024/orb-dark.png" };
+    private static final String[] ENERGY_ORB = {"img/512/orb.png" , "img/512/orb-ice.png" , "img/512/orb-fire.png" , "img/512/orb-dark.png" };
+    private static final String[] ENERGY_ORB_P = {"img/1024/orb.png" , "img/1024/orb-ice.png" , "img/1024/orb-fire.png" , "img/1024/orb-dark.png" };
 
     //选人按钮
     private static final String DCD_BUTTON = "charSelect/DecadeButton.png";
@@ -109,10 +99,10 @@ public class DCDmod implements PostInitializeSubscriber,EditCharactersSubscriber
     public static boolean AnimationTrigger = false;
     
     //config存储
-    public static Properties DCDDefaults = new Properties();
+    private static Properties DCDDefaults = new Properties();
     
     //mod列表小图标
-    public static final String DCD_BADGE = "img/powers/KamenRideDecadePower.png";
+    private static final String DCD_BADGE = "img/powers/KamenRideDecadePower.png";
     
     
     @SpireEnum
@@ -123,6 +113,10 @@ public class DCDmod implements PostInitializeSubscriber,EditCharactersSubscriber
     public static AbstractCard.CardTags FormRide;
     @SpireEnum
     public static AbstractCard.CardTags SelectCard;
+    @SpireEnum
+    public static AbstractCard.CardTags UnarmedCard;
+    @SpireEnum
+    public static AbstractCard.CardTags WeaponCard;
     
     public DCDmod(){
         
@@ -145,7 +139,7 @@ public class DCDmod implements PostInitializeSubscriber,EditCharactersSubscriber
         loadConfig();
     }
     
-	public static void loadConfig() {
+	private static void loadConfig() {
 		logger.info("==========================读取设置=============================");
 		try {
 			SpireConfig config = new SpireConfig("DCDmod", "DCDSaveData", DCDDefaults);
@@ -158,7 +152,7 @@ public class DCDmod implements PostInitializeSubscriber,EditCharactersSubscriber
 		logger.info("==========================设置读取完毕=============================");
 	}
 	
-	public static void saveConfig() {
+	private static void saveConfig() {
 		 logger.info("==========================存档设置=============================");
 		try {
 			SpireConfig config = new SpireConfig("DCDmod", "DCDSaveData", DCDDefaults);
@@ -170,7 +164,7 @@ public class DCDmod implements PostInitializeSubscriber,EditCharactersSubscriber
 		logger.info("==========================设置存档完毕=============================");
 	}
 	
-	public static void clearConfig() {
+	private static void clearConfig() {
 		saveConfig();
 	}
 
@@ -180,7 +174,7 @@ public class DCDmod implements PostInitializeSubscriber,EditCharactersSubscriber
         logger.info("=========================== 初始化DCDMod成功 ===========================");
     }
 
-    public static final String makePath(String resource) {
+    public static String makePath(String resource) {
         return FRUITY_MOD_ASSETS_FOLDER + "/" + resource;
     }
 
@@ -194,7 +188,7 @@ public class DCDmod implements PostInitializeSubscriber,EditCharactersSubscriber
     @Override
     public void receiveEditKeywords() {
     	logger.info("========================== 正在注入新的关键字 ==========================");
-        String keywordsPath = null;
+        String keywordsPath;
         switch (Settings.language) {
             case ZHT:
             case ZHS: {
@@ -207,7 +201,7 @@ public class DCDmod implements PostInitializeSubscriber,EditCharactersSubscriber
             }
         }
         final Gson gson = new Gson();
-        final Keywords keywords = (Keywords)gson.fromJson(loadJson(keywordsPath), Keywords.class);
+        final Keywords keywords = gson.fromJson(loadJson(keywordsPath), Keywords.class);
         for (final Keyword key : keywords.keywords) {
             logger.info("读取关键字：" + key.NAMES[0]);
             BaseMod.addKeyword(key.NAMES, key.DESCRIPTION);
@@ -215,7 +209,7 @@ public class DCDmod implements PostInitializeSubscriber,EditCharactersSubscriber
         logger.info("===========================注入新的关键字成功=============================");
     }
     
-    class Keywords
+    static class Keywords
     {
         Keyword[] keywords;
     }
@@ -225,7 +219,7 @@ public class DCDmod implements PostInitializeSubscriber,EditCharactersSubscriber
         logger.info("======================== 正在注入DCD的信息 ========================");
         logger.info("add " + CharacterEnum.Decade.toString());
         BaseMod.addCharacter(
-        		(AbstractPlayer)new Decade("Decade"),
+                new Decade("Decade"),
                 makePath(DCD_BUTTON), makePath(DCD_PORTRAIT),
                 CharacterEnum.Decade);
 
@@ -340,11 +334,22 @@ public class DCDmod implements PostInitializeSubscriber,EditCharactersSubscriber
         reflectedMap.put("deno_kotaewa_kiite_nai", new Sfx("sounds/deno_kotaewa_kiite_nai.mp3"));
         reflectedMap.put("deno_bokuni_tsurarete_miru", new Sfx("sounds/deno_bokuni_tsurarete_miru.mp3"));
         reflectedMap.put("deno_nakerude", new Sfx("sounds/deno_nakerude.mp3"));
+        reflectedMap.put("decade_BGM", new Sfx("sounds/decade_BGM.wav"));
+        reflectedMap.put("decade_slash", new Sfx("sounds/decade_slash.wav"));
+        reflectedMap.put("attack_slash", new Sfx("sounds/attack_slash.wav"));
+        reflectedMap.put("kuuga_attack", new Sfx("sounds/kuuga_attack.wav"));
+        reflectedMap.put("kuuga_boom", new Sfx("sounds/kuuga_boom.wav"));
+        reflectedMap.put("titan_slash", new Sfx("sounds/titan_slash.ogg"));
+        reflectedMap.put("kuuga_currentsound", new Sfx("sounds/kuuga_currentsound.wav"));
+        reflectedMap.put("pegasus_attack", new Sfx("sounds/pegasus_attack.wav"));
+        reflectedMap.put("pegasus_charge", new Sfx("sounds/pegasus_charge.ogg"));
+        reflectedMap.put("gouram_sound", new Sfx("sounds/gouram_sound.wav"));
+        reflectedMap.put("motorbike_sound", new Sfx("sounds/motorbike_sound.wav"));
 	}
     
 	@SuppressWarnings("unchecked")
 	private HashMap<String, Sfx> getSoundsMap() {
-        return (HashMap<String, Sfx>)ReflectionHacks.getPrivate((Object)CardCrawlGame.sound, (Class<?>)SoundMaster.class, "map");
+        return (HashMap<String, Sfx>)ReflectionHacks.getPrivate(CardCrawlGame.sound, SoundMaster.class, "map");
     }
 
 	@Override
@@ -426,6 +431,7 @@ public class DCDmod implements PostInitializeSubscriber,EditCharactersSubscriber
         BaseMod.addCard(new Dragreder());
         BaseMod.addCard(new AttackRide());
         BaseMod.addCard(new Blade_BlayRouzer());
+        BaseMod.addCard(new Kuuga_GouramAttack());
         
         //特殊卡牌（灰卡）
         BaseMod.addCard(new Decade_Blast());
@@ -517,6 +523,7 @@ public class DCDmod implements PostInitializeSubscriber,EditCharactersSubscriber
         UnlockTracker.unlockCard("Dragreder");
         UnlockTracker.unlockCard("AttackRide");
         UnlockTracker.unlockCard("Blade_BlayRouzer");
+        UnlockTracker.unlockCard("Kuuga_GouramAttack");
         
         //特殊卡牌解锁（灰卡）
         UnlockTracker.unlockCard("Decade_Blast");
@@ -541,7 +548,7 @@ public class DCDmod implements PostInitializeSubscriber,EditCharactersSubscriber
     @Override
     public void receiveEditRelics() {
         logger.info("========================= 正在加载新的遗物内容 =========================");
-        BaseMod.addRelicToCustomPool((AbstractRelic)new Decaderiver(), AbstractCardEnum.DCD);
+        BaseMod.addRelicToCustomPool(new Decaderiver(), AbstractCardEnum.DCD);
         logger.info("==========================加载新的遗物内容成功===========================");
     }
 
@@ -568,10 +575,14 @@ public class DCDmod implements PostInitializeSubscriber,EditCharactersSubscriber
          }
          else {
              logger.info("英文");
-             card = "localization/eng/DCDCards.json";
-             relic = "localization/eng/DCDRelics.json";
-             power = "localization/eng/DCDPower.json";
-             orb = "localization/eng/DCDOrbs.json";
+             card = "localization/zhs/DCDCards.json";
+             relic = "localization/zhs/DCDRelics.json";
+             power = "localization/zhs/DCDPower.json";
+             orb = "localization/zhs/DCDOrbs.json";
+             //card = "localization/eng/DCDCards.json";
+             //relic = "localization/eng/DCDRelics.json";
+             //power = "localization/eng/DCDPower.json";
+             //orb = "localization/eng/DCDOrbs.json";
          }
          final String relicStrings = Gdx.files.internal(relic).readString(String.valueOf(StandardCharsets.UTF_8));
          BaseMod.loadCustomStrings(RelicStrings.class, relicStrings);
@@ -596,6 +607,7 @@ public class DCDmod implements PostInitializeSubscriber,EditCharactersSubscriber
 	public void receiveOnBattleStart(AbstractRoom arg0) {
 		TurnTimer.atNextBattle();
 		TurnTimer.atBattleStart();
+		TurnTimer.StopBGM(true);
 	}
 
 	@Override

@@ -60,7 +60,7 @@ public class Hibiki_Ongekibou extends AbstractCustomCardWithType{
     public void use(AbstractPlayer p, AbstractMonster m) {
 		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, DamageType.NORMAL), AbstractGameAction.AttackEffect.FIRE));
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new HibikiBurnPower(m, this.magicNumber, p), this.magicNumber));
-		if(p.hasPower("KamnRideHibikiPower")&&!p.hasPower("HibikiKurenaiPower")) {
+		if(p.hasPower("KamenRideHibikiPower")&&!p.hasPower("HibikiKurenaiPower")) {
 			HibikiTaikoKeyEvent.ComboPoint += 1;
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new HibikiRollPower(p, 1), 1));
 		}

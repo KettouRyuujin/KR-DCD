@@ -31,13 +31,15 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 	   public void stackPower(int stackAmount) {
 		    updateDescription();
 		    if (this.amount == 0) {
-		    	AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, "KuugaSpecialPowe"));
+		    	AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, "KuugaSpecialPower"));
 		    }
 		    this.fontScale = 8.0F;
 		    this.amount += stackAmount;
-		    if(AbstractDungeon.player.hasPower("RisingDragonPower")) {}
+		    if(AbstractDungeon.player.hasPower("RisingDragonPower")) {
+
+			}
 		    else if(AbstractDungeon.player.hasPower("KuugaDragonPower")) {
-		    	if(this.amount>=15) {
+		    	if(this.amount > 15) {
 		    		this.amount = 15;
 		    	}
 		    }
@@ -67,7 +69,6 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 	   
 	   public void onApplyPower(final AbstractPower power, final AbstractCreature target, final AbstractCreature source) {
 		   updateDescription();
-		   stackPower(amount);
 	   }
 	  
 	   public void updateDescription() {

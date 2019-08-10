@@ -1,6 +1,8 @@
  package dcdmod.Power;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -8,8 +10,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import dcdmod.DCDmod;
 
- 
+
  public class RisingMightyPower extends AbstractPower
  {
 	  public static final String POWER_ID = "RisingMightyPower";
@@ -28,12 +31,13 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 	   updateDescription();
 	   loadRegion("RisingMightyPower");
 	   }
-	   
-	   public void onAttack(final DamageInfo info, final int damageAmount, final AbstractCreature target) {
-		   if(target != this.owner) {
-			   AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target,this.owner, new KuugaSpecialPower(target,1), 1));
-		   }
-	   }
+
+	 public void onUseCard(final AbstractCard card, final UseCardAction action) {
+	   	if(!this.owner.hasPower("RisingDragonPower")&&!this.owner.hasPower("RisingPegasusPower")&&
+				!this.owner.hasPower("RisingTitanPower") && card.hasTag(DCDmod.UnarmedCard)){
+				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner,this.owner,new RisingMightySpecialPower(this.owner,1),1));
+		}
+	 }
 
 	  
 	   public void updateDescription() {

@@ -1,5 +1,6 @@
 package dcdmod.Power;
 
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -10,6 +11,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import dcdmod.Vfx.Kuuga_dash;
 
 public class Decade_Dash2Power extends AbstractPower {
 	public static final String POWER_ID = "Decade_Dash2Power";
@@ -41,6 +43,10 @@ public class Decade_Dash2Power extends AbstractPower {
 	
 	public int onAttacked(final DamageInfo info, final int damageAmount) {
 		if(info.owner == Target) {
+			AbstractDungeon.actionManager.addToTop(new VFXAction(new Kuuga_dash(), 0F));
+			if(this.owner.hasPower("KamenRideKuugaPower")){
+				AbstractDungeon.actionManager.addToTop(new VFXAction(new Kuuga_dash(), 0F));
+			}
 			return 0;
 		}
 		return damageAmount;

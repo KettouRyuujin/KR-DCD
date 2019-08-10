@@ -15,8 +15,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dcdmod.DCDmod;
 import dcdmod.Patches.AbstractCardEnum;
 import dcdmod.Patches.AbstractCustomCardWithType;
-import dcdmod.Vfx.Kuuga_FAR_sounds;
-
+import dcdmod.Vfx.Kuuga_FAR_Background;
+import dcdmod.Vfx.Kuuga_FAR_SoundsAndAnimation;
+import dcdmod.Vfx.Kuuga_Pegasus_FAR;
+import dcdmod.Vfx.Kuuga_Pegasus_FAR2;
 
 
 public class PegasusAttack extends AbstractCustomCardWithType{
@@ -45,10 +47,20 @@ public class PegasusAttack extends AbstractCustomCardWithType{
 	@Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 		CardCrawlGame.sound.playA("FAR", 0F);
-		AbstractDungeon.actionManager.addToTop(new VFXAction(new Kuuga_FAR_sounds(p.drawX - 200.00f, p.drawY + 250.00f), 4F));
-        for(int i = 0;i < 3; i++) {
-        	AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, DamageType.HP_LOSS), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        }
+		AbstractDungeon.actionManager.addToTop(new VFXAction(new Kuuga_FAR_SoundsAndAnimation(p.drawX, p.drawY), 3.2F));
+		if(!DCDmod.AnimationTrigger){
+			AbstractDungeon.actionManager.addToBottom(new VFXAction(new Kuuga_Pegasus_FAR2(p,m,this.damage)));
+			AbstractDungeon.actionManager.addToTop(new VFXAction(new Kuuga_FAR_Background(false,false)));
+		}
+		else{
+			for(int i = 0;i < 3; i++) {
+				for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
+					if ((!monster.isDead) && (!monster.isDying)) {
+						AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, DamageType.HP_LOSS), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+					}
+				}
+			}
+		}
 	}
 	
 	@Override

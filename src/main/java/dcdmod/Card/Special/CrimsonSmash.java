@@ -47,7 +47,7 @@ public class CrimsonSmash extends AbstractCustomCardWithType{
 			AbstractDungeon.actionManager.addToTop(new VFXAction(new Axel_CrimsonSmash_Timer(this.damage), 0F));
 		}
 		else {
-			TurnTimer.StopBGM();
+			TurnTimer.StopBGM(false);
 			CardCrawlGame.sound.playA("faiz_BGM2", 0.0f);
 			CardCrawlGame.sound.playA("FAR", 0F);
 			AbstractDungeon.actionManager.addToTop(new VFXAction(new Faiz_CrimsonSmash(m.drawX, m.drawY, m, this.damage), 0F));

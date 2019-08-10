@@ -32,6 +32,7 @@ public class StormSpecialCard extends AbstractCustomCardWithType{
         		AbstractCard.CardRarity.SPECIAL, AbstractCard.CardTarget.SELF,CardColorType.Agito);
 		this.tags.add(DCDmod.RiderCard);
 		this.baseMagicNumber = this.magicNumber = 1;
+		this.exhaust = true;
 	}
 	
 	@Override

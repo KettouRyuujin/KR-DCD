@@ -18,7 +18,7 @@ import dcdmod.Patches.AbstractCardEnum;
 import dcdmod.Patches.AbstractCustomCardWithType;
 import dcdmod.Power.KuugaTitanPower;
 import dcdmod.Power.RisingTitanPower;
-import dcdmod.Vfx.Kuuga_titansounds;
+import dcdmod.Vfx.Kuuga_TitanSoundsAndAnimation;
 
 
 
@@ -46,27 +46,35 @@ public class FormRideTitan extends AbstractCustomCardWithType{
 	
 	@Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+		CardCrawlGame.sound.playA("formride", 0.0f);
 		if((p.hasPower("RisingMightyPower")||p.hasPower("RisingDragonPower")||p.hasPower("RisingPegasusPower"))&&!p.hasPower("KuugaTitanPower")&&!p.hasPower("RisingTitanPower")) {
 			AbstractDungeon.actionManager.addToTop(new RemoveHalfAttributeAction(p, p));
 			AbstractDungeon.actionManager.addToBottom(new RemoveFormRideAction(p, p));
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RisingTitanPower(p,1),1));
-			CardCrawlGame.sound.playA("formride", 0.0f);
-			AbstractDungeon.actionManager.addToBottom(new VFXAction(new Kuuga_titansounds(p.drawX - 200.00f, p.drawY + 250.00f), 0F));
-			final Decade Decade = (Decade)p;
-			Decade.Trickster(9);
+			if(DCDmod.AnimationTrigger){
+				final Decade Decade = (Decade)p;
+				Decade.Trickster(9);
+				AbstractDungeon.actionManager.addToBottom(new VFXAction(new Kuuga_TitanSoundsAndAnimation(), 0.5F));
+			}
+			else{
+				AbstractDungeon.actionManager.addToBottom(new VFXAction(new Kuuga_TitanSoundsAndAnimation(), 1.91F));
+			}
 		}
 		else if(!p.hasPower("KuugaTitanPower")&&!p.hasPower("RisingTitanPower")) {
 			AbstractDungeon.actionManager.addToTop(new RemoveHalfAttributeAction(p, p));
 			AbstractDungeon.actionManager.addToBottom(new RemoveFormRideAction(p, p));
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new KuugaTitanPower(p,1),1));
-			CardCrawlGame.sound.playA("formride", 0.0f);
-			AbstractDungeon.actionManager.addToBottom(new VFXAction(new Kuuga_titansounds(p.drawX - 200.00f, p.drawY + 250.00f), 0F));
-			final Decade Decade = (Decade)p;
-			Decade.Trickster(9);
+			if(DCDmod.AnimationTrigger){
+				final Decade Decade = (Decade)p;
+				Decade.Trickster(9);
+				AbstractDungeon.actionManager.addToBottom(new VFXAction(new Kuuga_TitanSoundsAndAnimation(), 0.5F));
+			}
+			else{
+				AbstractDungeon.actionManager.addToBottom(new VFXAction(new Kuuga_TitanSoundsAndAnimation(), 1.91F));
+			}
 		}
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber));
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BarricadePower(p),1));
-		//CardCrawlGame.sound.playA("decade_hensin", 0.0f);形态驾驭泰坦的声音
 	}
 	
 	public boolean canUse(AbstractPlayer p, AbstractMonster m) {

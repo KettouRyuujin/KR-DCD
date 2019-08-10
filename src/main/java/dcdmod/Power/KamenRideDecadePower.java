@@ -1,6 +1,7 @@
  package dcdmod.Power;
 
  import com.megacrit.cardcrawl.actions.animations.VFXAction;
+ import com.megacrit.cardcrawl.cards.DamageInfo;
  import com.megacrit.cardcrawl.core.AbstractCreature;
  import com.megacrit.cardcrawl.core.CardCrawlGame;
  import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -12,6 +13,7 @@
  import dcdmod.Characters.Decade;
  import dcdmod.Helper.SpecialRideBooker;
  import dcdmod.Vfx.Decade_attacked;
+ import dcdmod.Vfx.Decade_defend;
 
 
  public class KamenRideDecadePower extends AbstractPower {
@@ -20,7 +22,7 @@
 	public static final String NAME;
 	public static final String[] DESCRIPTIONS;
 	   
-	public KamenRideDecadePower(AbstractCreature owner) {
+	public KamenRideDecadePower(AbstractCreature owner, int amt) {
 		this.name = NAME;
 		this.ID = POWER_ID;
 		this.owner = owner;
@@ -31,23 +33,33 @@
 	}
 
 	 @Override
-	 public int onLoseHp(int damageAmount) {
-		AbstractDungeon.actionManager.addToTop(new VFXAction(new Decade_attacked(), 0F));
-		return super.onLoseHp(damageAmount);
+	 public int onAttacked(DamageInfo info, int damageAmount) {
+		if(info.owner != this.owner && info.type == DamageInfo.DamageType.NORMAL && damageAmount < 1){
+			AbstractDungeon.actionManager.addToTop(new VFXAction(new Decade_defend(), 0F));
+		}
+		if(info.owner != this.owner && info.type == DamageInfo.DamageType.NORMAL && damageAmount > 0){
+			AbstractDungeon.actionManager.addToTop(new VFXAction(new Decade_attacked(), 0F));
+		}
+		return super.onAttacked(info, damageAmount);
 	 }
 
+
+	 @Override
 	 public void atStartOfTurn() {
 		SpecialRideBooker.haskamenpower = true;
 	 }
 
-	 public void atEndOfTurn(boolean isPlayer){
+	 @Override
+	 public void atEndOfTurn(boolean isPlayer) {
 		SpecialRideBooker.haskamenpower = false;
 	 }
 
+	 @Override
 	 public void atEndOfRound() {
 		TurnTimer.atEndOfRound();
 	 }
 
+	 @Override
 	 public void onVictory() {
 		TurnTimer.atNextBattle();
 		CardCrawlGame.sound.playA("victory_normal", 0.0f);
@@ -62,6 +74,7 @@
 	 }
 
 
+	 @Override
 	 public void updateDescription() {
 		this.description = DESCRIPTIONS[0];
 	 }

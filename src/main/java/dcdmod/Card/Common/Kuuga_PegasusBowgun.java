@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -17,7 +19,8 @@ import basemod.helpers.TooltipInfo;
 import dcdmod.DCDmod;
 import dcdmod.Patches.AbstractCardEnum;
 import dcdmod.Patches.AbstractCustomCardWithType;
-
+import dcdmod.Power.KuugaSpecialPower;
+import dcdmod.Vfx.Kuuga_PegasusAttack;
 
 
 public class Kuuga_PegasusBowgun extends AbstractCustomCardWithType{
@@ -39,27 +42,51 @@ public class Kuuga_PegasusBowgun extends AbstractCustomCardWithType{
         		AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY,CardColorType.Kuuga);
 		this.tags.add(DCDmod.RiderCard);
 		this.baseDamage = ATTACK_DMG;
-		this.tips = new ArrayList<TooltipInfo>();
+		this.tips = new ArrayList<>();
 		this.tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[3], EXTENDED_DESCRIPTION[4]));
 	}
 	
 	@Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-			AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, DamageType.HP_LOSS), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-			if(p.hasPower("KuugaPegasusPower")||p.hasPower("RisingPegasusPower")) {
-				for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
-					 if ((!monster.isDead) && (!monster.isDying) && monster != m) {
-						 AbstractDungeon.actionManager.addToBottom(new DamageAction(monster,new DamageInfo(p, this.damage, DamageType.HP_LOSS), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-					 }
-				}
-				if(p.hasPower("RisingPegasusPower")) {
+		if(!DCDmod.AnimationTrigger && (p.hasPower("KuugaPegasusPower") || p.hasPower("RisingPegasusPower"))){
+			if(p.hasPower("KuugaPegasusPower")){
+				AbstractDungeon.actionManager.addToTop(new VFXAction(new Kuuga_PegasusAttack(this.damage)));
+			}
+			if(p.hasPower("RisingPegasusPower")){
+				AbstractDungeon.actionManager.addToTop(new VFXAction(new Kuuga_PegasusAttack(this.damage)));
+			}
+		}
+		else{
+			int x = 0;
+			if(p.hasPower("KuugaPegasusPower")) {
+				x += 1;
+			}
+			if(p.hasPower("RisingPegasusPower")) {
+				x += 1;
+			}
+			if(x > 0){
+				for(int i=0;i<x;i++){
 					for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
-						 if ((!monster.isDead) && (!monster.isDying)) {
-							 AbstractDungeon.actionManager.addToBottom(new DamageAction(monster,new DamageInfo(p, this.damage, DamageType.HP_LOSS), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-						 }
+						if ((!monster.isDead) && (!monster.isDying)) {
+							AbstractDungeon.actionManager.addToBottom(new DamageAction(monster,new DamageInfo(p, this.damage, DamageType.HP_LOSS), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+							if(p.hasPower("RisingMightyPower")){
+								AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster,p, new KuugaSpecialPower(monster,1), 1));
+							}
+							AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster,p, new KuugaSpecialPower(monster,1), 1));
+						}
 					}
 				}
 			}
+			else{
+				AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, DamageType.HP_LOSS), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+				if(p.hasPower("RisingMightyPower")){
+					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m,p, new KuugaSpecialPower(m,1), 1));
+				}
+				if(p.hasPower("KamenRideKuugaPower")){
+					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m,p, new KuugaSpecialPower(m,1), 1));
+				}
+			}
+		}
 	}
 	
 	@Override

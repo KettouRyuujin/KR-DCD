@@ -41,7 +41,7 @@ import java.util.List;
  * 来获得这个动画 随后可以用 animation.skeleton来随意对骨骼动画进行操作
  */
 public class AbstractSummonedAnimation {
-    public static List<AbstractSummonedAnimation> animations = new ArrayList<>();
+    public static List<AbstractSummonedAnimation> S_animations = new ArrayList<>();
 
     public static SkeletonMeshRenderer sr;
 
@@ -125,12 +125,12 @@ public class AbstractSummonedAnimation {
         if (abstractAnimation == null) {
             return;
         }
-        for (AbstractSummonedAnimation animation : animations) {
+        for (AbstractSummonedAnimation animation : S_animations) {
             if (animation.id != null && animation.id.equals(abstractAnimation.id)) {
                 return;
             }
         }
-        animations.add(abstractAnimation);
+        S_animations.add(abstractAnimation);
     }
 
     public AbstractSummonedAnimation(String imgUrl, float positionX, float positionY, float hb_w, float hb_h) {
@@ -235,7 +235,7 @@ public class AbstractSummonedAnimation {
         if (id == null) {
             return null;
         }
-        for (AbstractSummonedAnimation animation : animations) {
+        for (AbstractSummonedAnimation animation : S_animations) {
             if (id.equals(animation.id)) {
                 return animation;
             }
@@ -244,17 +244,34 @@ public class AbstractSummonedAnimation {
     }
 
     public static void clearAll() {
-        animations.clear();
+        S_animations.clear();
+    }
+
+    public static AbstractSummonedAnimation clear(String id) {
+        if (id == null) {
+            return null;
+        }
+        int x = 0;
+        for (AbstractSummonedAnimation animation : S_animations) {
+            if (id.equals(animation.id)) {
+                S_animations.remove(x);
+                break;
+            }
+            else{
+                x++;
+            }
+        }
+        return null;
     }
 
     public static void hideAll() {
-        for (AbstractSummonedAnimation animation : animations) {
+        for (AbstractSummonedAnimation animation : S_animations) {
             animation.visible = false;
         }
     }
 
     public static void showAll() {
-        for (AbstractSummonedAnimation animation : animations) {
+        for (AbstractSummonedAnimation animation : S_animations) {
             animation.visible = true;
         }
     }

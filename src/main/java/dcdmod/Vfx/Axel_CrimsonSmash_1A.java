@@ -1,7 +1,6 @@
 package dcdmod.Vfx;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -16,28 +15,21 @@ import dcdmod.Actions.EnterButtonAction;
 import dcdmod.Actions.FaizAnimationAction;
 import dcdmod.Actions.ReturnRandomNumberAction;
 import dcdmod.Patches.AbstractAnimation;
-import com.badlogic.gdx.graphics.Color;
 
 public class Axel_CrimsonSmash_1A extends AbstractGameEffect {
 	
 	public static boolean A1 = true;
 	private float x;
 	private float y;
-	private Texture img = null;
-	boolean Attack = true;
-	boolean Start = true;
-	boolean Second = true;
+	private boolean Attack = true;
+	private boolean Start = true;
+	private boolean Second = true;
 	private AbstractCreature m;
 	private int damage;
-	boolean Animation = true;
+	private boolean Animation = true;
 	private AbstractAnimation AXEL1;
-    public static String AXEL_ATLAS = "img/char/DCD_Animation/faiz_Axel/Axel_CrimsonSmash.atlas";
-    public static String AXEL_JSON1 = "img/char/DCD_Animation/faiz_Axel/Axel_CrimsonSmash_1A.json";
 
-	public Axel_CrimsonSmash_1A(int d) {
-		if (this.img == null) {
-			this.img =new Texture(Gdx.files.internal("img/1024/orb-dark.png"));
-		}
+	Axel_CrimsonSmash_1A(int d) {
 		this.damage = d;
 		this.m = AbstractDungeon.getMonsters().getRandomMonster(true);
 		if(m != null) {
@@ -46,12 +38,13 @@ public class Axel_CrimsonSmash_1A extends AbstractGameEffect {
 		}
 		this.duration = 2.0F;//倒数时间
 		this.startingDuration = 2.0F;//持续时间
-		this.color = Color.WHITE.cpy();
 	}
 
 	public void update() {
 		if(Animation) {
-			AXEL1 =  new AbstractAnimation(AXEL_ATLAS,AXEL_JSON1, 0.8f, x, y, 120.0F * Settings.scale, 120.0F * Settings.scale, 1.0f, 1.0F);
+			String AXEL_ATLAS = "img/char/DCD_Animation/faiz_Axel/Axel_CrimsonSmash.atlas";
+			String AXEL_JSON1 = "img/char/DCD_Animation/faiz_Axel/Axel_CrimsonSmash_1A.json";
+			AXEL1 =  new AbstractAnimation(AXEL_ATLAS, AXEL_JSON1, 0.8f, x, y, 120.0F * Settings.scale, 120.0F * Settings.scale, 1.0f , 1.0f);
 			Animation = false;
 		}
 		if(AXEL1!=null) {
@@ -104,8 +97,6 @@ public class Axel_CrimsonSmash_1A extends AbstractGameEffect {
 	}
 
 	public void render(SpriteBatch sb) {
-		sb.setColor(this.color);
-		sb.draw(this.img, this.x, this.y);
 	}
 
 	public void dispose() {

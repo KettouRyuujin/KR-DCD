@@ -1,27 +1,17 @@
 package dcdmod.Vfx;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
-
 import dcdmod.Helper.SpecialAutoVajin;
-
 import com.badlogic.gdx.graphics.Color;
 
 public class AutoVajin_attack extends AbstractGameEffect {
-	private float x;
-	private float y;
-	private Texture img = null;
-	boolean Start = true;
 
-	public AutoVajin_attack(float x, float y) {
-		if (this.img == null) {
-			this.img =new Texture(Gdx.files.internal("img/1024/orb-dark.png"));
-		}
+	private boolean Start = true;
 
-		this.x = x- (float)this.img.getWidth() / 2.0F;
-		this.y = y;
+	public AutoVajin_attack() {
+
 		this.duration = 1.0F;//倒数时间
 		this.startingDuration = 1.0F;//持续时间
 		this.color = Color.WHITE.cpy();
@@ -37,11 +27,10 @@ public class AutoVajin_attack extends AbstractGameEffect {
 	}
 
 	public void render(SpriteBatch sb) {
-		sb.setColor(this.color);
-		sb.draw(this.img, this.x, this.y);
 		if(Start) {
 			SpecialAutoVajin.a = 2;
 			SpecialAutoVajin.update();
+			Start = false;
 		}
 	}
 

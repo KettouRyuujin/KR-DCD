@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -17,7 +19,8 @@ import basemod.helpers.TooltipInfo;
 import dcdmod.DCDmod;
 import dcdmod.Patches.AbstractCardEnum;
 import dcdmod.Patches.AbstractCustomCardWithType;
-
+import dcdmod.Power.KuugaSpecialPower;
+import dcdmod.Vfx.Kuuga_TitanAttack;
 
 
 public class Kuuga_TitanSword extends AbstractCustomCardWithType{
@@ -41,27 +44,33 @@ public class Kuuga_TitanSword extends AbstractCustomCardWithType{
 		this.tags.add(DCDmod.RiderCard);
 		this.baseDamage = ATTACK_DMG;
 		this.baseMagicNumber = this.magicNumber = MAGIC_NUM;
-		this.tips = new ArrayList<TooltipInfo>();
+		this.tips = new ArrayList<>();
 		this.tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[8], EXTENDED_DESCRIPTION[9]));
 	}
 	
 	@Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-		if(p.hasPower("KuugaTitanPower")) {
-			AbstractDungeon.actionManager.addToBottom(new DamageAction(p,new DamageInfo(p, this.magicNumber, DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+		if(!DCDmod.AnimationTrigger && (p.hasPower("RisingTitanPower") || p.hasPower("KuugaTitanPower"))){
+			AbstractDungeon.actionManager.addToTop(new VFXAction(new Kuuga_TitanAttack(m,this.damage,this.magicNumber),0.0F));
 		}
-		else if(p.hasPower("RisingTitanPower")){
-			for(int i = 0;i<3;i++) {
-				AbstractDungeon.actionManager.addToBottom(new DamageAction(p,new DamageInfo(p, this.magicNumber, DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+		else{
+			AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+			if(p.hasPower("RisingTitanPower") || p.hasPower("KuugaTitanPower")){
+				if(p.hasPower("RisingTitanPower")  && p.hasPower("RisingMightyPower")){
+					AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+				}
+				for(int i = 0;i<3;i++) {
+					AbstractDungeon.actionManager.addToBottom(new DamageAction(p, new DamageInfo(p, this.magicNumber, DamageType.THORNS), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+				}
 			}
-			if(p.hasPower("RisingMightyPower")) {
-				AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+			else{
+				AbstractDungeon.actionManager.addToBottom(new DamageAction(p, new DamageInfo(p, this.magicNumber, DamageType.HP_LOSS), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
 			}
 		}
-		else {
-			AbstractDungeon.actionManager.addToBottom(new DamageAction(p,new DamageInfo(p, this.magicNumber, DamageType.HP_LOSS), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+		if(p.hasPower("RisingMightyPower")){
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m,p, new KuugaSpecialPower(m,1), 1));
 		}
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m,p, new KuugaSpecialPower(m,1), 1));
 	}
 	
 	@Override

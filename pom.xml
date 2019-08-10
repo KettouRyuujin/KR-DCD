@@ -3,7 +3,7 @@
 
     <groupId>DCD</groupId>
     <artifactId>DCD</artifactId>
-    <version>v0.0.5.6</version>
+    <version>v0.0.5.8</version>
     <packaging>jar</packaging>
 
     <name>DCD</name>
@@ -19,7 +19,7 @@
         <dependency>
             <groupId>basemod</groupId>
             <artifactId>basemod</artifactId>
-            <version>5.15.0</version>
+            <version>5.15.1</version>
             <scope>system</scope>
             <systemPath>${basedir}/../lib/BaseMod.jar</systemPath>
         </dependency>

@@ -247,6 +247,23 @@ public class AbstractAnimation {
         animations.clear();
     }
 
+    public static AbstractAnimation clear(String id) {
+        if (id == null) {
+            return null;
+        }
+        int x = 0;
+        for (AbstractAnimation animation : animations) {
+            if (id.equals(animation.id)) {
+                animations.remove(x);
+                break;
+            }
+            else{
+                x++;
+            }
+        }
+        return null;
+    }
+
     public static void hideAll() {
         for (AbstractAnimation animation : animations) {
             animation.visible = false;

@@ -1,6 +1,8 @@
 package dcdmod.Card.Common;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -10,11 +12,11 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-
 import dcdmod.DCDmod;
 import dcdmod.Patches.AbstractCardEnum;
 import dcdmod.Patches.AbstractCustomCardWithType;
-
+import dcdmod.Power.KuugaSpecialPower;
+import dcdmod.Vfx.Kuuga_UnarmedAttack7;
 
 
 public class UnarmedAttack7 extends AbstractCustomCardWithType{
@@ -34,12 +36,24 @@ public class UnarmedAttack7 extends AbstractCustomCardWithType{
         		AbstractCard.CardType.ATTACK, AbstractCardEnum.DCD,
         		AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY,CardColorType.Decade);
 		this.tags.add(DCDmod.RiderCard);
+		this.tags.add(DCDmod.UnarmedCard);
 		this.baseDamage = ATTACK_DMG;
 	}
 	
 	@Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, this.damageType), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+		if(p.hasPower("KamenRideKuugaPower")){
+			AbstractDungeon.actionManager.addToTop(new VFXAction(new Kuuga_UnarmedAttack7(m),0.0F));
+			AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, this.damageType)));
+			if(p.hasPower("RisingMightyPower")){
+				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m,p, new KuugaSpecialPower(m,1), 1));
+			}
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m,p, new KuugaSpecialPower(m,1), 1));
+		}
+		else{
+			AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, this.damageType), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+
+		}
 	}
 	
 	@Override
@@ -49,7 +63,7 @@ public class UnarmedAttack7 extends AbstractCustomCardWithType{
 		if(arg0 != null) {
 			if(arg0.currentBlock > 0) {
 				if(upgraded) {
-					this.damage = (int)(this.damage * 2);
+					this.damage = this.damage * 2;
 				}
 				else {
 					this.damage = (int)(this.damage * 1.5);

@@ -24,7 +24,7 @@ import dcdmod.Power.RisingMightyPower;
 import dcdmod.Power.RisingPegasusPower;
 import dcdmod.Power.RisingTitanPower;
 import dcdmod.Power.SuperRegenPower;
-
+import dcdmod.Vfx.Kuuga_MightySoundsAndAnimation;
 
 
 public class Kuuga_Rising extends AbstractCustomCardWithType{
@@ -37,9 +37,8 @@ public class Kuuga_Rising extends AbstractCustomCardWithType{
 	public static final String[] EXTENDED_DESCRIPTION;
 	public static final String IMG_PATH = "img/cards/Kuuga_Rising.png";
 	private static final int COST = 3;
-	int x;
-	
-	
+
+
 	public Kuuga_Rising() {
 		super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
         		AbstractCard.CardType.SKILL, AbstractCardEnum.DCD,
@@ -51,13 +50,12 @@ public class Kuuga_Rising extends AbstractCustomCardWithType{
 	
 	@Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new SFXAction("THUNDERCLAP", 0.05F));
-		AbstractDungeon.actionManager.addToBottom(new VFXAction(new LightningEffect(p.drawX, p.drawY), 0.05F));
+		int x;
 		if(p.hasPower("KuugaDragonPower")) {
 			x = p.getPower("KuugaDragonPower").amount;
 			AbstractDungeon.actionManager.addToBottom(new RemoveFormRideAction(p, p));
-			if(x>0) {
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RisingDragonPower(p,x),x));
+			if(x >0) {
+				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RisingDragonPower(p, x), x));
 			}
 			else {
 				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RisingDragonPower(p,0),0));
@@ -71,8 +69,8 @@ public class Kuuga_Rising extends AbstractCustomCardWithType{
 		else if(p.hasPower("KuugaTitanPower")) {			
 			x = p.getPower("KuugaTitanPower").amount;
 			AbstractDungeon.actionManager.addToBottom(new RemoveFormRideAction(p, p));
-			if(x>0) {
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RisingTitanPower(p,x),x));
+			if(x >0) {
+				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RisingTitanPower(p, x), x));
 			}
 			else {
 				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RisingTitanPower(p,0),0));
@@ -81,12 +79,14 @@ public class Kuuga_Rising extends AbstractCustomCardWithType{
 		}
 		else {
 			if(!p.hasPower("RisingMightyPower")){
+				AbstractDungeon.actionManager.addToTop(new VFXAction(new Kuuga_MightySoundsAndAnimation(),1.79F));
 				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RisingMightyPower(p,1),1));
 			}
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new SuperRegenPower(p, 3), 3));
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, 2), 2));
 		}
-		
+		AbstractDungeon.actionManager.addToTop(new SFXAction("THUNDERCLAP", 0.05F));
+		AbstractDungeon.actionManager.addToTop(new VFXAction(new LightningEffect(p.drawX, p.drawY), 0.05F));
 	}
 	
 	public boolean canUse(AbstractPlayer p, AbstractMonster m) {

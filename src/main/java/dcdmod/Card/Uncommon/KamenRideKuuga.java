@@ -2,7 +2,6 @@ package dcdmod.Card.Uncommon;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -44,21 +43,21 @@ public class KamenRideKuuga extends AbstractCustomCardWithType{
 		this.baseMagicNumber = this.magicNumber = 2;
 		this.tags.add(DCDmod.RiderCard);
 		this.tags.add(DCDmod.KamenRide);
-		this.tips = new ArrayList<TooltipInfo>();
+		this.tips = new ArrayList<>();
 		this.tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[0], EXTENDED_DESCRIPTION[1]));
 	}
 	
 	@Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber), this.magicNumber));
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new SuperRegenPower(p, 5), 5));
 		if (AbstractDungeon.player.hasPower("KamenRideDecadePower")){
 			AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(p, p, "KamenRideDecadePower"));
 		}
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new KamenRideKuugaPower(p,1),1));
 		CardCrawlGame.sound.playA("kamenride", 0.0f);
 		CardCrawlGame.sound.playA("kuuga_hensin", 0.0f);
-		AbstractDungeon.actionManager.addToBottom(new VFXAction(new Kuuga_dcdtokuuga(p.drawX - 200.00f, p.drawY + 250.00f), 1F));
+		AbstractDungeon.actionManager.addToBottom(new VFXAction(new Kuuga_dcdtokuuga(), 2.83F));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber), this.magicNumber));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new SuperRegenPower(p, 5), 5));
 	}
 	
 	public boolean canUse(AbstractPlayer p, AbstractMonster m) {

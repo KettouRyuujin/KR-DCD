@@ -47,7 +47,7 @@ public class SparkleCut extends AbstractCustomCardWithType{
 			AbstractDungeon.actionManager.addToTop(new VFXAction(new Axel_SparkleCut_Timer(this.damage), 0F));
 		}
 		else {
-			TurnTimer.StopBGM();
+			TurnTimer.StopBGM(false);
 			CardCrawlGame.sound.playA("faiz_BGM", 0.0f);
 			CardCrawlGame.sound.playA("FAR", 0F);
 			AbstractDungeon.actionManager.addToTop(new VFXAction(new Faiz_SparkleCut(m.drawX, m.drawY,m,this.damage), 0F));

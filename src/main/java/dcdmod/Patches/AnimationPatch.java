@@ -24,7 +24,7 @@ public class AnimationPatch {
             }
         }
         public static void Postfix2(AbstractPlayer player) {
-            for (AbstractSummonedAnimation animation : AbstractSummonedAnimation.animations) {
+            for (AbstractSummonedAnimation animation : AbstractSummonedAnimation.S_animations) {
                 if (animation != null) {
                     animation.update();
                 }
@@ -58,7 +58,7 @@ public class AnimationPatch {
         }
 
         public static void Prefix(AbstractPlayer player, SpriteBatch sb) {
-            for (AbstractSummonedAnimation animation : AbstractSummonedAnimation.animations) {
+            for (AbstractSummonedAnimation animation : AbstractSummonedAnimation.S_animations) {
                 if (animation != null) {
                     animation.render(sb);
                 }

@@ -19,7 +19,7 @@ import dcdmod.Patches.AbstractCardEnum;
 import dcdmod.Patches.AbstractCustomCardWithType;
 import dcdmod.Power.KuugaPegasusPower;
 import dcdmod.Power.RisingPegasusPower;
-import dcdmod.Vfx.Kuuga_pegasussounds;
+import dcdmod.Vfx.Kuuga_PegasusSoundsAndAnimation;
 
 
 
@@ -47,23 +47,32 @@ public class FormRidePegasus extends AbstractCustomCardWithType{
 	
 	@Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+		CardCrawlGame.sound.playA("formride", 0.0f);
 		if((p.hasPower("RisingMightyPower")||p.hasPower("RisingDragonPower")||p.hasPower("RisingTitanPower"))&&!p.hasPower("KuugaPegasusPower")&&!p.hasPower("RisingPegasusPower")) {
 			AbstractDungeon.actionManager.addToTop(new RemoveHalfAttributeAction(p, p));
 			AbstractDungeon.actionManager.addToBottom(new RemoveFormRideAction(p, p));
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RisingPegasusPower(p,3),3));
-			CardCrawlGame.sound.playA("formride", 0.0f);
-			AbstractDungeon.actionManager.addToBottom(new VFXAction(new Kuuga_pegasussounds(p.drawX - 200.00f, p.drawY + 250.00f), 0F));
-			final Decade Decade = (Decade)p;
-			Decade.Trickster(8);
+			if(DCDmod.AnimationTrigger){
+				final Decade Decade = (Decade)p;
+				Decade.Trickster(8);
+				AbstractDungeon.actionManager.addToBottom(new VFXAction(new Kuuga_PegasusSoundsAndAnimation(), 0.5F));
+			}
+			else{
+				AbstractDungeon.actionManager.addToBottom(new VFXAction(new Kuuga_PegasusSoundsAndAnimation(), 1.75F));
+			}
 		}
 		else if(!p.hasPower("KuugaPegasusPower")&&!p.hasPower("RisingPegasusPower")) {
 			AbstractDungeon.actionManager.addToTop(new RemoveHalfAttributeAction(p, p));
 			AbstractDungeon.actionManager.addToBottom(new RemoveFormRideAction(p, p));
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new KuugaPegasusPower(p,1),1));
-			CardCrawlGame.sound.playA("formride", 0.0f);
-			AbstractDungeon.actionManager.addToBottom(new VFXAction(new Kuuga_pegasussounds(p.drawX - 200.00f, p.drawY + 250.00f), 0F));
-			final Decade Decade = (Decade)p;
-			Decade.Trickster(8);
+			if(DCDmod.AnimationTrigger){
+				final Decade Decade = (Decade)p;
+				Decade.Trickster(8);
+				AbstractDungeon.actionManager.addToBottom(new VFXAction(new Kuuga_PegasusSoundsAndAnimation(), 0.5F));
+			}
+			else{
+				AbstractDungeon.actionManager.addToBottom(new VFXAction(new Kuuga_PegasusSoundsAndAnimation(), 1.75F));
+			}
 		}
 		AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new PegasusDefend(), 1, true, true));
 		AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(new PegasusDefend(), 1));

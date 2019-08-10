@@ -7,15 +7,15 @@ import dcdmod.DCDmod;
  
  public abstract class AbstractCustomCardWithType extends AbstractGIFCard
  {
-	 public CardColorType colorType;
+	 private CardColorType colorType;
 	 private boolean willApplyPowers;
    
-   public static enum CardColorType
+   public enum CardColorType
    {
      Decade, Kuuga, Agito, Ryuki, Faiz, Blade, Hibiki, Kabuto, DenO, Kiva;
      
  
-     private CardColorType() {}
+     CardColorType() {}
    }
    
    public AbstractCustomCardWithType(String id, String name, String img, int cost, String rawDescription, CardType type, CardColor color, CardRarity rarity, CardTarget target, CardColorType damageType, boolean willApplyPowers)
@@ -75,9 +75,7 @@ import dcdmod.DCDmod;
 				setBannerTexture(DCDmod.COMMON[cost], DCDmod.COMMON_P[cost]);
 			}
 			break;
-		case CURSE:
-			break;
-		case RARE:
+		   case RARE:
 			if(this.freeToPlayOnce){
 				setBannerTexture(DCDmod.RARE[0], DCDmod.RARE_P[0]);
 			}
@@ -138,7 +136,7 @@ import dcdmod.DCDmod;
 			break;
 		   
 	   }
-	   if(this.cardID == "FinalAttackRide"){
+	   if(this.cardID.equals("FinalAttackRide")){
 			if(this.freeToPlayOnce){
 				setBannerTexture(DCDmod.FAR[0], DCDmod.FAR_P[0]);
 			}
@@ -162,43 +160,26 @@ import dcdmod.DCDmod;
    private void assignOrbTexture()
    {
      switch (this.colorType) {
-     case Decade: 
-       setOrbTexture("img/512/orb-dark.png", "img/1024/orb-dark.png");
+     case Decade:
+		 case Kuuga:
+		 case Agito:
+		 case Ryuki:
+		 case Faiz:
+		 case Blade:
+		 case Hibiki:
+		 case Kabuto:
+		 case DenO:
+		 case Kiva:
+			 setOrbTexture("img/512/orb-dark.png", "img/1024/orb-dark.png");
        break;
-     case Kuuga: 
-       setOrbTexture("img/512/orb-dark.png", "img/1024/orb-dark.png");
-       break;
-     case Agito: 
-       setOrbTexture("img/512/orb-dark.png", "img/1024/orb-dark.png");
-       break;
-     case Ryuki: 
-       setOrbTexture("img/512/orb-dark.png", "img/1024/orb-dark.png");
-       break;
-     case Faiz: 
-       setOrbTexture("img/512/orb-dark.png", "img/1024/orb-dark.png");
-       break;
-     case Blade: 
-       setOrbTexture("img/512/orb-dark.png", "img/1024/orb-dark.png");
-       break;
-     case Hibiki: 
-       setOrbTexture("img/512/orb-dark.png", "img/1024/orb-dark.png");
-       break;
-     case Kabuto: 
-       setOrbTexture("img/512/orb-dark.png", "img/1024/orb-dark.png");
-       break;
-     case DenO: 
-       setOrbTexture("img/512/orb-dark.png", "img/1024/orb-dark.png");
-       break;
-     case Kiva: 
-       setOrbTexture("img/512/orb-dark.png", "img/1024/orb-dark.png");
-     }
+	 }
      
    }
    
  
    private void assignBGTexture()
    {
-     int indexPointer = 0;
+     int indexPointer;
      String[] portraitListPointer = null; 
      String[] textureListPointer = null; 
      switch (this.type) {
@@ -220,10 +201,7 @@ import dcdmod.DCDmod;
      
      
      switch (this.colorType) {
-     	case Decade: 
-     		indexPointer = 0;
-     		break;
-     	case Kuuga: 
+		 case Kuuga:
      		indexPointer = 1;
      		break;
      	case Agito: 
@@ -254,7 +232,8 @@ import dcdmod.DCDmod;
      		indexPointer = 0;
      		break;
      }
-            setBackgroundTexture(textureListPointer[indexPointer], portraitListPointer[indexPointer]);
+	   assert textureListPointer != null;
+	   setBackgroundTexture(textureListPointer[indexPointer], portraitListPointer[indexPointer]);
  }
  
 			public void calculateCardDamage(AbstractMonster arg0)
@@ -267,96 +246,24 @@ import dcdmod.DCDmod;
      }
      if (this.damage != 0)
      {
-    	 switch (this.colorType) {
-    	 	case Decade: 
-    	 		if(AbstractDungeon.player.hasPower("BladeThunderPower") && this.cardID != "FinalAttackRide") {
-    	 			modifier += AbstractDungeon.player.getPower("BladeThunderPower").amount;
-    	 		}
-    	 		if(AbstractDungeon.player.hasPower("HibikiKurenaiSpecialPower")) {
-    	 			modifier += AbstractDungeon.player.getPower("HibikiKurenaiSpecialPower").amount;
-    	 		}
-    	 		break;
-    	 	case Kuuga:
-    	 		if(AbstractDungeon.player.hasPower("BladeThunderPower")) {
-    	 			modifier += AbstractDungeon.player.getPower("BladeThunderPower").amount;
-    	 		}
-    	 		if(AbstractDungeon.player.hasPower("HibikiKurenaiSpecialPower")) {
-    	 			modifier += AbstractDungeon.player.getPower("HibikiKurenaiSpecialPower").amount;
-    	 		}
-    	 		break;
-    	 	case Agito:
-    	 		if(AbstractDungeon.player.hasPower("BladeThunderPower")) {
-    	 			modifier += AbstractDungeon.player.getPower("BladeThunderPower").amount;
-	    		}
-    	 		if(AbstractDungeon.player.hasPower("HibikiKurenaiSpecialPower")) {
-    	 			modifier += AbstractDungeon.player.getPower("HibikiKurenaiSpecialPower").amount;
-    	 		}
-	      		break;
-	       	case Ryuki:
-	      		if(AbstractDungeon.player.hasPower("BladeThunderPower")) {
-	      			modifier += AbstractDungeon.player.getPower("BladeThunderPower").amount;
-	    		}
-    	 		if(AbstractDungeon.player.hasPower("HibikiKurenaiSpecialPower")) {
-    	 			modifier += AbstractDungeon.player.getPower("HibikiKurenaiSpecialPower").amount;
-    	 		}
-	      		break;
-	       	case Faiz:
-	      		if(AbstractDungeon.player.hasPower("BladeThunderPower")) {
-	      			modifier += AbstractDungeon.player.getPower("BladeThunderPower").amount;
-	    		}
-    	 		if(AbstractDungeon.player.hasPower("HibikiKurenaiSpecialPower")) {
-    	 			modifier += AbstractDungeon.player.getPower("HibikiKurenaiSpecialPower").amount;
-    	 		}
-	      		break;
-	       	case Blade:
-	      		if(AbstractDungeon.player.hasPower("BladeThunderPower")) {
-	      			modifier += AbstractDungeon.player.getPower("BladeThunderPower").amount;
-	    		}
-    	 		if(AbstractDungeon.player.hasPower("HibikiKurenaiSpecialPower")) {
-    	 			modifier += AbstractDungeon.player.getPower("HibikiKurenaiSpecialPower").amount;
-    	 		}
-	      		break;
-	       	case Hibiki:
-	      		if(AbstractDungeon.player.hasPower("BladeThunderPower")) {
-	      			modifier += AbstractDungeon.player.getPower("BladeThunderPower").amount;
-	    		}
-    	 		if(AbstractDungeon.player.hasPower("HibikiKurenaiSpecialPower")) {
-    	 			modifier += AbstractDungeon.player.getPower("HibikiKurenaiSpecialPower").amount;
-    	 		}
-	      		break;
-	       	case Kabuto:
-	      		if(AbstractDungeon.player.hasPower("BladeThunderPower")) {
-	      			modifier += AbstractDungeon.player.getPower("BladeThunderPower").amount;
-	    		}
-    	 		if(AbstractDungeon.player.hasPower("HibikiKurenaiSpecialPower")) {
-    	 			modifier += AbstractDungeon.player.getPower("HibikiKurenaiSpecialPower").amount;
-    	 		}
-	      		break;
-	       	case DenO:
-	      		if(AbstractDungeon.player.hasPower("BladeThunderPower")) {
-	      			modifier += AbstractDungeon.player.getPower("BladeThunderPower").amount;
-	    		}
-    	 		if(AbstractDungeon.player.hasPower("HibikiKurenaiSpecialPower")) {
-    	 			modifier += AbstractDungeon.player.getPower("HibikiKurenaiSpecialPower").amount;
-    	 		}
-	      		break;
-	       	case Kiva:
-	      		if(AbstractDungeon.player.hasPower("BladeThunderPower")) {
-	      			modifier += AbstractDungeon.player.getPower("BladeThunderPower").amount;
-	    		}
-    	 		if(AbstractDungeon.player.hasPower("HibikiKurenaiSpecialPower")) {
-    	 			modifier += AbstractDungeon.player.getPower("HibikiKurenaiSpecialPower").amount;
-    	 		}
-	      		break;		  
-	       	default:
-	      		if(AbstractDungeon.player.hasPower("BladeThunderPower")) {
-	      			modifier += AbstractDungeon.player.getPower("BladeThunderPower").amount;
-	    		}
-    	 		if(AbstractDungeon.player.hasPower("HibikiKurenaiSpecialPower")) {
-    	 			modifier += AbstractDungeon.player.getPower("HibikiKurenaiSpecialPower").amount;
-    	 		}
-	      		break;       
-    	 }
+		 if (this.colorType == CardColorType.Decade) {
+			 if (AbstractDungeon.player.hasPower("BladeThunderPower") && !this.cardID.equals("FinalAttackRide")) {
+				 modifier += AbstractDungeon.player.getPower("BladeThunderPower").amount;
+			 }
+		 } else {
+			 if (AbstractDungeon.player.hasPower("BladeThunderPower")) {
+				 modifier += AbstractDungeon.player.getPower("BladeThunderPower").amount;
+			 }
+		 }
+		 if (AbstractDungeon.player.hasPower("HibikiKurenaiSpecialPower")) {
+			 modifier += AbstractDungeon.player.getPower("HibikiKurenaiSpecialPower").amount;
+		 }
+		 if(this.hasTag(DCDmod.UnarmedCard) && AbstractDungeon.player.hasPower("KamenRideKuugaPower") &&
+		 !AbstractDungeon.player.hasPower("KuugaDragonPower") && !AbstractDungeon.player.hasPower("RisingDragonPower") &&
+		 !AbstractDungeon.player.hasPower("KuugaTitanPower") && !AbstractDungeon.player.hasPower("RisingTitanPower") &&
+		 !AbstractDungeon.player.hasPower("KuugaPegasusPower") && !AbstractDungeon.player.hasPower("RisingPegasusPower")){
+			 modifier += 2;
+		 }
 				
 				if (modifier != 0) { 
 					this.isDamageModified = true;		

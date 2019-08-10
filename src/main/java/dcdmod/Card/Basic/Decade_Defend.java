@@ -13,7 +13,7 @@ import dcdmod.DCDmod;
 import dcdmod.Patches.AbstractCardEnum;
 import dcdmod.Patches.AbstractCustomCardWithType;
 import dcdmod.Power.Rollpower;
-import dcdmod.Vfx.DenO_backtodcd;
+import dcdmod.Vfx.Kuuga_roll;
 
 
 public class Decade_Defend extends AbstractCustomCardWithType{
@@ -41,6 +41,9 @@ public class Decade_Defend extends AbstractCustomCardWithType{
     public void use(AbstractPlayer p, AbstractMonster m) {
 		AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Rollpower(p, 1), 1));
+		if(p.hasPower("KamenRideKuugaPower")){
+			AbstractDungeon.actionManager.addToTop(new VFXAction(new Kuuga_roll(), 0F));
+		}
 		//AbstractDungeon.actionManager.addToBottom(new VFXAction(new DenO_backtodcd(AbstractDungeon.player.drawX - 200.00f, AbstractDungeon.player.drawY + 250.00f), 2F));
 	}
 	

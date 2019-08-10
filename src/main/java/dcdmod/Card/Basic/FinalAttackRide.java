@@ -69,7 +69,7 @@ public class FinalAttackRide extends AbstractCustomCardWithType{
 	
 	@Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-		TurnTimer.StopBGM();
+		TurnTimer.StopBGM(false);
 		if(!p.hasPower("KamenRideKabutoPower")){
 			CardCrawlGame.sound.playA("FAR", 0F);
 		}
@@ -79,37 +79,84 @@ public class FinalAttackRide extends AbstractCustomCardWithType{
 				AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
 				break;
 			case 1:
-				AbstractDungeon.actionManager.addToTop(new VFXAction(new Kuuga_FAR_sounds(p.drawX - 200.00f, p.drawY + 250.00f), 4F));
+				AbstractDungeon.actionManager.addToTop(new VFXAction(new Kuuga_FAR_SoundsAndAnimation(p.drawX, p.drawY), 3.2F));
+				if(!DCDmod.AnimationTrigger){
+					AbstractDungeon.actionManager.addToTop(new VFXAction(new Kuuga_FAR_Background(false,false)));
+				}
 				if(p.hasPower("KuugaDragonPower")||p.hasPower("RisingDragonPower")){
-					for(int i = 0;i < (m.getPower("KuugaSpecialPower").amount/3); i++) {
-						AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+					if(m.hasPower("KuugaSpecialPower")){
+						if(DCDmod.AnimationTrigger){
+							for(int i = 0;i < (m.getPower("KuugaSpecialPower").amount/3); i++) {
+								AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+							}
+							AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(m, p, "KuugaSpecialPower"));
+						}
+						else{
+							AbstractDungeon.actionManager.addToBottom(new VFXAction(new Kuuga_Dragon_FAR(p,m,this.damage,m.getPower("KuugaSpecialPower").amount/3), 0F));
+						}
 					}
-					AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(p, p, "KuugaSpecialPower"));
 				}
 				else if(p.hasPower("KuugaTitanPower")||p.hasPower("RisingTitanPower")){
-					if(p.hasPower("RisingMightyPower")) {
-						AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage , DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+					if(!DCDmod.AnimationTrigger){
+						AbstractDungeon.actionManager.addToBottom(new VFXAction(new Kuuga_Titan_FAR(p,m,this.damage)));
 					}
-					AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage , DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-					AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(p, p, "KuugaSpecialPower"));
+					else{
+						if(p.hasPower("RisingMightyPower")) {
+							AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage , DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+						}
+						AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage , DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+						AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(m, p, "KuugaSpecialPower"));
+					}
 				}
 				else if(p.hasPower("KuugaPegasusPower")||p.hasPower("RisingPegasusPower")) {
-			        for(int i = 0;i < 2; i++) {
-			        	AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, DamageType.HP_LOSS), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-			        }
-			        if(p.hasPower("RisingPegasusPower")) {
-			        	AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, DamageType.HP_LOSS), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-			        }
+					if(!DCDmod.AnimationTrigger){
+						if(p.hasPower("KuugaPegasusPower")){
+							AbstractDungeon.actionManager.addToBottom(new VFXAction(new Kuuga_Pegasus_FAR(p,m,this.damage)));
+						}
+						else{
+							AbstractDungeon.actionManager.addToBottom(new VFXAction(new Kuuga_Pegasus_FAR2(p,m,this.damage)));
+						}
+					}
+					else{
+						int x = 2;
+						if(p.hasPower("RisingPegasusPower")) {
+							x += 1;
+						}
+						for(int i = 0;i < x; i++) {
+							for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
+								if ((!monster.isDead) && (!monster.isDying)) {
+									AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, DamageType.HP_LOSS), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+								}
+							}
+						}
+					}
+
 				}
 				else if(p.hasPower("RisingMightyPower")){
-						AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage*2, DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-						AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage*2, DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-						AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(p, p, "KuugaSpecialPower"));
+					if(m.hasPower("KuugaSpecialPower") && m.getPower("KuugaSpecialPower").amount >= 3){
+						this.damage = this.damage*2;
+					}
+					if(!DCDmod.AnimationTrigger){
+						AbstractDungeon.actionManager.addToBottom(new VFXAction(new Kuuga_FAR_R_kick(p,m,this.damage)));
+					}
+					else{
+						AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+						AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+						AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(m, p, "KuugaSpecialPower"));
+					}
 				}
 				else {
-					AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, (int) (this.damage*1.5), DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-					AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, (int) (this.damage*1.5), DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-					AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(p, p, "KuugaSpecialPower"));
+					if(m.hasPower("KuugaSpecialPower") && m.getPower("KuugaSpecialPower").amount >= 3){
+						this.damage = (int) (this.damage*1.5);
+					}
+					if(!DCDmod.AnimationTrigger){
+						AbstractDungeon.actionManager.addToBottom(new VFXAction(new Kuuga_FAR_kick(p,m,this.damage)));
+					}
+					else{
+						AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+						AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+						AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(m, p, "KuugaSpecialPower"));
+					}
 				}
 				break;
 			case 2:
@@ -122,8 +169,8 @@ public class FinalAttackRide extends AbstractCustomCardWithType{
 					AbstractDungeon.actionManager.addToBottom(new RemoveKamenRideAction(p, p));
 					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new KamenRideDecadePower(p,1),1));
 				}
-				else if(p.hasPower("SpcialStormPower")&&p.getPower("SpcialStormPower").amount>=3) {
-					int x =p.getPower("SpcialStormPower").amount/3;
+				else if(p.hasPower("SpecialStormPower")&&p.getPower("SpecialStormPower").amount>=3) {
+					int x =p.getPower("SpecialStormPower").amount/3;
 					for(int i = 0; i < x; i++ ) {
 						AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
 					}
@@ -496,26 +543,21 @@ public class FinalAttackRide extends AbstractCustomCardWithType{
 	public boolean canUse(AbstractPlayer p, AbstractMonster m) {
 		boolean canUse = super.canUse(p, m);
 		if(!canUse) return false;
-		if(p.hasPower("KuugaDragonPower") || p.hasPower("KuugaTitanPower")|| p.hasPower("KamenRideKuugaPower")|| p.hasPower("RisingTitanPower")) {
-			if(p.hasPower("KuugaPegasusPower")||p.hasPower("RisingPegasusPower")) {
-				return true;
-			}
-			else {
-				if(m !=null && m.hasPower("KuugaSpecialPower")) {
-					if( m.getPower("KuugaSpecialPower").amount<3) {			
-						canUse = false;
-						this.cantUseMessage = EXTENDED_DESCRIPTION[5];
-					}
-				}
-				else {
+		if(p.hasPower("KamenRideBladePower")&&(!p.hasPower("BladeSlashPower")&&!p.hasPower("BladeKickPower"))) {
+			canUse = false;
+			this.cantUseMessage = EXTENDED_DESCRIPTION[36];
+		}
+		if(p.hasPower("KuugaDragonPower")||p.hasPower("RisingDragonPower")){
+			if(m !=null && m.hasPower("KuugaSpecialPower")) {
+				if( m.getPower("KuugaSpecialPower").amount<3) {
 					canUse = false;
 					this.cantUseMessage = EXTENDED_DESCRIPTION[5];
 				}
 			}
-		}
-		if(p.hasPower("KamenRideBladePower")&&(!p.hasPower("BladeSlashPower")&&!p.hasPower("BladeKickPower"))) {
-			canUse = false;
-			this.cantUseMessage = EXTENDED_DESCRIPTION[36];
+			else {
+				canUse = false;
+				this.cantUseMessage = EXTENDED_DESCRIPTION[5];
+			}
 		}
 		if(p.hasPower("KamenRideHibikiPower") && !HibikiTaikoKeyEvent.Fever) {
 			canUse = false;

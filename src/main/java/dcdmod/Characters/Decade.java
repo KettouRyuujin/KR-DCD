@@ -42,15 +42,20 @@ public class Decade extends CustomPlayer {
 	public static int cf;
 
 	//人物模型
-	private static String FAR_ATLAS = "img/char/DCD_Animation/FAR/FAR.atlas";
-    public static String FAR_JSON0 = "img/char/DCD_Animation/FAR/FAR_FAR0.json";
-    private static String FAR_JSON1 = "img/char/DCD_Animation/FAR/FAR_FAR1.json";
-    private static String FAR_JSON2 = "img/char/DCD_Animation/FAR/FAR_FAR2.json";
-    public static AnimationLoader FAR0 = new AnimationLoader(FAR_ATLAS, FAR_JSON0,  1.0f);
-    public static AnimationLoader FAR1 = new AnimationLoader(FAR_ATLAS, FAR_JSON1,  1.0f);
-    public static AnimationLoader FAR2 = new AnimationLoader(FAR_ATLAS, FAR_JSON2,  1.0f);
-	private static int [] ban = {13,15,19,20,21,22,24,25,26,27,31,32,33,36,38,42,51,52,53,56,57,58,71,72,73,74,76,78,79};
-
+	private static String FAR0_ATLAS = "img/char/DCD_Animation/FAR/FAR0.atlas";
+	private static String FAR1_ATLAS = "img/char/DCD_Animation/FAR/FAR1.atlas";
+	private static String FAR2_ATLAS = "img/char/DCD_Animation/FAR/FAR2.atlas";
+	private static String FAR0_JSON = "img/char/DCD_Animation/FAR/FAR0.json";
+	private static String FAR1_JSON = "img/char/DCD_Animation/FAR/FAR1.json";
+	private static String FAR2_JSON = "img/char/DCD_Animation/FAR/FAR2.json";
+    public static AnimationLoader FAR0 = new AnimationLoader(FAR0_ATLAS, FAR0_JSON,  1.0f);
+    public static AnimationLoader FAR1 = new AnimationLoader(FAR1_ATLAS, FAR1_JSON,  1.0f);
+    public static AnimationLoader FAR2 = new AnimationLoader(FAR2_ATLAS, FAR2_JSON,  1.0f);
+	private static int [] ban = {13,15,19,20,21,22,24,25,26,27,31,32,33,36,38,42,51,52,53,56,57,58,71,72,73,74,76,78,79,
+			80,81,82,83,84,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,106,107,108,109,110,111,112,
+			113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,
+			140,141,142};
+	private static int [] defend = {77,81,87,88,115};
 	
 	public Decade(String name) {
 		
@@ -189,6 +194,7 @@ public class Decade extends CustomPlayer {
 	
 	public void Trickster(final int a) {
 	    boolean banAnimation = false;
+	    boolean isDefend = false;
 	    boolean loop = false;
 	    System.out.println("模型" + Decade.cf);
         if (a == Decade.cf) {
@@ -199,7 +205,6 @@ public class Decade extends CustomPlayer {
             System.out.println("==3");
             return;
         }
-        Decade.cf = a;
     	if(DCDmod.AnimationTrigger) {
 			for (int value : ban) {
 				if (a == value) {
@@ -208,17 +213,35 @@ public class Decade extends CustomPlayer {
 				}
 			}
     	}
+    	else{
+			for (int value : defend) {
+				if (a == value) {
+					isDefend = true;
+					break;
+				}
+			}
+			if(isDefend){
+				for (int value : ban) {
+					if (cf == value) {
+						banAnimation = true;
+						break;
+					}
+				}
+			}
+		}
     	if(banAnimation) {
             System.out.println("==ban");
 		}
     	else{
+			Decade.cf = a;
 			String AnimationName = DecadeAnimationAction.NAME[a];
-			AnimationLoader animation1 = new AnimationLoader(DecadeAnimationAction.ATLAS[a], DecadeAnimationAction.JSON[a], 0.8f);
+			//AnimationLoader animation1 = new AnimationLoader(DecadeAnimationAction.ATLAS[a], DecadeAnimationAction.JSON[a], 0.8f);
 			if(AnimationName.equals("normal") || AnimationName.equals("normal_p") || AnimationName.equals("normal_t") || AnimationName.equals("normal_tp")
 					 || AnimationName.equals("Dragon") || AnimationName.equals("Pegasus") || AnimationName.equals("Titan")) {
 				loop = true;
 			}
-			AnimationLoader.loadAnimation(AbstractDungeon.player, animation1);
+			//AnimationLoader.loadAnimation(AbstractDungeon.player, animation1);
+			this.loadAnimation(DecadeAnimationAction.ATLAS[a], DecadeAnimationAction.JSON[a], 0.8f);
 			this.state.setAnimation(0, AnimationName, loop);
 			switch(a) {
 	        case 2:
@@ -241,7 +264,7 @@ public class Decade extends CustomPlayer {
 	            SpecialRideBooker.kamenpowerpoint = 1;
 	            SpecialRideBooker.nodecade = false;
 	            SpecialRideBooker.haskamenpower = true;
-	            TurnTimer.StopBGM();
+	            TurnTimer.StopBGM(false);
 	        	break;
 	        case 11:
 	            SpecialRideBooker.kamenpowerpoint = 1;
@@ -255,7 +278,7 @@ public class Decade extends CustomPlayer {
 	            SpecialRideBooker.kamenpowerpoint = 1;
 	            SpecialRideBooker.nodecade = false;
 	            SpecialRideBooker.haskamenpower = true;
-	            TurnTimer.StopBGM();
+	            TurnTimer.StopBGM(false);
 	        	break;
 	        case 28:
 	        	SpecialRideBooker.kamenpowerpoint = 2;
@@ -266,7 +289,7 @@ public class Decade extends CustomPlayer {
 	        	SpecialRideBooker.nodecade = true;
 	        	break;
 	        case 37:
-	        	TurnTimer.StopBGM();
+	        	TurnTimer.StopBGM(false);
 	        	break;
 	        case 43:
 	        	SpecialRideBooker.nodecade = true;
@@ -274,7 +297,7 @@ public class Decade extends CustomPlayer {
 	        case 45:
 	            SpecialRideBooker.kamenpowerpoint = 2;
 	            SpecialRideBooker.haskamenpower = true;
-	            TurnTimer.StopBGM();
+	            TurnTimer.StopBGM(false);
 	            CardCrawlGame.sound.playA("blade_BGM1", 0.0f);
 	        	break;
 	        case 46:
@@ -282,7 +305,7 @@ public class Decade extends CustomPlayer {
 	            SpecialRideBooker.haskamenpower = true;
 	        	break;
 	        case 47:
-	        	TurnTimer.StopBGM();
+	        	TurnTimer.StopBGM(false);
 	        	break;
 	        case 49:
 	        	SpecialRideBooker.nodecade = true;
@@ -316,11 +339,11 @@ public class Decade extends CustomPlayer {
 		retVal.add("Decade_Defend");
 		retVal.add("Decade_Defend");
 		retVal.add("Decade_Defend");
-		//retVal.add("AttackRide");
-		//retVal.add("Kabuto_ClockUp");
-		//retVal.add("Blade_Mach");
-		//retVal.add("Blade_Metal");
-		//retVal.add("Hibiki_Attack1");
+		//retVal.add("Kuuga_Rising");
+		//retVal.add("Decade_Invisible");
+		//retVal.add("UnarmedAttack7");
+		//retVal.add("UnarmedAttack8");
+		//retVal.add("UnarmedAttack9");
 		//retVal.add("UnarmedAttack1");
 		//retVal.add("UnarmedAttack1");
 		//retVal.add("UnarmedAttack1");

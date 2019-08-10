@@ -1,5 +1,6 @@
 package dcdmod.Power;
 
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -9,6 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import dcdmod.Vfx.Kuuga_dash;
 
 public class PegasusDefendPower extends AbstractPower {
 	public static final String POWER_ID = "PegasusDefendPower";
@@ -41,7 +43,12 @@ public class PegasusDefendPower extends AbstractPower {
 	}
 	
 	public int onAttacked(final DamageInfo info, final int damageAmount) {
-		AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, "PegasusDefendPower", 1));
+		if(info.owner != this.owner && info.type == DamageInfo.DamageType.NORMAL){
+			if(this.owner.hasPower("KamenRideKuugaPower")){
+				AbstractDungeon.actionManager.addToTop(new VFXAction(new Kuuga_dash(), 0F));
+			}
+			AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, "PegasusDefendPower", 1));
+		}
 		return damageAmount;
 	}
 	

@@ -1,6 +1,7 @@
 package dcdmod.Card.Special;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -13,7 +14,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dcdmod.DCDmod;
 import dcdmod.Patches.AbstractCardEnum;
 import dcdmod.Patches.AbstractCustomCardWithType;
-
 
 
 public class Decade_Blast extends AbstractCustomCardWithType{
@@ -38,8 +38,14 @@ public class Decade_Blast extends AbstractCustomCardWithType{
 	
 	@Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-		for(int i = 0;i < 5; i++) {
-			AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.getMonsters().getRandomMonster(true), new DamageInfo(p, this.damage ,this.damageType), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+		CardCrawlGame.sound.playA("attackride", 0.0f);
+		if(p.hasPower("KamenRideDecadePower")){
+			AbstractDungeon.actionManager.addToTop(new VFXAction(new dcdmod.Vfx.Decade_Blast(this.damage,this.damageType), 0F));
+		}
+		else{
+			for(int i = 0;i < 5; i++) {
+				AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.getMonsters().getRandomMonster(true), new DamageInfo(p, this.damage ,this.damageType), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+			}
 		}
 	}
 	
@@ -48,7 +54,7 @@ public class Decade_Blast extends AbstractCustomCardWithType{
 	{
 		super.calculateCardDamage(arg0);
 		if(AbstractDungeon.player.hasPower("BladeSlashPower")) {
-			int x = 0;
+			int x;
 			x = AbstractDungeon.player.getPower("BladeSlashPower").amount * 2;
 			this.damage += x;
 			this.isDamageModified = true;
