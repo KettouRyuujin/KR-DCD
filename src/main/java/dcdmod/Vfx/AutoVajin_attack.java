@@ -4,7 +4,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import dcdmod.Helper.SpecialAutoVajin;
-import com.badlogic.gdx.graphics.Color;
 
 public class AutoVajin_attack extends AbstractGameEffect {
 
@@ -14,7 +13,7 @@ public class AutoVajin_attack extends AbstractGameEffect {
 
 		this.duration = 1.0F;//倒数时间
 		this.startingDuration = 1.0F;//持续时间
-		this.color = Color.WHITE.cpy();
+
 	}
 
 	public void update() {

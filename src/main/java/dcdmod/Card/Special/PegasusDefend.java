@@ -102,10 +102,7 @@ public class PegasusDefend extends AbstractCustomCardWithType{
 	
 	@Override
     public void upgrade() {
-		if (!this.upgraded) {
-			
-		}
-	
+
     }
     
     static {

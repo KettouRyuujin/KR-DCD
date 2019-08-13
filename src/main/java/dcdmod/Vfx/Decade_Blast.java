@@ -22,7 +22,6 @@ public class Decade_Blast extends AbstractGameEffect {
 		this.Type = Type;
 		this.duration = 1.4F;//倒数时间
 		this.startingDuration = 1.4F;//持续时间
-		this.color = Color.WHITE.cpy();
 	}
 
 	public void update() {

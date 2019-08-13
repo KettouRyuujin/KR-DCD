@@ -26,8 +26,7 @@ import dcdmod.Vfx.Hibiki_backtodcd;
 	  private static final PowerStrings powerStrings;
 	  public static final String NAME;
 	  public static final String[] DESCRIPTIONS;
-	  int power;
-	  int x = 0;
+
 	   
 	   public KamenRideHibikiPower(AbstractCreature owner, int amt)
 	   {
@@ -45,12 +44,12 @@ import dcdmod.Vfx.Hibiki_backtodcd;
 	   
 	   public void onRemove() {
 		   if(this.owner.hasPower("HibikiKurenaiPower")) {
-			   AbstractDungeon.actionManager.addToBottom(new VFXAction(new Allformbacktodcd(AbstractDungeon.player.drawX - 200.00f, AbstractDungeon.player.drawY + 250.00f), 2F));
+			   AbstractDungeon.actionManager.addToBottom(new VFXAction(new Allformbacktodcd(), 2F));
 			   AbstractDungeon.actionManager.addToBottom(new RemoveFormRideAction(this.owner, this.owner));
 			   AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, "HibikiKurenaiSpecialPower"));
 		   }
 		   else if(this.owner.hasPower("KamenRideDecadePower")) {
-			   AbstractDungeon.actionManager.addToBottom(new VFXAction(new Hibiki_backtodcd(AbstractDungeon.player.drawX - 200.00f, AbstractDungeon.player.drawY + 250.00f), 2F));
+			   AbstractDungeon.actionManager.addToBottom(new VFXAction(new Hibiki_backtodcd(), 2F));
 		   }
 		   if(HibikiTaikoKeyEvent.Fever){
 			   HibikiTaikoKeyEvent.Fever = false;

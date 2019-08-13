@@ -42,7 +42,7 @@ public class KamenRideAgito extends AbstractCustomCardWithType{
 
 		this.tags.add(DCDmod.RiderCard);
 		this.tags.add(DCDmod.KamenRide);
-		this.tips = new ArrayList<TooltipInfo>();
+		this.tips = new ArrayList<>();
 		this.tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[0], EXTENDED_DESCRIPTION[1]));
 	}
 	
@@ -55,7 +55,7 @@ public class KamenRideAgito extends AbstractCustomCardWithType{
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new AgitoLevelPower(p,1),1));
 		CardCrawlGame.sound.playA("kamenride", 0.0f);
 		CardCrawlGame.sound.playA("agito_hensin", 0.0f);
-		AbstractDungeon.actionManager.addToBottom(new VFXAction(new Agito_dcdtoagito(p.drawX - 200.00f, p.drawY + 250.00f), 3F));
+		AbstractDungeon.actionManager.addToBottom(new VFXAction(new Agito_dcdtoagito(), 3F));
 	}
 	
 	public boolean canUse(AbstractPlayer p, AbstractMonster m) {

@@ -20,10 +20,9 @@ public class Faiz_Axel_Timer extends AbstractGameEffect {
 	private float x;
 	private float y;
 	private static Texture img1 = null;
-	private Texture img2 = null;
-	private int img0 = 100;
+	private Texture img2;
 	private static float TimerTime = 0.1F;
-	private static String Timer[] = {
+	private static String[] Timer = {
 			"img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-101.png",//0
 			"img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-1.png",
 			"img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-2.png",
@@ -125,19 +124,14 @@ public class Faiz_Axel_Timer extends AbstractGameEffect {
 			"img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-98.png",
 			"img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-99.png",
 			"img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-0.png"};
-	boolean timeout = true;
 	private static int img;
     
-	public Faiz_Axel_Timer(float x, float y) {
-		if (Faiz_Axel_Timer.img1 == null) {
-			Faiz_Axel_Timer.img1 = new Texture(Gdx.files.internal("img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-0.png"));
-		}
-		if (this.img2 == null) {
-			this.img2 = new Texture(Gdx.files.internal("img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-190.png"));
-		}
+	Faiz_Axel_Timer(float x, float y) {
+		Faiz_Axel_Timer.img1 = new Texture(Gdx.files.internal("img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-0.png"));
+		this.img2 = new Texture(Gdx.files.internal("img/char/DCD_Animation/faiz_Axel/timer/Axel_Timer_16810-190.png"));
 		this.x = x;
 		this.y = y;
-		Faiz_Axel_Timer.img = img0;
+		Faiz_Axel_Timer.img = 100;
 		this.duration = 11.35F;//倒数时间
 		this.startingDuration = 11.35F;//持续时间
 		this.color = Color.WHITE.cpy();
@@ -148,7 +142,7 @@ public class Faiz_Axel_Timer extends AbstractGameEffect {
 		if(!EnterButtonAction.AxelForm) {
 			this.isDone = true;
 			if(Decade.cf != 10 && Decade.cf != 1 && Decade.cf != 3) {
-				AbstractDungeon.actionManager.addToTop(new VFXAction(new Axel_backtofaiz(AbstractDungeon.player.drawX, AbstractDungeon.player.drawY), 0.0F));
+				AbstractDungeon.actionManager.addToTop(new VFXAction(new Axel_backtofaiz(), 0.0F));
 			}
 		}
 		if (this.duration < 11.3F) {
@@ -168,11 +162,11 @@ public class Faiz_Axel_Timer extends AbstractGameEffect {
 			EnterButtonAction.FaizShot = false;
 			EnterButtonAction.FaizEdge = false;
 			FaizGearAction.FaizPoint = 0;
-			AbstractDungeon.actionManager.addToTop(new VFXAction(new Axel_backtofaiz(AbstractDungeon.player.drawX, AbstractDungeon.player.drawY), 0.0F));
+			AbstractDungeon.actionManager.addToTop(new VFXAction(new Axel_backtofaiz(), 0.0F));
 		}
 	}
 
-	public static void timer() {
+	private static void timer() {
 		if(Faiz_Axel_Timer.img != 0) {
 			TimerTime = 0.1f;
 			Faiz_Axel_Timer.img -=1;

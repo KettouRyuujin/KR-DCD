@@ -43,7 +43,7 @@ public class KamenRideRyuki extends AbstractCustomCardWithType{
 		this.baseMagicNumber = this.magicNumber = 1;
 		this.tags.add(DCDmod.RiderCard);
 		this.tags.add(DCDmod.KamenRide);
-		this.tips = new ArrayList<TooltipInfo>();
+		this.tips = new ArrayList<>();
 		this.tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[0], EXTENDED_DESCRIPTION[1]));
 	}
 	
@@ -56,7 +56,7 @@ public class KamenRideRyuki extends AbstractCustomCardWithType{
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new KamenRideRyukiPower(p,1),1));
 		CardCrawlGame.sound.playA("kamenride", 0.0f);
 		CardCrawlGame.sound.playA("ryuki_hensin", 0.0f);
-		AbstractDungeon.actionManager.addToBottom(new VFXAction(new Ryuki_dcdtoryuki(p.drawX - 200.00f, p.drawY + 250.00f), 1F));
+		AbstractDungeon.actionManager.addToBottom(new VFXAction(new Ryuki_dcdtoryuki(), 1F));
 	}
 	
 	public boolean canUse(AbstractPlayer p, AbstractMonster m) {

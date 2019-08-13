@@ -50,7 +50,7 @@ import dcdmod.Vfx.Hibiki_taikoprepare;
 public class HibikiTaikoKeyEvent {
 
 
-	public static InputAction[] TaikoButtonActions = new InputAction[5];
+	private static InputAction[] TaikoButtonActions = new InputAction[5];
 	public static String[] TaikoArray = new String[]{"","","","",""};
 	public static int TaikoNumber = -1;
 	public static int ComboPoint = 0;
@@ -116,7 +116,7 @@ public class HibikiTaikoKeyEvent {
 			SpecialHibikiTaikoScore.draw_height = 284.0f;
 			SpecialHibikiTaikoScore.draw_width = 235.0f;
 			SpecialHibikiTaikoScore.ishide = false;
-			AbstractDungeon.actionManager.addToBottom(new VFXAction(new Hibiki_taikoprepare(AbstractDungeon.player.drawX, AbstractDungeon.player.drawY), 1.0F));
+			AbstractDungeon.actionManager.addToBottom(new VFXAction(new Hibiki_taikoprepare(), 1.0F));
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new FeverPower(AbstractDungeon.player, 1), 1));
 		}
 	}
@@ -155,18 +155,18 @@ public class HibikiTaikoKeyEvent {
 		}
 	}
 	
-	public static void KeyCount() {
+	private static void KeyCount() {
 		TaikoNumber +=1;
 		if(TaikoNumber>4) {
 			TaikoNumber = 0;
 		}
 		SpecialHibikiTaikoKey.TimerTime = 1.5F;
 		if(Fever) {
-			AbstractDungeon.actionManager.addToBottom(new VFXAction(new Hibiki_taikoaction(AbstractDungeon.player.drawX, AbstractDungeon.player.drawY), 0.0F));
+			AbstractDungeon.actionManager.addToBottom(new VFXAction(new Hibiki_taikoaction(), 0.0F));
 		}
 	}
 	
-	public static void TaikoCount() {
+	private static void TaikoCount() {
 		ComboPoint += 2;
 		if(Fever) {
 			ComboPoint += 1;
@@ -176,7 +176,7 @@ public class HibikiTaikoKeyEvent {
 		}
 	}
 	
-	public static void TaikoSpace() {
+	private static void TaikoSpace() {
 			switch(TaikoArray[0]+TaikoArray[1]+TaikoArray[2]+TaikoArray[3]+TaikoArray[4]) {
 			case "PATAPATAPATAPON"/*前进*/:
 				if(Fever && ActionPoint > 0) {
@@ -358,7 +358,6 @@ public class HibikiTaikoKeyEvent {
 				}
 				break;
 			default:
-				return;
 		}
 	}
 }

@@ -14,7 +14,7 @@ public class Decade_attacked extends AbstractGameEffect {
 	public Decade_attacked() {
 		this.duration = 0.25F;//倒数时间
 		this.startingDuration = 0.25F;//持续时间
-		this.color = Color.WHITE.cpy();
+
 	}
 
 	public void update() {

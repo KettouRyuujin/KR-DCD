@@ -50,13 +50,13 @@ public class Kabuto_CastOff extends AbstractCustomCardWithType{
 		this.tags.add(DCDmod.RiderCard);
 		this.tags.add(DCDmod.KamenRide);
 		this.exhaust = true;
-		this.tips = new ArrayList<TooltipInfo>();
+		this.tips = new ArrayList<>();
 		this.tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[1], EXTENDED_DESCRIPTION[2]));
 	}
 	
 	@Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToTop(new VFXAction(new Kabuto_MaskedToRider(p.drawX - 200.00f, p.drawY + 250.00f), 1.4F));
+		AbstractDungeon.actionManager.addToTop(new VFXAction(new Kabuto_MaskedToRider(), 1.4F));
 		AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, "KabutoMaskedPower")); 
 		int[] N = {0,0,0,0,0};
 		for(AbstractCard c : p.hand.group) {

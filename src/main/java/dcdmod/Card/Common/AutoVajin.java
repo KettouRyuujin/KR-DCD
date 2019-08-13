@@ -42,8 +42,8 @@ public class AutoVajin extends AbstractCustomCardWithType{
 	@Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 		CardCrawlGame.sound.playA("attackride", 0.0f);
-		AbstractDungeon.actionManager.addToTop(new VFXAction(new AutoVajin_sounds(p.drawX - 200.00f, p.drawY + 250.00f), 0.0F));
-		AbstractDungeon.actionManager.addToBottom(new VFXAction(new AutoVajin_appear(p.drawX - 200.00f, p.drawY + 250.00f), 2.5F));
+		AbstractDungeon.actionManager.addToTop(new VFXAction(new AutoVajin_sounds(), 0.0F));
+		AbstractDungeon.actionManager.addToBottom(new VFXAction(new AutoVajin_appear(), 2.5F));
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new AutoVajinPower(p, 3), 3));
 		if(EnterButtonAction.FaizEdge&&p.hasOrb()) {
 			for(AbstractOrb o : p.orbs) {

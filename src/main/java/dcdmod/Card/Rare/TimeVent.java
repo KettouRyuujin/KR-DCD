@@ -42,7 +42,7 @@ public class TimeVent extends AbstractCustomCardWithType{
 			ModBaseClassForSLExample.TimeVentUpgraded = false;
 			TimeVentUpgraded = false;
 			for(AbstractCard c : p.masterDeck.group) {
-				if(c.cardID == this.cardID && c.upgraded != true) {
+				if(c.cardID.equals(this.cardID) && !c.upgraded) {
 					AbstractDungeon.player.masterDeck.removeCard(c);
 					break;
 				}

@@ -24,7 +24,7 @@ public class SpecialFlamePower extends AbstractPower
   public static final String[] DESCRIPTIONS;
 
   
-   public SpecialFlamePower(AbstractCreature owner, int amt)
+   SpecialFlamePower(AbstractCreature owner, int amt)
    {
     this.name = NAME;
     this.ID = POWER_ID;
@@ -49,15 +49,15 @@ public class SpecialFlamePower extends AbstractPower
    }
    
    public int onAttacked(final DamageInfo info, final int damageAmount) {
-	   int x = 0;
+	   int x;
 	   if(this.owner.hasPower("Strength") && info.owner != this.owner && info.owner != null) {
 		   x = this.owner.getPower("Strength").amount;
 		   if(x>0) {
 			   if(this.owner.hasPower("AgitoFlamePower")&&!this.owner.hasPower("AgitoStormPower")) {
-				   AbstractDungeon.actionManager.addToTop(new VFXAction(new Agito_flame(this.owner.drawX - 200.00f, this.owner.drawY + 250.00f), 0F));
+				   AbstractDungeon.actionManager.addToTop(new VFXAction(new Agito_flame(), 0F));
 			   }
 			   else if(this.owner.hasPower("AgitoFlamePower")&&this.owner.hasPower("AgitoStormPower")) {
-				   AbstractDungeon.actionManager.addToTop(new VFXAction(new Agito_trinity(this.owner.drawX - 200.00f, this.owner.drawY + 250.00f), 0F));
+				   AbstractDungeon.actionManager.addToTop(new VFXAction(new Agito_trinity(), 0F));
 			   }
 			   AbstractDungeon.actionManager.addToBottom(new DamageAction(info.owner,new DamageInfo(this.owner, x * this.amount,  DamageType.THORNS), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
 		   } 

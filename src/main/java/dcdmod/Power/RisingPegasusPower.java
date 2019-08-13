@@ -43,7 +43,7 @@ import dcdmod.Vfx.Allformbacktodcd;
 	   
 	   public void onRemove() {
 		   if(trueremove) {
-			   AbstractDungeon.actionManager.addToTop(new VFXAction(new Allformbacktodcd(AbstractDungeon.player.drawX - 200.00f, AbstractDungeon.player.drawY + 250.00f), 2F));
+			   AbstractDungeon.actionManager.addToTop(new VFXAction(new Allformbacktodcd(), 2F));
 			   AbstractDungeon.actionManager.addToBottom(new RemoveFormRideAction(this.owner, this.owner));
 			   AbstractDungeon.actionManager.addToBottom(new RemoveKamenRideAction(this.owner, this.owner));
 			   AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new KamenRideDecadePower(this.owner,1),1));
@@ -53,7 +53,7 @@ import dcdmod.Vfx.Allformbacktodcd;
 	   }
 	   
 	   public void onUseCard(final AbstractCard card, final UseCardAction action) {
-		   if(card.hasTag(DCDmod.KamenRide)&& card.cardID != "Kuuga_Rising"){
+		   if(card.hasTag(DCDmod.KamenRide)&& !card.cardID.equals("Kuuga_Rising")){
 			   trueremove = false;
 		   }
 	   }

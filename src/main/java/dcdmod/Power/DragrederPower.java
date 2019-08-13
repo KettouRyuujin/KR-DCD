@@ -30,10 +30,8 @@ import dcdmod.Vfx.Ryuki_defend;
 	  private static final PowerStrings powerStrings;
 	  public static final String NAME;
 	  public static final String[] DESCRIPTIONS;
-	  public static boolean DragrederAttack = false;
-	  boolean noformme;
-	   
-	   public DragrederPower(AbstractCreature owner, int amt)
+
+	 public DragrederPower(AbstractCreature owner, int amt)
 	   {
 		   
 	    this.name = NAME;
@@ -46,7 +44,7 @@ import dcdmod.Vfx.Ryuki_defend;
 	   }
 	   
 	   public void onRemove() {
-		   AbstractDungeon.actionManager.addToTop(new VFXAction(new Dragreder_disappear(this.owner.drawX - 200.00f, this.owner.drawY + 250.00f), 0F));
+		   AbstractDungeon.actionManager.addToTop(new VFXAction(new Dragreder_disappear(), 0F));
 		   CardCrawlGame.sound.playA("autovajindisappea", 0.0f); 
 	   }
 	   
@@ -64,8 +62,8 @@ import dcdmod.Vfx.Ryuki_defend;
 	        if(this.owner.hasPower("DragShieldPower")&&info.owner!=this.owner) {
 	        	AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, "DragShieldPower", 1));
 	        	if(Decade.cf != 24 && this.owner.hasPower("KamenRideRyukiPower")) {
-	        		AbstractDungeon.actionManager.addToTop(new VFXAction(new Ryuki_defend(AbstractDungeon.player.drawX - 200.00f, AbstractDungeon.player.drawY + 250.00f), 0F));
-	        		AbstractDungeon.actionManager.addToTop(new VFXAction(new Dragreder_defend(this.owner.drawX - 200.00f, this.owner.drawY + 250.00f), 0F));
+	        		AbstractDungeon.actionManager.addToTop(new VFXAction(new Ryuki_defend(), 0F));
+	        		AbstractDungeon.actionManager.addToTop(new VFXAction(new Dragreder_defend(), 0F));
 	        	}
 	        	if(this.owner.hasPower("MirrorWorldPower")) {
 	        		AbstractDungeon.actionManager.addToBottom(new DamageAction(info.owner,new DamageInfo(this.owner, ((this.owner.maxHealth * 20 ) / 100), DamageType.THORNS), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
@@ -97,12 +95,12 @@ import dcdmod.Vfx.Ryuki_defend;
 				 }
 			}
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new DragClawPower(this.owner, x), x));
-			AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.owner, this.owner, 10));
+			AbstractDungeon.actionManager.addToTop(new GainBlockAction(this.owner, this.owner, 10));
 	    }
 	   	   
 	    
 	   public void onVictory() {
-		   AbstractDungeon.actionManager.addToTop(new VFXAction(new Dragreder_disappear(this.owner.drawX - 200.00f, this.owner.drawY + 250.00f), 0F));
+		   AbstractDungeon.actionManager.addToTop(new VFXAction(new Dragreder_disappear(), 0F));
 		   CardCrawlGame.sound.playA("autovajindisappea", 0.0f); 
 	   }
 

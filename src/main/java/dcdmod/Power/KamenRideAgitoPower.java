@@ -29,12 +29,10 @@ import dcdmod.Vfx.Allformbacktodcd;
 	  private static final PowerStrings powerStrings;
 	  public static final String NAME;
 	  public static final String[] DESCRIPTIONS;
-	  int ax = 0;
-	  int sx = 0;
-	  boolean Storm;
-	  boolean Flame;
-	   
-	   public KamenRideAgitoPower(AbstractCreature owner, int amt)
+	  private int ax = 0;
+	  private int sx = 0;
+
+	 public KamenRideAgitoPower(AbstractCreature owner, int amt)
 	   {
 		   
 	    this.name = NAME;
@@ -49,10 +47,10 @@ import dcdmod.Vfx.Allformbacktodcd;
 	   public void onRemove() {
 		   if(this.owner.hasPower("KamenRideDecadePower")) {
 			   if(Decade.cf == 17||Decade.cf == 18||Decade.cf == 19||Decade.cf == 21) {
-				   AbstractDungeon.actionManager.addToBottom(new VFXAction(new Allformbacktodcd(AbstractDungeon.player.drawX - 200.00f, AbstractDungeon.player.drawY + 250.00f), 2F));
+				   AbstractDungeon.actionManager.addToBottom(new VFXAction(new Allformbacktodcd(), 2F));
 			   }
 			   else {
-				   AbstractDungeon.actionManager.addToBottom(new VFXAction(new Agito_backtodcd(AbstractDungeon.player.drawX - 200.00f, AbstractDungeon.player.drawY + 250.00f), 2F));
+				   AbstractDungeon.actionManager.addToBottom(new VFXAction(new Agito_backtodcd(), 2F));
 			   }		   
 		   }
 		   AbstractDungeon.actionManager.addToBottom(new RemoveFormRideAction(this.owner, this.owner));
@@ -60,20 +58,20 @@ import dcdmod.Vfx.Allformbacktodcd;
 	   }
 	   
 	   public void onUseCard(final AbstractCard card, final UseCardAction action) {
-		   if(this.owner.hasPower("AgitoStormPower") && this.owner.hasPower("AgitoFlamePower") && card.cardID == "Agito_StormHalberd" && !DCDmod.AnimationTrigger) {
-			   AbstractDungeon.actionManager.addToTop(new VFXAction(new Agito_trinity(this.owner.drawX - 200.00f, this.owner.drawY + 250.00f), 0F));
+		   if(this.owner.hasPower("AgitoStormPower") && this.owner.hasPower("AgitoFlamePower") && card.cardID.equals("Agito_StormHalberd") && !DCDmod.AnimationTrigger) {
+			   AbstractDungeon.actionManager.addToTop(new VFXAction(new Agito_trinity(), 0F));
 		   } 
 	   }
 	   
 	   public void onAfterCardPlayed(final AbstractCard usedCard) {
 		   if(usedCard.type == CardType.ATTACK) {
-			   if(usedCard.cardID != "Agito_StormHalberd") {
+			   if(!usedCard.cardID.equals("Agito_StormHalberd")) {
 				   ax++;
 			   }
 			   updateDescription();
 		   }
 		   if(usedCard.type == CardType.SKILL) {
-			   if(usedCard.cardID != "Agito_FlameSaber") {
+			   if(!usedCard.cardID.equals("Agito_FlameSaber")) {
 				   sx++;
 			   }   
 			   updateDescription();
@@ -81,34 +79,33 @@ import dcdmod.Vfx.Allformbacktodcd;
 		   if(ax >= 5) {
 			   ax -= 5;
 			   updateDescription();
-			   Storm = true;
+			   boolean storm = true;
 			   for(AbstractCard c : AbstractDungeon.player.discardPile.group) {
-				   if(c.cardID == "FormRideStorm" && Storm!=false) {
+				   if(c.cardID.equals("FormRideStorm")) {
 					   AbstractDungeon.player.discardPile.removeCard(c);
 					   AbstractDungeon.player.hand.addToTop(c);
 					   AbstractDungeon.player.hand.refreshHandLayout();
 					   AbstractDungeon.player.hand.applyPowers();
-					   Storm = false;
+					   storm = false;
 					   break;
 				   }
 			   }
 			   for(AbstractCard c : AbstractDungeon.player.drawPile.group) {
-				   if(c.cardID == "FormRideStorm" && Storm!=false) {
+				   if(c.cardID.equals("FormRideStorm") && storm) {
 					   AbstractDungeon.player.drawPile.removeCard(c);
 					   AbstractDungeon.player.hand.addToTop(c);
 					   AbstractDungeon.player.hand.refreshHandLayout();
 					   AbstractDungeon.player.hand.applyPowers();
-					   Storm = false;
+					   storm = false;
 					   break;
 				   }
 			   }
 			   for(AbstractCard c : AbstractDungeon.player.exhaustPile.group) {
-				   if(c.cardID == "FormRideStorm" && Storm!=false) {
+				   if(c.cardID.equals("FormRideStorm") && storm) {
 					   AbstractDungeon.player.exhaustPile.removeCard(c);
 					   AbstractDungeon.player.hand.addToTop(c.makeCopy());
 					   AbstractDungeon.player.hand.refreshHandLayout();
 					   AbstractDungeon.player.hand.applyPowers();
-					   Storm = false;
 					   break;
 				   }
 			   }
@@ -117,35 +114,34 @@ import dcdmod.Vfx.Allformbacktodcd;
 		   if(sx >= 5) {
 			   sx -= 5;
 			   updateDescription();
-			   Flame = true;
+			   boolean flame = true;
 			   //AbstractCard fc = new FormRideFlame();
 			   for(AbstractCard c : AbstractDungeon.player.discardPile.group) {
-				   if(c.cardID == "FormRideFlame" && Flame!=false) {
+				   if(c.cardID.equals("FormRideFlame")) {
 					   AbstractDungeon.player.discardPile.removeCard(c);
 					   AbstractDungeon.player.hand.addToTop(c);
 					   AbstractDungeon.player.hand.refreshHandLayout();
 					   AbstractDungeon.player.hand.applyPowers();
-					   Flame = false;
+					   flame = false;
 					   break;
 				   }
 			   }
 			   for(AbstractCard c : AbstractDungeon.player.drawPile.group) {
-				   if(c.cardID == "FormRideFlame" && Flame!=false) {
+				   if(c.cardID.equals("FormRideFlame") && flame) {
 					   AbstractDungeon.player.drawPile.removeCard(c);
 					   AbstractDungeon.player.hand.addToTop(c);
 					   AbstractDungeon.player.hand.refreshHandLayout();
 					   AbstractDungeon.player.hand.applyPowers();
-					   Flame = false;
+					   flame = false;
 					   break;
 				   }
 			   }
 			   for(AbstractCard c : AbstractDungeon.player.exhaustPile.group) {
-				   if(c.cardID == "FormRideFlame" && Flame!=false) {
+				   if(c.cardID.equals("FormRideFlame") && flame) {
 					   AbstractDungeon.player.exhaustPile.removeCard(c);
 					   AbstractDungeon.player.hand.addToTop(c.makeCopy());
 					   AbstractDungeon.player.hand.refreshHandLayout();
 					   AbstractDungeon.player.hand.applyPowers();
-					   Flame = false;
 					   break;
 				   }
 			   }

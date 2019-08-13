@@ -39,8 +39,7 @@ public class Hibiki_FEVER extends AbstractCustomCardWithType{
 	@Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 		if(p.hasPower("HibikiKurenaiPower")&&p.hasPower("HibikiKurenaiSpecialPower")) {
-			int x = p.getPower("HibikiKurenaiSpecialPower").amount;
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new HibikiKurenaiSpecialPower(p,x),x));
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new HibikiKurenaiSpecialPower(p,10),10));
 		}
 		else {
 			HibikiTaikoKeyEvent.ComboPoint += 10;

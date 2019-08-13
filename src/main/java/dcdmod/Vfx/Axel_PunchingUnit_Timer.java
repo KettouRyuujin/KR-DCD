@@ -18,7 +18,6 @@ public class Axel_PunchingUnit_Timer extends AbstractGameEffect {
 	
 	private float x;
 	private float y;
-	private AbstractCreature m;
 	private int damage;
 	private boolean Start= true;
 	private boolean Final = false;
@@ -27,7 +26,7 @@ public class Axel_PunchingUnit_Timer extends AbstractGameEffect {
 
 
 	public Axel_PunchingUnit_Timer(int d) {
-		this.m = AbstractDungeon.getMonsters().getRandomMonster(true);
+		AbstractCreature m = AbstractDungeon.getMonsters().getRandomMonster(true);
 		if(m != null) {
 			this.x = m.drawX;
 			this.y = m.drawY;
@@ -44,9 +43,7 @@ public class Axel_PunchingUnit_Timer extends AbstractGameEffect {
 				String FAIZ_ATLAS = "img/char/DCD_Animation/faiz_Axel/Axel_PunchingUnit.atlas";
 				String FAIZ_JSON1 = "img/char/DCD_Animation/faiz_Axel/Axel_PunchingUnit.json";
 				AXEL4 = new AbstractAnimation(FAIZ_ATLAS, FAIZ_JSON1, 0.8f, x, y, 120.0F * Settings.scale, 120.0F * Settings.scale, 1.0f , 1.0f);
-				if(AXEL4 != null) {
-					AXEL4.setMovable(false);
-				}
+				AXEL4.setMovable(false);
 				AbstractAnimation.changeAnimation(AXEL4, FaizAnimationAction.axel_FAR_P);
 				AXEL4.state.setAnimation(0, "PunchingUnit", true);
 				for(int i=0;i<EnterButtonAction.ShotPoint;i++) {

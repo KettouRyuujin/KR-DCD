@@ -41,8 +41,8 @@ public class FormRideAxel extends AbstractCustomCardWithType{
 	@Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 		CardCrawlGame.sound.playA("formride", 0.0f);
-		AbstractDungeon.actionManager.addToTop(new VFXAction(new Axel_faiztoaxel(p.drawX, p.drawY), 5.7F));
-		AbstractDungeon.actionManager.addToTop(new VFXAction(new Faiz_axelsounds(p.drawX, p.drawY), 0F));
+		AbstractDungeon.actionManager.addToTop(new VFXAction(new Axel_faiztoaxel(), 5.7F));
+		AbstractDungeon.actionManager.addToTop(new VFXAction(new Faiz_axelsounds(), 0F));
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new VulnerablePower(p, 3, false), 3));
 	}
 	

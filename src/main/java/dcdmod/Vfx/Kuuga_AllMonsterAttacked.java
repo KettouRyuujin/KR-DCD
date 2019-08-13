@@ -15,7 +15,7 @@ public class Kuuga_AllMonsterAttacked extends AbstractGameEffect {
 	private boolean start = true;
 	public static int x;
 
-	public Kuuga_AllMonsterAttacked() {
+	Kuuga_AllMonsterAttacked() {
 		this.duration = 0.58F;//倒数时间
 		this.startingDuration = 0.58F;//持续时间
 		this.id = "kuuga_attacked" + x;

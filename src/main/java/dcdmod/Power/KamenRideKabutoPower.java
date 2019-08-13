@@ -26,8 +26,7 @@ import dcdmod.Vfx.Kabuto_backtodcd;
 	  private static final PowerStrings powerStrings;
 	  public static final String NAME;
 	  public static final String[] DESCRIPTIONS;
-	  int power;
-	  int x = 0;
+
 	   
 	   public KamenRideKabutoPower(AbstractCreature owner, int amt)
 	   {
@@ -43,11 +42,11 @@ import dcdmod.Vfx.Kabuto_backtodcd;
 	   
 	   public void onRemove() {
 		   if(this.owner.hasPower("KabutoMaskedPower")) {
-			   AbstractDungeon.actionManager.addToBottom(new VFXAction(new Allformbacktodcd(AbstractDungeon.player.drawX - 200.00f, AbstractDungeon.player.drawY + 250.00f), 2F));
+			   AbstractDungeon.actionManager.addToBottom(new VFXAction(new Allformbacktodcd(), 2F));
 			   AbstractDungeon.actionManager.addToBottom(new RemoveFormRideAction(this.owner, this.owner));
 		   }
 		   else if(this.owner.hasPower("KamenRideDecadePower")) {
-			   AbstractDungeon.actionManager.addToBottom(new VFXAction(new Kabuto_backtodcd(AbstractDungeon.player.drawX - 200.00f, AbstractDungeon.player.drawY + 250.00f), 2F));
+			   AbstractDungeon.actionManager.addToBottom(new VFXAction(new Kabuto_backtodcd(), 2F));
 			   AbstractDungeon.actionManager.addToBottom(new RemoveFormRideAction(this.owner, this.owner));
 		   }
 	   }

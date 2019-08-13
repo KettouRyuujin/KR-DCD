@@ -9,21 +9,14 @@ import dcdmod.Characters.Decade;
 import com.badlogic.gdx.graphics.Color;
 
 public class Decade_henshin extends AbstractGameEffect {
-	private float x;
-	private float y;
-	private Texture img = null;
-	boolean start = true;
 
-	public Decade_henshin(float x, float y) {
-		if (this.img == null) {
-			this.img =new Texture(Gdx.files.internal("img/1024/orb-dark.png"));
-		}
+	private boolean start = true;
 
-		this.x = x- (float)this.img.getWidth() / 2.0F;
-		this.y = y;
+	public Decade_henshin() {
+
 		this.duration = 5.0F;//倒数时间
 		this.startingDuration = 5.0F;//持续时间
-		this.color = Color.WHITE.cpy();
+
 	}
 
 	public void update() {
@@ -36,8 +29,6 @@ public class Decade_henshin extends AbstractGameEffect {
 	}
 
 	public void render(SpriteBatch sb) {
-		sb.setColor(this.color);
-		sb.draw(this.img, this.x, this.y);
 		if(start) {
 			final Decade Decade = (Decade)AbstractDungeon.player;
 			Decade.Trickster(2);//切换模型

@@ -41,7 +41,7 @@ public class NMDAZYYGL extends AbstractCustomCardWithType{
 			canUse = false;
 			this.cantUseMessage = EXTENDED_DESCRIPTION[0];
 		}
-		if(m != null && m.id == "Darkling") {
+		if(m != null && m.id.equals("Darkling")) {
 			canUse = false;
 			this.cantUseMessage = EXTENDED_DESCRIPTION[1];
 		}

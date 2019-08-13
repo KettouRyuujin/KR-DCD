@@ -11,18 +11,16 @@ public class Axel_SparkleCut extends AbstractGameEffect {
 	
 	private float x;
 	private float y;
-	private Texture img = null;
-	boolean Start= true;
-	boolean Final = false;
-	int n = 0;
+	private Texture img;
+	private boolean Start= true;
+	private boolean Final = false;
+	private int n = 0;
 	
 
 	
 	
-	public Axel_SparkleCut(float x, float y) {
-		if (this.img == null) {
-			this.img =new Texture(Gdx.files.internal("img/1024/orb-dark.png"));
-		}
+	Axel_SparkleCut(float x, float y) {
+		this.img =new Texture(Gdx.files.internal("img/1024/orb-dark.png"));
 		this.x = x;
 		this.y = y;
 		this.duration = 30.0F;//倒数时间

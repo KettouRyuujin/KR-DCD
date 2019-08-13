@@ -1,45 +1,47 @@
 package dcdmod.Characters;
 
+import basemod.abstracts.CustomPlayer;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
-import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.utility.ExhaustAllEtherealAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardColor;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
-import com.megacrit.cardcrawl.helpers.ScreenShake.ShakeDur;
-import com.megacrit.cardcrawl.helpers.ScreenShake.ShakeIntensity;
 import com.megacrit.cardcrawl.neow.NeowRoom;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoom;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
-import basemod.abstracts.CustomPlayer;
-import dcdmod.DCDmod;
 import dcdmod.Actions.DecadeAnimationAction;
+import dcdmod.Actions.ReturnRandomNumberAction2;
 import dcdmod.Actions.TurnTimer;
 import dcdmod.Card.Common.KamenRideDecade;
 import dcdmod.Card.Rare.TimeVent;
+import dcdmod.DCDmod;
 import dcdmod.Helper.SpecialFaizButton;
 import dcdmod.Helper.SpecialHibikiTaiko;
 import dcdmod.Helper.SpecialHibikiTaikoScore;
 import dcdmod.Helper.SpecialRideBooker;
 import dcdmod.Patches.*;
+
 import java.util.ArrayList;
 
 public class Decade extends CustomPlayer {
 	private static final int ENERGY_PER_TURN = 3;
 	private static final String[] orbTextures = { "img/character/orb/enabled/layer1.png", "img/character/orb/enabled/layer2.png", "img/character/orb/enabled/layer3.png", "img/character/orb/enabled/layer4.png", "img/character/orb/enabled/layer5.png", "img/character/orb/enabled/layer6.png", "img/character/orb/disabled/layer1d.png", "img/character/orb/disabled/layer2d.png", "img/character/orb/disabled/layer3d.png", "img/character/orb/disabled/layer4d.png", "img/character/orb/disabled/layer5d.png" };
 	public static int cf;
+	public static String KamenRide = "";
 
 	//人物模型
 	private static String FAR0_ATLAS = "img/char/DCD_Animation/FAR/FAR0.atlas";
@@ -241,76 +243,86 @@ public class Decade extends CustomPlayer {
 				loop = true;
 			}
 			//AnimationLoader.loadAnimation(AbstractDungeon.player, animation1);
-			this.loadAnimation(DecadeAnimationAction.ATLAS[a], DecadeAnimationAction.JSON[a], 0.8f);
+			this.loadAnimation(DecadeAnimationAction.ATLAS[a], DecadeAnimationAction.JSON[a], 0.8F);
 			this.state.setAnimation(0, AnimationName, loop);
 			switch(a) {
-	        case 2:
-	            SpecialRideBooker.kamenpowerpoint = 1;
-	            SpecialRideBooker.nodecade = false;
-	            SpecialRideBooker.haskamenpower = true;
-	        	break;
-	        case 3:
-	            SpecialRideBooker.nodecade = true;
-	        	break;
-	        case 5:
-	        	SpecialRideBooker.nodecade = true;
-	        	break;
-	        case 6:
-	            SpecialRideBooker.kamenpowerpoint = 1;
-	            SpecialRideBooker.nodecade = false;
-	            SpecialRideBooker.haskamenpower = true;
-	        	break;
-	        case 10:
-	            SpecialRideBooker.kamenpowerpoint = 1;
-	            SpecialRideBooker.nodecade = false;
-	            SpecialRideBooker.haskamenpower = true;
-	            TurnTimer.StopBGM(false);
-	        	break;
-	        case 11:
-	            SpecialRideBooker.kamenpowerpoint = 1;
-	            SpecialRideBooker.nodecade = false;
-	            SpecialRideBooker.haskamenpower = true;
-	        	break;
-	        case 12:
-	        	SpecialRideBooker.nodecade = true;
-	        	break;
-	        case 23:
-	            SpecialRideBooker.kamenpowerpoint = 1;
-	            SpecialRideBooker.nodecade = false;
-	            SpecialRideBooker.haskamenpower = true;
-	            TurnTimer.StopBGM(false);
-	        	break;
-	        case 28:
-	        	SpecialRideBooker.kamenpowerpoint = 2;
-	        	SpecialRideBooker.nodecade = true;
-	        	SpecialRideBooker.haskamenpower = true;
-	        	break;
-	        case 35:
-	        	SpecialRideBooker.nodecade = true;
-	        	break;
-	        case 37:
-	        	TurnTimer.StopBGM(false);
-	        	break;
-	        case 43:
-	        	SpecialRideBooker.nodecade = true;
-	        	break;
-	        case 45:
-	            SpecialRideBooker.kamenpowerpoint = 2;
-	            SpecialRideBooker.haskamenpower = true;
-	            TurnTimer.StopBGM(false);
-	            CardCrawlGame.sound.playA("blade_BGM1", 0.0f);
-	        	break;
-	        case 46:
-	            SpecialRideBooker.kamenpowerpoint = 3;
-	            SpecialRideBooker.haskamenpower = true;
-	        	break;
-	        case 47:
-	        	TurnTimer.StopBGM(false);
-	        	break;
-	        case 49:
-	        	SpecialRideBooker.nodecade = true;
-	        	HibikiTaikoKeyEvent.TaikoTrigger = true;
-	        	break;
+				case 2:
+				case 6:
+				case 11:
+					KamenRide = "Decade";
+					SpecialRideBooker.kamenpowerpoint = 1;
+					SpecialRideBooker.nodecade = false;
+					SpecialRideBooker.haskamenpower = true;
+					this.corpseImg = new Texture(Gdx.files.internal("img/char/DCD/decade_down.png"));
+					break;
+				case 3:
+					KamenRide = "";
+					SpecialRideBooker.nodecade = true;
+					this.corpseImg = new Texture(Gdx.files.internal("img/char/DCD/corpse.png"));
+					break;
+				case 5:
+					KamenRide = "Kuuga";
+					SpecialRideBooker.nodecade = true;
+					this.corpseImg = new Texture(Gdx.files.internal("img/char/DCD/kuuga_down.png"));
+					break;
+				case 10:
+				case 23:
+					KamenRide = "Decade";
+					SpecialRideBooker.kamenpowerpoint = 1;
+					SpecialRideBooker.nodecade = false;
+					SpecialRideBooker.haskamenpower = true;
+					TurnTimer.StopBGM(false);
+					this.corpseImg = new Texture(Gdx.files.internal("img/char/DCD/decade_down.png"));
+					break;
+				case 12:
+					KamenRide = "Agito";
+					SpecialRideBooker.nodecade = true;
+					this.corpseImg = new Texture(Gdx.files.internal("img/char/DCD/agito_down.png"));
+					break;
+				case 28:
+					KamenRide = "Ryuki";
+					SpecialRideBooker.kamenpowerpoint = 2;
+					SpecialRideBooker.nodecade = true;
+					SpecialRideBooker.haskamenpower = true;
+					this.corpseImg = new Texture(Gdx.files.internal("img/char/DCD/ryuki_down.png"));
+					break;
+				case 35:
+					KamenRide = "Faiz";
+					SpecialRideBooker.nodecade = true;
+					this.corpseImg = new Texture(Gdx.files.internal("img/char/DCD/faiz_down.png"));
+					break;
+				case 37:
+				case 47:
+					KamenRide = "Decade";
+					TurnTimer.StopBGM(false);
+					this.corpseImg = new Texture(Gdx.files.internal("img/char/DCD/decade_down.png"));
+					break;
+				case 43:
+					SpecialRideBooker.nodecade = true;
+					break;
+				case 45:
+					KamenRide = "Blade";
+					SpecialRideBooker.kamenpowerpoint = 2;
+					SpecialRideBooker.haskamenpower = true;
+					TurnTimer.StopBGM(false);
+					CardCrawlGame.sound.playA("blade_BGM1", 0.0f);
+					this.corpseImg = new Texture(Gdx.files.internal("img/char/DCD/blade_down.png"));
+					break;
+				case 46:
+					SpecialRideBooker.kamenpowerpoint = 3;
+					SpecialRideBooker.haskamenpower = true;
+					break;
+				case 49:
+					KamenRide = "Hibiki";
+					SpecialRideBooker.nodecade = true;
+					HibikiTaikoKeyEvent.TaikoTrigger = true;
+					this.corpseImg = new Texture(Gdx.files.internal("img/char/DCD/hibiki_down.png"));
+					break;
+				case 59:
+					KamenRide = "Kabuto";
+					SpecialRideBooker.nodecade = true;
+					this.corpseImg = new Texture(Gdx.files.internal("img/char/DCD/kabuto_down.png"));
+					break;
 	        }
 		}	        
 	}
@@ -339,8 +351,8 @@ public class Decade extends CustomPlayer {
 		retVal.add("Decade_Defend");
 		retVal.add("Decade_Defend");
 		retVal.add("Decade_Defend");
-		//retVal.add("Kuuga_Rising");
-		//retVal.add("Decade_Invisible");
+		//retVal.add("Kabuto_ClockUp");
+		//retVal.add("Kabuto_ClockUp");
 		//retVal.add("UnarmedAttack7");
 		//retVal.add("UnarmedAttack8");
 		//retVal.add("UnarmedAttack9");
@@ -383,8 +395,14 @@ public class Decade extends CustomPlayer {
 	
 	@Override
 	public void doCharSelectScreenSelectEffect() {
-        CardCrawlGame.sound.playA("ATTACK_HEAVY", MathUtils.random(-0.2f, 0.2f));
-        CardCrawlGame.screenShake.shake(ShakeIntensity.MED, ShakeDur.SHORT, true);
+		CardCrawlGame.sound.stop("henshin(oilfish)");
+		CardCrawlGame.sound.stop("ButtonSoundKey1");
+		if(10 > ReturnRandomNumberAction2.ReturnRandomNumber()) {
+			CardCrawlGame.sound.playA("henshin(oilfish)", 0);
+		}
+		else{
+			CardCrawlGame.sound.playA("ButtonSoundKey1", 0);
+		}
 	}
 	
 	@Override
@@ -415,7 +433,7 @@ public class Decade extends CustomPlayer {
 
 	@Override
 	public String getCustomModeCharacterButtonSoundKey() {
-		return "ATTACK_HEAVY";
+		return GetButtonSoundKey.CustomModeButtonSoundKey();
 	}
 
 

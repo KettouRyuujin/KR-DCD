@@ -44,7 +44,7 @@ public class Hibiki_Attack3 extends AbstractCustomCardWithType{
 		this.baseDamage = ATTACK_DMG;
 		this.baseMagicNumber = this.magicNumber = 3;
 		this.damageType = DamageType.NORMAL;
-		this.tips = new ArrayList<TooltipInfo>();
+		this.tips = new ArrayList<>();
 		this.tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[0], EXTENDED_DESCRIPTION[1]));
 	}
 	

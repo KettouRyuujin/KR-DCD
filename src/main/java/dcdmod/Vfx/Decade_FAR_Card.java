@@ -28,7 +28,7 @@ public class Decade_FAR_Card extends AbstractGameEffect {
     private boolean attack = true;
     private boolean isdead = false;
 
-    public Decade_FAR_Card(AbstractCreature source, AbstractCreature target,int x){
+    Decade_FAR_Card(AbstractCreature source, AbstractCreature target, int x){
         this.duration = 2.47F;
         this.startingDuration = this.duration;
         this.img = ImageMaster.loadImage("img/char/DCD_Animation/decade/FAR/card.png");

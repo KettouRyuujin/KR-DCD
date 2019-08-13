@@ -37,7 +37,7 @@ public class Blade_Kick_s extends AbstractCustomCardWithType{
         		AbstractCard.CardRarity.SPECIAL, AbstractCard.CardTarget.SELF,CardColorType.Blade);
 		this.tags.add(DCDmod.RiderCard);
 		this.baseMagicNumber = this.magicNumber = 1;
-		this.tips = new ArrayList<TooltipInfo>();
+		this.tips = new ArrayList<>();
 		this.tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[0], EXTENDED_DESCRIPTION[1]));
 		this.exhaust = true;
 	}
@@ -51,7 +51,7 @@ public class Blade_Kick_s extends AbstractCustomCardWithType{
 		if(p.hasPower("KamenRideBladePower")) {
 			boolean inhand = false;
 			for(AbstractCard c : AbstractDungeon.player.hand.group) {
-				if(c.cardID == "FinalAttackRide") {
+				if(c.cardID.equals("FinalAttackRide")) {
 					inhand = true;
 					break;
 				}
@@ -59,7 +59,7 @@ public class Blade_Kick_s extends AbstractCustomCardWithType{
 			if(!inhand) {
 				boolean done = false;
 				for(AbstractCard c : AbstractDungeon.player.discardPile.group) {
-					if(c.cardID == "FinalAttackRide" && !done) {
+					if(c.cardID.equals("FinalAttackRide")) {
 						AbstractDungeon.player.discardPile.removeCard(c);
 						AbstractDungeon.player.hand.addToHand(c);
 						done = true; 
@@ -67,7 +67,7 @@ public class Blade_Kick_s extends AbstractCustomCardWithType{
 					}
 				}
 				for(AbstractCard c : AbstractDungeon.player.drawPile.group) {
-					if(c.cardID == "FinalAttackRide" && !done) {
+					if(c.cardID.equals("FinalAttackRide") && !done) {
 						AbstractDungeon.player.drawPile.removeCard(c);
 						AbstractDungeon.player.hand.addToHand(c);
 						done = true; 
@@ -75,10 +75,9 @@ public class Blade_Kick_s extends AbstractCustomCardWithType{
 					}
 				}
 				for(AbstractCard c : AbstractDungeon.player.exhaustPile.group) {
-					if(c.cardID == "FinalAttackRide" && !done) {
+					if(c.cardID.equals("FinalAttackRide") && !done) {
 						AbstractDungeon.player.exhaustPile.removeCard(c);
 						AbstractDungeon.player.hand.addToHand(c);
-						done = true; 
 						break;
 					}
 				}

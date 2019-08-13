@@ -54,7 +54,7 @@ public class KamenRideDecade extends AbstractCustomCardWithType{
 		else {
 			CardCrawlGame.sound.playA("decade_hensin", 0.0f);
 			CardCrawlGame.sound.playA("people_hensin", 0.0f);
-			AbstractDungeon.actionManager.addToBottom(new VFXAction(new Decade_henshin(p.drawX - 200.00f, p.drawY + 250.00f), 5.0F));
+			AbstractDungeon.actionManager.addToBottom(new VFXAction(new Decade_henshin(), 5.0F));
 		}
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber), this.magicNumber));
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber));

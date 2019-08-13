@@ -6,28 +6,20 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
-
 import dcdmod.Actions.EnterButtonAction;
 import dcdmod.Characters.Decade;
-import com.badlogic.gdx.graphics.Color;
 
 public class Axel_faiztoaxel extends AbstractGameEffect {
-	private float x;
-	private float y;
-	private Texture img = null;
-	boolean Timer = true;
-	boolean start = true;
-	
-	public Axel_faiztoaxel(float x, float y) {
-		if (this.img == null) {
-			this.img =new Texture(Gdx.files.internal("img/1024/orb-dark.png"));
-		}
 
-		this.x = x- (float)this.img.getWidth() / 2.0F;
-		this.y = y;
+	private Texture img = null;
+	private boolean Timer = true;
+	private boolean start = true;
+	
+	public Axel_faiztoaxel() {
+
 		this.duration = 5.7F;//倒数时间
 		this.startingDuration = 5.7F;//持续时间
-		this.color = Color.WHITE.cpy();
+
 	}
 
 	public void update() {
@@ -51,8 +43,6 @@ public class Axel_faiztoaxel extends AbstractGameEffect {
 	}
 
 	public void render(SpriteBatch sb) {
-		sb.setColor(this.color);
-		sb.draw(this.img, this.x, this.y);
 		if(start) {
 			final Decade Decade = (Decade)AbstractDungeon.player;
 			Decade.Trickster(39);//切换模型

@@ -42,7 +42,7 @@ public class TurnTimer {
 		if(dx!=1) {
 			AbstractCard rc = null;
 			for(AbstractCard c : AbstractDungeon.player.drawPile.group) {
-				if(c.cardID == "NMDAZYYGL") {
+				if(c.cardID.equals("NMDAZYYGL")) {
 					AbstractDungeon.player.drawPile.group.remove(c);
 					rc = c;
 					break;
@@ -103,7 +103,7 @@ public class TurnTimer {
 		AbstractRelic r1 = null;
 		if(AbstractDungeon.player.hasRelic("MirrorWorldRelic")) {
 			for(AbstractRelic r: AbstractDungeon.player.relics) {
-				if(r.relicId == "MirrorWorldRelic") {
+				if(r.relicId.equals("MirrorWorldRelic")) {
 					r1 = r;
 				}
 			}
@@ -148,6 +148,7 @@ public class TurnTimer {
 		//其他动画控制
 		AbstractAnimation.clearAll();
 	}
+
 	public static void atBattleStart() {
 		//战斗开关
 		BattleEnd = false;
@@ -180,7 +181,7 @@ public class TurnTimer {
 		if(!ModBaseClassForSLExample.TimeVentUpgraded&&ModBaseClassForSLExample.testOutput>0) {
 			boolean removetimevent = false;
 			for(AbstractCard c : AbstractDungeon.player.hand.group) {
-				if(c.cardID == "TimeVent" && c.upgraded != true) {
+				if(c.cardID.equals("TimeVent") && !c.upgraded) {
 					AbstractDungeon.player.hand.group.remove(c);
 					removetimevent = true;
 					break;
@@ -188,14 +189,14 @@ public class TurnTimer {
 			}
 			if(!removetimevent) {
 				for(AbstractCard c : AbstractDungeon.player.drawPile.group) {
-					if(c.cardID == "TimeVent" && c.upgraded != true) {
+					if(c.cardID.equals("TimeVent") && !c.upgraded) {
 						AbstractDungeon.player.drawPile.group.remove(c);
 						break;
 					} 
 				}
 			}
 			for(AbstractCard c : AbstractDungeon.player.masterDeck.group) {
-				if(c.cardID == "TimeVent" && c.upgraded != true) {
+				if(c.cardID.equals("TimeVent") && !c.upgraded) {
 					AbstractDungeon.player.masterDeck.group.remove(c);
 					break;
 				} 
@@ -206,7 +207,7 @@ public class TurnTimer {
 		AbstractRelic r1 = null;
 		if(AbstractDungeon.player.hasRelic("MirrorWorldRelic")) {
 			for(AbstractRelic r: AbstractDungeon.player.relics) {
-				if(r.relicId == "MirrorWorldRelic") {
+				if(r.relicId.equals("MirrorWorldRelic")) {
 					r1 = r;
 				}
 			}
@@ -233,7 +234,7 @@ public class TurnTimer {
 		if(dx!=1) {
 			AbstractCard rc = null;
 			for(AbstractCard c : AbstractDungeon.player.drawPile.group) {
-				if(c.cardID == "NMDAZYYGL") {
+				if(c.cardID.equals("NMDAZYYGL")) {
 					AbstractDungeon.player.drawPile.group.remove(c);
 					rc = c;
 					break;
@@ -247,7 +248,7 @@ public class TurnTimer {
 		//藏匿控制2
 		AbstractCard rc = null;
 		for(AbstractCard c : AbstractDungeon.player.hand.group) {
-			if(c.cardID == "NMDAZYYGL") {
+			if(c.cardID.equals("NMDAZYYGL")) {
 				AbstractDungeon.player.hand.group.remove(c);
 				rc = c;
 				break;
@@ -260,9 +261,6 @@ public class TurnTimer {
 		
 		//召唤兽动画控制
 		AbstractSummonedAnimation.clearAll();
-		SpecialDragreder.DRAGREDERTrigger1 = true;
-		SpecialAutoVajin.AutoVajinTrigger1 = true;
-		SpecialTaikoEffects.TAIKOTrigger1 = true;
 		
 		//其他动画控制
 		AbstractAnimation.clearAll();

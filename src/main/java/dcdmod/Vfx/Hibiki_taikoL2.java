@@ -9,13 +9,10 @@ import com.badlogic.gdx.graphics.Color;
 public class Hibiki_taikoL2 extends AbstractGameEffect {
 	private float x;
 	private float y;
-	private Texture img = null;
+	private Texture img;
 
 	public Hibiki_taikoL2(float x, float y) {
-		if (this.img == null) {
-			this.img =new Texture(Gdx.files.internal("img/char/DCD_Animation/hibiki/taiko/taikoL2.png"));
-		}
-
+		this.img =new Texture(Gdx.files.internal("img/char/DCD_Animation/hibiki/taiko/taikoL2.png"));
 		this.x = x;
 		this.y = y;
 		this.duration = 0.3F;//倒数时间

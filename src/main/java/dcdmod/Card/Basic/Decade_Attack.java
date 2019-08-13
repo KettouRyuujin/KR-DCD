@@ -18,9 +18,7 @@ import dcdmod.Patches.AbstractCardEnum;
 import dcdmod.Patches.AbstractCustomCardWithType;
 import dcdmod.Power.KuugaSpecialPower;
 import dcdmod.Vfx.Decade_attack;
-import dcdmod.Vfx.Kuuga_DragonAttack;
 import dcdmod.Vfx.Kuuga_attack;
-
 import java.util.ArrayList;
 import java.util.List;
 

@@ -1,7 +1,6 @@
 package dcdmod.Vfx;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -12,45 +11,27 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
-
-import dcdmod.DCDmod;
 import dcdmod.Characters.Decade;
+import dcdmod.DCDmod;
 import dcdmod.Helper.SpecialTaikoEffects;
 import dcdmod.Patches.AbstractSummonedAnimation;
-import dcdmod.Patches.AnimationLoader;
 import dcdmod.Patches.HibikiTaikoKeyEvent;
 
-import com.badlogic.gdx.graphics.Color;
-
 public class Hibiki_FAR_SoundsAndAnimation extends AbstractGameEffect {
-	
-	private float x;
-	private float y;
-	private Texture img = null;
-	boolean FAR0Start = true;
-	boolean FAR1Start = true;
-	boolean FAR2Start = true;
-	boolean FAR3Start = true;
-	boolean FAR = true;
+
+	private boolean FAR0Start = true;
+	private boolean FAR1Start = true;
+	private boolean FAR2Start = true;
+	private boolean FAR3Start = true;
+	private boolean FAR = true;
 	private int damage;
 	private DamageType damageType;
-	public static String TAIKO_ATLAS2 = "img/char/DCD_Animation/hibiki/taiko_p.atlas";
-	public static String TAIKO_JSON2 = "img/char/DCD_Animation/hibiki/taiko_p_taiko.json";
-	public static AnimationLoader Taiko2 = new AnimationLoader(TAIKO_ATLAS2, TAIKO_JSON2,  0.8f);
 
 	public Hibiki_FAR_SoundsAndAnimation(int d,DamageType damageType) {
-		if (this.img == null) {
-			this.img =new Texture(Gdx.files.internal("img/1024/orb-dark.png"));
-			
-		}
-
-		this.x = AbstractDungeon.player.drawX;
-		this.y = AbstractDungeon.player.drawY;
 		this.damage = d;
 		this.damageType = damageType;
 		this.duration = 5.0F;//倒数时间
 		this.startingDuration = 5.0F;//持续时间
-		this.color = Color.WHITE.cpy();
 	}
 
 	public void update() {
@@ -66,9 +47,11 @@ public class Hibiki_FAR_SoundsAndAnimation extends AbstractGameEffect {
 					final Decade Decade = (Decade)AbstractDungeon.player;
 					Decade.Trickster(52);//切换模型
 					Decade.state.setAnimation(0, "prepare", true);
-					new AbstractSummonedAnimation("TAIKO",TAIKO_ATLAS2,TAIKO_JSON2, 0.8f, AbstractDungeon.player.drawX+50.0f, AbstractDungeon.player.drawY, 120.0F * Settings.scale, 120.0F * Settings.scale, 1.0f);
-					AbstractSummonedAnimation TAIKO =  AbstractSummonedAnimation.getAnimation("TAIKO");
-			    	AbstractSummonedAnimation.changeAnimation(TAIKO, Taiko2);
+					String TAIKO_ATLAS2 = "img/char/DCD_Animation/hibiki/taiko_p.atlas";
+					String TAIKO_JSON2 = "img/char/DCD_Animation/hibiki/taiko_p_taiko.json";
+					new AbstractSummonedAnimation("TAIKO2", TAIKO_ATLAS2, TAIKO_JSON2, 0.8f, AbstractDungeon.player.drawX+50.0f, AbstractDungeon.player.drawY, 120.0F * Settings.scale, 120.0F * Settings.scale, 1.0f);
+					AbstractSummonedAnimation TAIKO =  AbstractSummonedAnimation.getAnimation("TAIKO2");
+					TAIKO.setMovable(false);
 			    	TAIKO.state.setAnimation(0, "taiko", true);
 				}
 				for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
@@ -114,6 +97,7 @@ public class Hibiki_FAR_SoundsAndAnimation extends AbstractGameEffect {
 			}
 		}
 		if (this.duration < 0.0F) {
+			AbstractSummonedAnimation.clear("TAIKO2");
 			this.isDone = true;
 			for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
 				if ((!monster.isDead) && (!monster.isDying)) {
@@ -135,8 +119,7 @@ public class Hibiki_FAR_SoundsAndAnimation extends AbstractGameEffect {
 	}
 
 	public void render(SpriteBatch sb) {
-		sb.setColor(this.color);
-		sb.draw(this.img, this.x, this.y);
+
 	}
 
 	public void dispose() {

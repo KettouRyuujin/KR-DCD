@@ -1,7 +1,6 @@
 package dcdmod.Vfx;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -11,10 +10,9 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
-
-import dcdmod.DCDmod;
 import dcdmod.Actions.FaizAnimationAction;
 import dcdmod.Characters.Decade;
+import dcdmod.DCDmod;
 import dcdmod.Patches.AbstractAnimation;
 
 public class Faiz_CrimsonSmash extends AbstractGameEffect {
@@ -44,12 +42,14 @@ public class Faiz_CrimsonSmash extends AbstractGameEffect {
 			}
 			this.duration -= Gdx.graphics.getDeltaTime();
 			if (this.duration < 3.5F && stage == 0) {
+				assert FAR1 != null;
 				AbstractAnimation.changeAnimation(FAR1, FaizAnimationAction.faiz_FAR2);
 				FAR1.state.setAnimation(0, "FAR2", false);
 				AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(AbstractDungeon.player, 5, DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
 				stage ++;
 			}
 			if (this.duration < 3.0F && stage == 1) {
+				assert FAR1 != null;
 				AbstractAnimation.changeAnimation(FAR1, FaizAnimationAction.faiz_FAR);
 				FAR1.state.setAnimation(0, "FAR3", false);
 				stage ++;

@@ -43,10 +43,10 @@ public class AgitoPower extends AbstractCustomCardWithType{
 		CardCrawlGame.sound.playA("attackride", 0.0f);
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new AgitoPowerPower(p, this.magicNumber), this.magicNumber));
 		if(p.hasPower("AgitoStormPower") && p.hasPower("AgitoFlamePower")) {
-			AbstractDungeon.actionManager.addToTop(new VFXAction(new Agito_power_t(p.drawX - 200.00f, p.drawY + 250.00f), 0.6F));
+			AbstractDungeon.actionManager.addToTop(new VFXAction(new Agito_power_t(), 0.6F));
 		}
 		else if(p.hasPower("KamenRideAgitoPower")){
-			AbstractDungeon.actionManager.addToTop(new VFXAction(new Agito_power(p.drawX - 200.00f, p.drawY + 250.00f), 1.25F));
+			AbstractDungeon.actionManager.addToTop(new VFXAction(new Agito_power(), 1.25F));
 		}
 	}
 	
@@ -112,10 +112,6 @@ public class AgitoPower extends AbstractCustomCardWithType{
 	
 	@Override
     public void upgrade() {
-		if (!this.upgraded) {
-			
-		}
-	
     }
     
     static {

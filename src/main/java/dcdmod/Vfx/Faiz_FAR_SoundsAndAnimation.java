@@ -6,9 +6,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
-import dcdmod.DCDmod;
-import dcdmod.Actions.FaizAnimationAction;
 import dcdmod.Characters.Decade;
+import dcdmod.DCDmod;
 import dcdmod.Patches.AbstractAnimation;
 
 public class Faiz_FAR_SoundsAndAnimation extends AbstractGameEffect {

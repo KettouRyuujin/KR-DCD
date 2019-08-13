@@ -46,7 +46,7 @@ public class FormRideFlame extends AbstractCustomCardWithType implements CustomS
         this(0);
     }
 	
-	public FormRideFlame(int upgrades) {
+	private FormRideFlame(int upgrades) {
 		super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
         		AbstractCard.CardType.SKILL, AbstractCardEnum.DCD,
         		AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.SELF,CardColorType.Agito);
@@ -55,13 +55,10 @@ public class FormRideFlame extends AbstractCustomCardWithType implements CustomS
 			upgrades = 9;
 		}
 		this.timesUpgraded = upgrades;
-		if(this.timesUpgraded >= 9) {
-			this.timesUpgraded = 9;
-		}
 		this.baseMagicNumber = 1;
 		this.tags.add(DCDmod.RiderCard);
 		this.tags.add(DCDmod.KamenRide);
-		this.tips = new ArrayList<TooltipInfo>();
+		this.tips = new ArrayList<>();
 		switch(this.timesUpgraded) {
 		case 0:
 			this.tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[0], EXTENDED_DESCRIPTION[1]));
@@ -123,58 +120,40 @@ public class FormRideFlame extends AbstractCustomCardWithType implements CustomS
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new AgitoFlamePower(p, 1), 1));
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FlameLevelPower(p,this.timesUpgraded + 1),this.timesUpgraded + 1));
 			switch(this.timesUpgraded) {
-			case 0:
-				break;
-			case 1:
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, 1), 1));
-				AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(new FlameSpecialCard(), 1));
-				break;
-			case 2:
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, 1), 1));
-				AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(new FlameSpecialCard(), 1));
-				break;
-			case 3:
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, 3), 3));
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, 1), 1));
-				AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(new FlameSpecialCard(), 1));
-				break;
-			case 4:
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, 3), 3));
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, 1), 1));
-				AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(new FlameSpecialCard(), 1));
-				break;
-			case 5:
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, 4), 4));
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, 1), 1));
-				AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(new FlameSpecialCard(), 1));
-				break;
-			case 6:
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, 4), 4));
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, 1), 1));
-				AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(new FlameSpecialCard(), 1));
-				break;
-			case 7:
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, 6), 6));
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, 2), 2));
-				AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(new FlameSpecialCard(), 1));
-				break;
-			case 8:
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, 6), 6));
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, 2), 2));
-				AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(new AgitoPower(), 1));
-				AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(new FlameSpecialCard(), 1));
-				break;
-			case 9:
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, 6), 6));
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, 2), 2));
-				AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(new AgitoPower(), 1));
-				AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(new FlameSpecialCard(), 1));
-				break;
-			default:
-				break;
+				case 1:
+				case 2:
+					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, 1), 1));
+					AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(new FlameSpecialCard(), 1));
+					break;
+				case 3:
+				case 4:
+					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, 3), 3));
+					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, 1), 1));
+					AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(new FlameSpecialCard(), 1));
+					break;
+				case 5:
+				case 6:
+					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, 4), 4));
+					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, 1), 1));
+					AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(new FlameSpecialCard(), 1));
+					break;
+				case 7:
+					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, 6), 6));
+					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, 2), 2));
+					AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(new FlameSpecialCard(), 1));
+					break;
+				case 8:
+				case 9:
+					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, 6), 6));
+					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, 2), 2));
+					AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(new AgitoPower(), 1));
+					AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(new FlameSpecialCard(), 1));
+					break;
+				default:
+					break;
 			}
 			CardCrawlGame.sound.playA("formride", 0.0f);
-			AbstractDungeon.actionManager.addToBottom(new VFXAction(new Agito_flamesounds(p.drawX - 200.00f, p.drawY + 250.00f), 0F));
+			AbstractDungeon.actionManager.addToBottom(new VFXAction(new Agito_flamesounds(), 0F));
 		}
 	}
 	
@@ -271,8 +250,8 @@ public class FormRideFlame extends AbstractCustomCardWithType implements CustomS
 			this.timesUpgraded = 9;
 		}
 		this.upgraded = true;
-		this.name = (NAME + "Lv" + (int)(this.timesUpgraded+1));
-		this.tips = new ArrayList<TooltipInfo>();
+		this.name = (NAME + "Lv" + (this.timesUpgraded+1));
+		this.tips = new ArrayList<>();
 		switch(this.timesUpgraded) {
 		case 0:
 			this.tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[0], EXTENDED_DESCRIPTION[1]));
@@ -312,12 +291,7 @@ public class FormRideFlame extends AbstractCustomCardWithType implements CustomS
     
 	@Override
     public boolean canUpgrade() {
-		if(this.timesUpgraded <= 8 && !(AbstractDungeon.getCurrRoom() instanceof RestRoom) && !(AbstractDungeon.getCurrRoom() instanceof EventRoom)) {
-			return true;
-		}
-		else {
-			return false;
-		}
+		return this.timesUpgraded <= 8 && !(AbstractDungeon.getCurrRoom() instanceof RestRoom) && !(AbstractDungeon.getCurrRoom() instanceof EventRoom);
     }
 	
     static {

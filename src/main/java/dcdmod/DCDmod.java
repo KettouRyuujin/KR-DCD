@@ -345,6 +345,8 @@ public class DCDmod implements PostInitializeSubscriber,EditCharactersSubscriber
         reflectedMap.put("pegasus_charge", new Sfx("sounds/pegasus_charge.ogg"));
         reflectedMap.put("gouram_sound", new Sfx("sounds/gouram_sound.wav"));
         reflectedMap.put("motorbike_sound", new Sfx("sounds/motorbike_sound.wav"));
+        reflectedMap.put("ButtonSoundKey1", new Sfx("sounds/ButtonSoundKey1.wav"));
+        reflectedMap.put("henshin(oilfish)", new Sfx("sounds/Hensin(oilfish).ogg"));
 	}
     
 	@SuppressWarnings("unchecked")

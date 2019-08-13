@@ -40,7 +40,7 @@ public class Decade_Dash2 extends AbstractCustomCardWithType{
         		AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY,CardColorType.Decade);
 		this.tags.add(DCDmod.RiderCard);
 		this.baseMagicNumber = this.magicNumber = 1;
-		this.tips = new ArrayList<TooltipInfo>();
+		this.tips = new ArrayList<>();
 		this.tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[2], EXTENDED_DESCRIPTION[1]));
 	}
 	

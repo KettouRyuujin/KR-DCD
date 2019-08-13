@@ -160,7 +160,7 @@ public class FinalAttackRide extends AbstractCustomCardWithType{
 				}
 				break;
 			case 2:
-				AbstractDungeon.actionManager.addToTop(new VFXAction(new Agito_FAR_sounds(p.drawX - 200.00f, p.drawY + 250.00f), 4F));
+				AbstractDungeon.actionManager.addToTop(new VFXAction(new Agito_FAR_sounds(), 4F));
 				AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
 				AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
 				if(AbstractDungeon.player.hasPower("AgitoFlamePower") && AbstractDungeon.player.hasPower("AgitoStormPower")){
@@ -177,7 +177,7 @@ public class FinalAttackRide extends AbstractCustomCardWithType{
 				}
 				break;
 			case 3:
-				AbstractDungeon.actionManager.addToTop(new VFXAction(new Ryuki_FAR_sounds(p.drawX - 200.00f, p.drawY + 250.00f), 4F));
+				AbstractDungeon.actionManager.addToTop(new VFXAction(new Ryuki_FAR_sounds(), 4F));
 				if(p.hasPower("DragClawPower") && p.hasPower("DragrederPower")) {
 					AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, "DragClawPower"));
 					AbstractDungeon.actionManager.addToBottom(new RyukiAttackAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), 10));
@@ -209,7 +209,7 @@ public class FinalAttackRide extends AbstractCustomCardWithType{
 					AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_HEAVY"));
 			        AbstractDungeon.actionManager.addToBottom(new VFXAction(p, new CleaveEffect(), 0.1F));  
 			        if(this.name.equals(EXTENDED_DESCRIPTION[39])) {
-			        	AbstractDungeon.actionManager.addToTop(new VFXAction(new Blade_FAR_sounds1(p.drawX - 200.00f, p.drawY + 250.00f), 4F));
+			        	AbstractDungeon.actionManager.addToTop(new VFXAction(new Blade_FAR_sounds1(), 4F));
 			    		for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
 			   			 	if ((!monster.isDead) && (!monster.isDying)) {
 					    		AbstractDungeon.actionManager.addToBottom(new SFXAction("THUNDERCLAP", 0.05F));
@@ -227,10 +227,10 @@ public class FinalAttackRide extends AbstractCustomCardWithType{
 				else if(this.name.equals(EXTENDED_DESCRIPTION[22]) || this.name.equals(EXTENDED_DESCRIPTION[43]) || this.name.equals(EXTENDED_DESCRIPTION[45])) {
 			        if(this.name.equals(EXTENDED_DESCRIPTION[43]) || this.name.equals(EXTENDED_DESCRIPTION[45])) {
 			        	if(this.name.equals(EXTENDED_DESCRIPTION[43])) {
-			        		AbstractDungeon.actionManager.addToTop(new VFXAction(new Blade_FAR_sounds2(p.drawX - 200.00f, p.drawY + 250.00f), 4F));
+			        		AbstractDungeon.actionManager.addToTop(new VFXAction(new Blade_FAR_sounds2(), 4F));
 			        	}
 			        	else {
-			        		AbstractDungeon.actionManager.addToTop(new VFXAction(new Blade_FAR_sounds3(p.drawX - 200.00f, p.drawY + 250.00f), 4F));
+			        		AbstractDungeon.actionManager.addToTop(new VFXAction(new Blade_FAR_sounds3(), 4F));
 			        	}
 			    		AbstractDungeon.actionManager.addToBottom(new SFXAction("THUNDERCLAP", 0.05F));
 			    		AbstractDungeon.actionManager.addToBottom(new VFXAction(new LightningEffect(m.drawX, m.drawY), 0.05F));
@@ -244,7 +244,7 @@ public class FinalAttackRide extends AbstractCustomCardWithType{
 				}
 				break;
 			case 7:
-				AbstractDungeon.actionManager.addToTop(new VFXAction(new Kabuto_FAR_sounds(p.drawX - 200.00f, p.drawY + 250.00f), 4F));
+				AbstractDungeon.actionManager.addToTop(new VFXAction(new Kabuto_FAR_sounds(), 4F));
 				AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
 				if(p.hasPower("KabutoDexterityPower")||p.hasPower("KabutoStrengthPower")){
 					AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(new Kabuto_Photon(), 1));

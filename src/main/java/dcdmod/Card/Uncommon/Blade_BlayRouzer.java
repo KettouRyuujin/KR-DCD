@@ -42,17 +42,17 @@ public class Blade_BlayRouzer extends AbstractCustomCardWithType{
 	public static final String[] EXTENDED_DESCRIPTION;
 	public static final String IMG_PATH = "img/cards/Blade_BlayRouzer.png";
 	private static final int COST = 2;
-	boolean RouzeCard = false;
+	private boolean RouzeCard = false;
 	private List<TooltipInfo> tips;
-	static CardGroup group = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
-	static AbstractCard c = null;
+	private static CardGroup group = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
+	private static AbstractCard c = null;
 	
 	public Blade_BlayRouzer() {
 		super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
         		AbstractCard.CardType.ATTACK, AbstractCardEnum.DCD,
         		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY,CardColorType.Blade);
 		this.tags.add(DCDmod.RiderCard);
-		this.tips = new ArrayList<TooltipInfo>();
+		this.tips = new ArrayList<>();
 		this.tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[2], EXTENDED_DESCRIPTION[3]));
 	}
 	

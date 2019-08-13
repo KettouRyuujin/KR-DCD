@@ -56,7 +56,7 @@ public class Agito_FlameSaber extends AbstractCustomCardWithType{
 		if(p.hasPower("AgitoFlamePower")) {
 			boolean Flame = true;
 			for(AbstractCard c : AbstractDungeon.player.discardPile.group) {
-				   if(c.cardID.equals("FormRideFlame") && Flame) {
+				   if(c.cardID.equals("FormRideFlame")) {
 					   AbstractDungeon.player.discardPile.removeCard(c);
 					   AbstractDungeon.player.hand.addToTop(c);
 					   AbstractDungeon.player.hand.refreshHandLayout();
@@ -81,7 +81,6 @@ public class Agito_FlameSaber extends AbstractCustomCardWithType{
 					AbstractDungeon.player.hand.addToTop(c.makeCopy());
 					AbstractDungeon.player.hand.refreshHandLayout();
 					AbstractDungeon.player.hand.applyPowers();
-					Flame = false;
 					break;
 				}
 			}

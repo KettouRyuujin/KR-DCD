@@ -27,8 +27,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
  
 public class Decaderiver extends AbstractClickRelic{
   public static final String ID = "Decadriver";
-  boolean ishensin = false;
-  boolean ismonsterroom = false;
+  private boolean ishensin = false;
+  private boolean ismonsterroom = false;
 
   
   public Decaderiver()
@@ -58,7 +58,7 @@ public class Decaderiver extends AbstractClickRelic{
 	   if(card.hasTag(DCDmod.FormRide)||card.hasTag(DCDmod.KamenRide)) {
 		   flash();
 			AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-			ArrayList<AbstractCard> groupCopy = new ArrayList<AbstractCard>();
+			ArrayList<AbstractCard> groupCopy = new ArrayList<>();
 			Iterator<?> var4 = AbstractDungeon.player.hand.group.iterator();
 
 			while (true) {
@@ -86,14 +86,12 @@ public class Decaderiver extends AbstractClickRelic{
 					logger.info("NO VALID CARDS");
 				} else {
 					logger.info("VALID CARDS: ");
-					Iterator<AbstractCard> var9 = groupCopy.iterator();
 
-					while (var9.hasNext()) {
-						AbstractCard cc = (AbstractCard) var9.next();
+					for (AbstractCard cc : groupCopy) {
 						logger.info(cc.name);
 					}
 
-					c = (AbstractCard) groupCopy.get(AbstractDungeon.cardRandomRng.random(0, groupCopy.size() - 1));
+					c = groupCopy.get(AbstractDungeon.cardRandomRng.random(0, groupCopy.size() - 1));
 				}
 
 				if (c != null) {
@@ -133,7 +131,7 @@ public class Decaderiver extends AbstractClickRelic{
 		   CardCrawlGame.sound.playA("people_hensin", 0.0f);
 		   CardCrawlGame.sound.playA("decade_hensin", 0.0f);
 		   AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new KamenRideDecadePower(AbstractDungeon.player,1),1));
-		   AbstractDungeon.actionManager.addToBottom(new VFXAction(new Decade_henshin(AbstractDungeon.player.drawX - 200.00f, AbstractDungeon.player.drawY + 250.00f), 5.0F));
+		   AbstractDungeon.actionManager.addToBottom(new VFXAction(new Decade_henshin(), 5.0F));
 		   ishensin = true;
 	   }
    }  

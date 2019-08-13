@@ -14,40 +14,34 @@ import dcdmod.Patches.AbstractSummonedAnimation;
 import com.badlogic.gdx.graphics.Color;
 
 public class Blade_henshin_SoundsAndAnimation extends AbstractGameEffect {
-	private float x;
-	private float y;
-	private Texture img = null;
-	boolean HENSHIN1Start = true;
-	boolean HENSHIN2Start = true;
-	boolean HENSHIN3Start = true;
-	boolean HENSHIN4Start = true;
-	boolean timer = true;
-	boolean start = true;
-	public static String HENSHIN1_ATLAS = "img/char/DCD_Animation/blade/blade_henshin_card.atlas";
-	public static String HENSHIN2_ATLAS = "img/char/DCD_Animation/blade/blade_henshin_P.atlas";
-	public static String HENSHIN3_ATLAS = "img/char/DCD_Animation/blade/blade_henshin1.atlas";
-	public static String HENSHIN4_ATLAS = "img/char/DCD_Animation/blade/blade_henshin2.atlas";
-	public static String JSON1 = "img/char/DCD_Animation/blade/blade_henshin_card.json";
-	public static String JSON2 = "img/char/DCD_Animation/blade/blade_henshin_P.json";
-	public static String JSON3 = "img/char/DCD_Animation/blade/blade_henshin1.json";
-	public static String JSON4 = "img/char/DCD_Animation/blade/blade_henshin2.json";
 
-	
+	private boolean HENSHIN1Start = true;
+	private boolean HENSHIN2Start = true;
+	private boolean HENSHIN3Start = true;
+	private boolean HENSHIN4Start = true;
+	private boolean timer = true;
+	private boolean start = true;
+
+
 	public Blade_henshin_SoundsAndAnimation(float x, float y) {
-		if (this.img == null) {
-			this.img =new Texture(Gdx.files.internal("img/1024/orb-dark.png"));
-			new AbstractSummonedAnimation("BLADE_HENSHIN1",HENSHIN1_ATLAS,JSON1, 1.0f, x , y, 120.0F * Settings.scale, 120.0F * Settings.scale, 1.0f);
-			new AbstractAnimation("BLADE_HENSHIN2",HENSHIN2_ATLAS,JSON2, 1.0f, x+5.0f , y+25.0f, 120.0F * Settings.scale, 120.0F * Settings.scale, 1.0f);
-			new AbstractAnimation("BLADE_HENSHIN3",HENSHIN3_ATLAS,JSON3, 1.0f, x , y-5.0f, 120.0F * Settings.scale, 120.0F * Settings.scale, 1.0f);
-			new AbstractAnimation("BLADE_HENSHIN4",HENSHIN4_ATLAS,JSON4, 1.0f, x , y-5.0f, 120.0F * Settings.scale, 120.0F * Settings.scale, 1.0f);
-			//BladeAnimationAction.blade_normal.getClass();
-		}
 
-		this.x = x;
-		this.y = y;
+		String HENSHIN1_ATLAS = "img/char/DCD_Animation/blade/blade_henshin_card.atlas";
+		String JSON1 = "img/char/DCD_Animation/blade/blade_henshin_card.json";
+		new AbstractSummonedAnimation("BLADE_HENSHIN1", HENSHIN1_ATLAS, JSON1, 1.0f, x , y, 120.0F * Settings.scale, 120.0F * Settings.scale, 1.0f);
+		String HENSHIN2_ATLAS = "img/char/DCD_Animation/blade/blade_henshin_P.atlas";
+		String JSON2 = "img/char/DCD_Animation/blade/blade_henshin_P.json";
+		new AbstractAnimation("BLADE_HENSHIN2", HENSHIN2_ATLAS, JSON2, 1.0f, x+5.0f , y+25.0f, 120.0F * Settings.scale, 120.0F * Settings.scale, 1.0f);
+		String HENSHIN3_ATLAS = "img/char/DCD_Animation/blade/blade_henshin1.atlas";
+		String JSON3 = "img/char/DCD_Animation/blade/blade_henshin1.json";
+		new AbstractAnimation("BLADE_HENSHIN3", HENSHIN3_ATLAS, JSON3, 1.0f, x , y-5.0f, 120.0F * Settings.scale, 120.0F * Settings.scale, 1.0f);
+		String HENSHIN4_ATLAS = "img/char/DCD_Animation/blade/blade_henshin2.atlas";
+		String JSON4 = "img/char/DCD_Animation/blade/blade_henshin2.json";
+		new AbstractAnimation("BLADE_HENSHIN4", HENSHIN4_ATLAS, JSON4, 1.0f, x , y-5.0f, 120.0F * Settings.scale, 120.0F * Settings.scale, 1.0f);
+		//BladeAnimationAction.blade_normal.getClass();
+
 		this.duration = 4.33F;//倒数时间
 		this.startingDuration = 4.33F;//持续时间
-		this.color = Color.WHITE.cpy();
+
 	}
 
 	public void update() {
@@ -96,6 +90,12 @@ public class Blade_henshin_SoundsAndAnimation extends AbstractGameEffect {
 			}
 		}
 		if (this.duration < 0.0F) {
+
+			AbstractSummonedAnimation.clear("BLADE_HENSHIN1");
+			AbstractAnimation.clear("BLADE_HENSHIN2");
+			AbstractAnimation.clear("BLADE_HENSHIN3");
+			AbstractAnimation.clear("BLADE_HENSHIN4");
+
 			this.isDone = true;
 			final Decade Decade = (Decade)AbstractDungeon.player;
 			Decade.Trickster(45);//切换模型
@@ -103,8 +103,7 @@ public class Blade_henshin_SoundsAndAnimation extends AbstractGameEffect {
 	}
 
 	public void render(SpriteBatch sb) {
-		sb.setColor(this.color);
-		sb.draw(this.img, this.x, this.y);
+
 		if(start) {
 			final Decade Decade = (Decade)AbstractDungeon.player;
 			Decade.Trickster(43);//切换模型

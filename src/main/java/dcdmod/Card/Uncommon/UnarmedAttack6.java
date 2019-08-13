@@ -32,8 +32,7 @@ public class UnarmedAttack6 extends AbstractCustomCardWithType{
 	public static final String IMG_PATH = "img/cards/UnarmedAttack6.png";
 	private static final int COST = 1;
 	private static final int ATTACK_DMG = 9;
-	private AbstractCard c;
-	
+
 	public UnarmedAttack6() {
 		super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
         		AbstractCard.CardType.ATTACK, AbstractCardEnum.DCD,
@@ -57,6 +56,7 @@ public class UnarmedAttack6 extends AbstractCustomCardWithType{
 		}
 		if(p.hasPower("Dexterity")) {
 			int x = p.getPower("Dexterity").amount;
+			AbstractCard c;
 			if(upgraded) {
 				if(x>=8) {
 					x = 8;

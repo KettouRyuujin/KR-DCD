@@ -1,30 +1,21 @@
 package dcdmod.Vfx;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import dcdmod.Characters.Decade;
-import com.badlogic.gdx.graphics.Color;
 
 public class Hibiki_backtodcd extends AbstractGameEffect {
-	private float x;
-	private float y;
-	private Texture img = null;
-	boolean Start = true;
-	boolean End = true;
-	
-	public Hibiki_backtodcd(float x, float y) {
-		if (this.img == null) {
-			this.img =new Texture(Gdx.files.internal("img/1024/orb-dark.png"));
-		}
 
-		this.x = x- (float)this.img.getWidth() / 2.0F;
-		this.y = y;
+	private boolean Start = true;
+	private boolean End = true;
+	
+	public Hibiki_backtodcd() {
+
 		this.duration = 2.0F;//倒数时间
 		this.startingDuration = 2.0F;//持续时间
-		this.color = Color.WHITE.cpy();
+
 	}
 
 	public void update() {
@@ -44,8 +35,7 @@ public class Hibiki_backtodcd extends AbstractGameEffect {
 	}
 
 	public void render(SpriteBatch sb) {
-		sb.setColor(this.color);
-		sb.draw(this.img, this.x, this.y);
+
 		if(Start) {
 			final Decade Decade = (Decade)AbstractDungeon.player;
 			Decade.Trickster(50);//切换模型

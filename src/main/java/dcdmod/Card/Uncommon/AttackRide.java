@@ -25,9 +25,9 @@ public class AttackRide extends AbstractCustomCardWithType{
 	public static final	String [] EXTENDED_DESCRIPTION;
 	public static final String IMG_PATH = "img/cards/AttackRide.png";
 	private static final int COST = 1;
-	AbstractCard c = null;
-	CardGroup group = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
-	boolean AttackRideCard = false;
+	private AbstractCard c = null;
+	private CardGroup group = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
+	private boolean AttackRideCard = false;
 	
 	public AttackRide() {
 		super(ID, NAME, IMG_PATH, COST, DESCRIPTION,

@@ -23,10 +23,9 @@ import dcdmod.Vfx.Agito_storm;
 	  private static final PowerStrings powerStrings;
 	  public static final String NAME;
 	  public static final String[] DESCRIPTIONS;
-	  int ax = 0;
-	  int Lv = 1;
-	   
-	   public AgitoStormPower(AbstractCreature owner, int amt)
+	  private int ax = 0;
+
+	 public AgitoStormPower(AbstractCreature owner, int amt)
 	   {
 		   
 	    this.name = NAME;
@@ -45,8 +44,8 @@ import dcdmod.Vfx.Agito_storm;
 	   }
 	   
 	   public void onUseCard(final AbstractCard card, final UseCardAction action) {
-		   if(!this.owner.hasPower("AgitoFlamePower") && card.cardID == "Agito_StormHalberd" && !DCDmod.AnimationTrigger) {
-		   AbstractDungeon.actionManager.addToTop(new VFXAction(new Agito_storm(this.owner.drawX - 200.00f, this.owner.drawY + 250.00f), 0F));
+		   if(!this.owner.hasPower("AgitoFlamePower") && card.cardID.equals("Agito_StormHalberd") && !DCDmod.AnimationTrigger) {
+		   AbstractDungeon.actionManager.addToTop(new VFXAction(new Agito_storm(), 0F));
 		   } 
 	   }
 	   

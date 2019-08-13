@@ -50,9 +50,9 @@ public class DragShield extends AbstractCustomCardWithType{
 		CardCrawlGame.sound.playA("attackride", 0.0f);
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DragShieldPower(p, this.magicNumber), this.magicNumber));
 		if(!p.hasPower("DragShieldPower") && p.hasPower("KamenRideRyukiPower")) {
-			AbstractDungeon.actionManager.addToTop(new VFXAction(new Ryuki_guard(AbstractDungeon.player.drawX - 200.00f, AbstractDungeon.player.drawY + 250.00f), 0.8F));
+			AbstractDungeon.actionManager.addToTop(new VFXAction(new Ryuki_guard(), 0.8F));
 		}
-		AbstractDungeon.actionManager.addToTop(new VFXAction(new DragShield_sounds(p.drawX - 200.00f, p.drawY + 250.00f), 1.5F));
+		AbstractDungeon.actionManager.addToTop(new VFXAction(new DragShield_sounds(), 1.5F));
 	}
 	
 	@Override
@@ -156,6 +156,7 @@ public class DragShield extends AbstractCustomCardWithType{
 	@Override
     public void upgrade() {
 		if (!this.upgraded) {
+			upgradeName();
 			this.upgradeMagicNumber(1);
 		}
 	

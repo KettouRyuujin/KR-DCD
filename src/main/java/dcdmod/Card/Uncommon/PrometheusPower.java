@@ -49,7 +49,7 @@ public class PrometheusPower extends AbstractCustomCardWithType{
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new AgitoLevelPower(p,1),1));
 		}
 		for(AbstractCard c : AbstractDungeon.player.masterDeck.group) {
-			if(c.cardID == "FormRideStorm"||c.cardID == "FormRideFlame") {
+			if(c.cardID.equals("FormRideStorm") || c.cardID.equals("FormRideFlame")) {
 				if(c.timesUpgraded<=8) {
 					c.upgrade();
 				}
@@ -59,7 +59,7 @@ public class PrometheusPower extends AbstractCustomCardWithType{
 			}
 		}
 		for(AbstractCard c : AbstractDungeon.player.exhaustPile.group) {
-			if(c.cardID == "FormRideStorm"||c.cardID == "FormRideFlame") {
+			if(c.cardID.equals("FormRideStorm") || c.cardID.equals("FormRideFlame")) {
 				if(c.timesUpgraded<=8) {
 					c.upgrade();
 				}
@@ -69,7 +69,7 @@ public class PrometheusPower extends AbstractCustomCardWithType{
 			}
 		}
 		for(AbstractCard c : AbstractDungeon.player.drawPile.group) {
-			if(c.cardID == "FormRideStorm"||c.cardID == "FormRideFlame") {
+			if(c.cardID.equals("FormRideStorm") || c.cardID.equals("FormRideFlame")) {
 				if(c.timesUpgraded<=8) {
 					c.upgrade();
 				}
@@ -79,7 +79,7 @@ public class PrometheusPower extends AbstractCustomCardWithType{
 			}
 		}
 		for(AbstractCard c : AbstractDungeon.player.discardPile.group) {
-			if(c.cardID == "FormRideStorm"||c.cardID == "FormRideFlame") {
+			if(c.cardID.equals("FormRideStorm") || c.cardID.equals("FormRideFlame")) {
 				if(c.timesUpgraded<=8) {
 					c.upgrade();
 				}

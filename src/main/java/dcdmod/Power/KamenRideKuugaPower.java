@@ -38,11 +38,11 @@
 	 public void onRemove() {
 		 if(this.owner.hasPower("KamenRideDecadePower")&&(this.owner.hasPower("KuugaDragonPower")||this.owner.hasPower("RisingDragonPower")||this.owner.hasPower("KuugaPegasusPower")||this.owner.hasPower("RisingPegasusPower")||this.owner.hasPower("KuugaTitanPower")||this.owner.hasPower("RisingTitanPower"))) {
 			 //(this.owner.hasPower("KamenRideDecadePower")&&!this.owner.hasPower("KuugaDragonPower")&&!this.owner.hasPower("RisingDragonPower")&&!this.owner.hasPower("KuugaTitanPower")&&!this.owner.hasPower("RisingTitanPower")&&!this.owner.hasPower("KuugaPegasusPower")&&!this.owner.hasPower("RisingPegasusPower")) {
-			 AbstractDungeon.actionManager.addToBottom(new VFXAction(new Allformbacktodcd(AbstractDungeon.player.drawX - 200.00f, AbstractDungeon.player.drawY + 250.00f), 2F));
+			 AbstractDungeon.actionManager.addToBottom(new VFXAction(new Allformbacktodcd(), 2F));
 			 AbstractDungeon.actionManager.addToBottom(new RemoveFormRideAction(this.owner, this.owner));
 		 }
 		 else if(this.owner.hasPower("KamenRideDecadePower")) {//&&(this.owner.hasPower("KuugaDragonPower")||this.owner.hasPower("RisingDragonPower")||this.owner.hasPower("KuugaPegasusPower")||this.owner.hasPower("RisingPegasusPower")||this.owner.hasPower("KuugaTitanPower")||this.owner.hasPower("RisingTitanPower"))) {
-			 AbstractDungeon.actionManager.addToBottom(new VFXAction(new Kuuga_backtodcd(AbstractDungeon.player.drawX - 200.00f, AbstractDungeon.player.drawY + 250.00f), 2F));
+			 AbstractDungeon.actionManager.addToBottom(new VFXAction(new Kuuga_backtodcd(), 2F));
 			 AbstractDungeon.actionManager.addToBottom(new RemoveFormRideAction(this.owner, this.owner));
 		 }
 	 }

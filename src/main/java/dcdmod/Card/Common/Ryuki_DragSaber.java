@@ -47,7 +47,7 @@ public class Ryuki_DragSaber extends AbstractCustomCardWithType{
 		this.baseMagicNumber = this.magicNumber = MAGIC_NUM;
 		this.baseDamage = ATTACK_DMG;
 		this.baseBlock = BLOCK_AMT;
-		this.tips = new ArrayList<TooltipInfo>();
+		this.tips = new ArrayList<>();
 		this.tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[2], EXTENDED_DESCRIPTION[3]));
 	}
 	

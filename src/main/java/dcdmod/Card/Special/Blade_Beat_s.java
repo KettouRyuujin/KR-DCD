@@ -29,7 +29,7 @@ public class Blade_Beat_s extends AbstractCustomCardWithType{
 	public static final String IMG_PATH = "img/cards/BladeBeat.png";
 	private static final int COST = 1;
 	private List<TooltipInfo> tips;
-	boolean done = false;
+	private boolean done = false;
 	
 	public Blade_Beat_s() {
 		super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
@@ -37,7 +37,7 @@ public class Blade_Beat_s extends AbstractCustomCardWithType{
         		AbstractCard.CardRarity.SPECIAL, AbstractCard.CardTarget.SELF,CardColorType.Blade);
 		this.tags.add(DCDmod.RiderCard);
 		this.baseMagicNumber = this.magicNumber = 1;
-		this.tips = new ArrayList<TooltipInfo>();
+		this.tips = new ArrayList<>();
 		this.tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[0], EXTENDED_DESCRIPTION[1]));
 		this.exhaust = true;
 	}
@@ -47,14 +47,14 @@ public class Blade_Beat_s extends AbstractCustomCardWithType{
 		CardCrawlGame.sound.playA("blade_beat", 0.0f);
 		if(p.hasPower("BladeBeatPower") && p.getPower("BladeBeatPower").amount >=3) {
 			for(AbstractCard c : p.drawPile.group) {
-				if(c.cardID == "Blade_Beat" && !done) {
+				if(c.cardID.equals("Blade_Beat") && !done) {
 					p.drawPile.moveToHand(c, p.drawPile);
 					done = true;
 					break;
 				}
 			}
 			for(AbstractCard c : p.discardPile.group) {
-				if(c.cardID == "Blade_Beat" && !done) {
+				if(c.cardID.equals("Blade_Beat") && !done) {
 					p.drawPile.moveToHand(c, p.discardPile);
 					done = true;
 					break;

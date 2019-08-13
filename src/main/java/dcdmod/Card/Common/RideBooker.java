@@ -51,14 +51,14 @@ public class RideBooker extends AbstractCustomCardWithType{
     public void use(AbstractPlayer p, AbstractMonster m) {
 		boolean remove = false;
 		for(AbstractRelic r: AbstractDungeon.player.relics) {
-			if(r.relicId == "Singing Bowl") {
+			if(r.relicId.equals("Singing Bowl")) {
 				AbstractDungeon.player.relics.remove(r);
 				
 				remove = true;
 				break;
 			}
 		}
-		ArrayList<AbstractCard> temp = new ArrayList<AbstractCard>();
+		ArrayList<AbstractCard> temp = new ArrayList<>();
 		AbstractCard c = new GunForm();
 		temp.add(c);
 		AbstractCard c1 = new SwordForm();
@@ -67,7 +67,6 @@ public class RideBooker extends AbstractCustomCardWithType{
 		if(remove) {
 			AbstractRelic r = new SingingBowl();
 			AbstractDungeon.player.relics.add(r);
-			remove = false;
 		}
 	}
 	
@@ -152,7 +151,7 @@ public class RideBooker extends AbstractCustomCardWithType{
 		if(AbstractDungeon.player != null) {
 			if(AbstractDungeon.cardRewardScreen.onCardSelect) {
 				for(AbstractCard c3 : AbstractDungeon.player.masterDeck.group) {
-					if(c3.cardID == "SwordForm") {
+					if(c3.cardID.equals("SwordForm")) {
 						if(!AbstractDungeon.player.hasPower("SwordFormPower")) {
 							AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new RideBooker_Attack(), 3, true, true));
 							AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new SwordFormPower(AbstractDungeon.player, 1), 1));
@@ -164,7 +163,7 @@ public class RideBooker extends AbstractCustomCardWithType{
 						AbstractDungeon.player.masterDeck.removeCard(c3);
 						break;
 					}
-					else if(c3.cardID == "GunForm") {
+					else if(c3.cardID.equals("GunForm")) {
 						if(!AbstractDungeon.player.hasPower("GunFormPower")) {
 							AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new RideBooker_Shoot(), 3, true, true));
 							AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Decade_Blast(), 1, true, true));

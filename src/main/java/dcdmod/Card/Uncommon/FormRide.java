@@ -57,9 +57,9 @@ public class FormRide extends AbstractCustomCardWithType{
 	public static final	String [] EXTENDED_DESCRIPTION;
 	public static final String IMG_PATH = "img/cards/FormRide.png";
 	private static final int COST = 2;
-	AbstractCard c = null;
-	CardGroup group = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
-	boolean FormRideCard = false;
+	private AbstractCard c = null;
+	private CardGroup group = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
+	private boolean FormRideCard = false;
 	private List<TooltipInfo> tips;
 	
 	public FormRide() {
@@ -68,7 +68,7 @@ public class FormRide extends AbstractCustomCardWithType{
         		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF,CardColorType.Decade);
 		this.tags.add(DCDmod.RiderCard);
 		this.tags.add(DCDmod.FormRide);
-		this.tips = new ArrayList<TooltipInfo>();
+		this.tips = new ArrayList<>();
 		this.tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[13], EXTENDED_DESCRIPTION[14]));
 		exhaust = true;
 	}
@@ -99,8 +99,8 @@ public class FormRide extends AbstractCustomCardWithType{
 		}
 		else if(p.hasPower("KamenRideFaizPower")) {
 			CardCrawlGame.sound.playA("formride", 0.0f);
-			AbstractDungeon.actionManager.addToTop(new VFXAction(new Axel_faiztoaxel(p.drawX, p.drawY), 5.7F));
-			AbstractDungeon.actionManager.addToTop(new VFXAction(new Faiz_axelsounds(p.drawX, p.drawY), 0F));
+			AbstractDungeon.actionManager.addToTop(new VFXAction(new Axel_faiztoaxel(), 5.7F));
+			AbstractDungeon.actionManager.addToTop(new VFXAction(new Faiz_axelsounds(), 0F));
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new VulnerablePower(p, 3, false), 3));
 			FormRideCard = false;
 		}
@@ -111,13 +111,13 @@ public class FormRide extends AbstractCustomCardWithType{
 			FormRideCard = false;
 		}
 		else if(p.hasPower("KamenRideKabutoPower")&&!p.hasPower("KabutoMaskedPower")){
-			AbstractDungeon.actionManager.addToTop(new VFXAction(new Kabuto_RiderToMasked(p.drawX - 200.00f, p.drawY + 250.00f), 1.2F));
+			AbstractDungeon.actionManager.addToTop(new VFXAction(new Kabuto_RiderToMasked(), 1.2F));
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new KabutoMaskedPower(p,1),1));
 			AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(new Kabuto_CastOff(), 1));
 			FormRideCard = false;
 		}
 		else if(p.hasPower("KamenRideKabutoPower")&&p.hasPower("KabutoMaskedPower")){
-			AbstractDungeon.actionManager.addToTop(new VFXAction(new Kabuto_MaskedToRider(p.drawX - 200.00f, p.drawY + 250.00f), 1.4F));
+			AbstractDungeon.actionManager.addToTop(new VFXAction(new Kabuto_MaskedToRider(), 1.4F));
 			AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, "KabutoMaskedPower")); 
 			int[] N = {0,0,0,0,0};
 			for(AbstractCard c : p.hand.group) {

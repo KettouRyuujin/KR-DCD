@@ -19,9 +19,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 
 public class FaizPhone extends CustomOrb {
-	public static final String ORB_ID = "FaizPhone";
+	private static final String ORB_ID = "FaizPhone";
 	private static final OrbStrings orbString;
-	public static final String[] DESC;
+	private static final String[] DESC;
 	
 	public FaizPhone() {
 		super(ORB_ID, orbString.NAME, 1, 1, DESC[0], DESC[1], "img/orbs/SB-555P.png");
@@ -45,16 +45,16 @@ public class FaizPhone extends CustomOrb {
 				AbstractDungeon.actionManager.addToTop(new VFXAction(AbstractDungeon.player, new CleaveEffect(), 0.0F));
 				AbstractDungeon.actionManager.addToTop(new DamageAction(AbstractDungeon.getMonsters().getRandomMonster(true),new DamageInfo(AbstractDungeon.player, 3, DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));	
 			}
-			AbstractDungeon.actionManager.addToTop(new VFXAction(new Faiz_gunattack(AbstractDungeon.player.drawX, AbstractDungeon.player.drawY), 0F));
+			AbstractDungeon.actionManager.addToTop(new VFXAction(new Faiz_gunattack(), 0F));
 		}
     }
 	
 	public void render(SpriteBatch sb) {
-		if(!EnterButtonAction.FaizPhone && this.name != "SB-555P(off)") {
+		if(!EnterButtonAction.FaizPhone && !this.name.equals("SB-555P(off)")) {
 			this.name = "SB-555P(off)";
 			this.img = ImageMaster.loadImage("img/orbs/SB-555P_N.png");
 		}
-		if(EnterButtonAction.FaizPhone && this.name != "SB-555P(on)") {
+		if(EnterButtonAction.FaizPhone && !this.name.equals("SB-555P(on)")) {
 			this.name = "SB-555P(on)";
 			this.img = ImageMaster.loadImage("img/orbs/SB-555P.png");
 		}

@@ -55,8 +55,8 @@ import dcdmod.Vfx.AutoVajin_disappear;
 	    }
 	   
 	    public void atEndOfTurn(final boolean isPlayer) {
-	    	AbstractDungeon.actionManager.addToBottom(new VFXAction(new AutoVajin_defend(AbstractDungeon.player.drawX, AbstractDungeon.player.drawY), 0F));
-			AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.owner, this.owner, 8));
+	    	AbstractDungeon.actionManager.addToBottom(new VFXAction(new AutoVajin_defend(), 0F));
+			AbstractDungeon.actionManager.addToTop(new GainBlockAction(this.owner, this.owner, 8));
 	    }
 	   
 	   public void onAttack(final DamageInfo info, final int damageAmount, final AbstractCreature target) {

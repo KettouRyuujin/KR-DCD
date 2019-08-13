@@ -40,15 +40,15 @@ public class Dragreder extends AbstractCustomCardWithType{
 		this.tags.add(DCDmod.RiderCard);
 		this.exhaust = true;
 		this.baseMagicNumber = this.magicNumber = MAGIC_NUM;
-		this.tips = new ArrayList<TooltipInfo>();
+		this.tips = new ArrayList<>();
 		this.tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[1], EXTENDED_DESCRIPTION[2]));
 	}
 	
 	@Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 		CardCrawlGame.sound.playA("attackride", 0.0f);
-		AbstractDungeon.actionManager.addToTop(new VFXAction(new Dragreder_sounds(p.drawX - 200.00f, p.drawY + 250.00f), 0.0F));
-		AbstractDungeon.actionManager.addToBottom(new VFXAction(new Dragreder_appear(p.drawX - 200.00f, p.drawY + 250.00f), 2.5F));
+		AbstractDungeon.actionManager.addToTop(new VFXAction(new Dragreder_sounds(), 0.0F));
+		AbstractDungeon.actionManager.addToBottom(new VFXAction(new Dragreder_appear(), 2.5F));
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DragrederPower(p, this.magicNumber), this.magicNumber));
 	}
 	
@@ -130,6 +130,7 @@ public class Dragreder extends AbstractCustomCardWithType{
 	@Override
     public void upgrade() {
 		if (!this.upgraded) {
+			upgradeName();
 			this.upgradeBaseCost(2);
 		}
 	

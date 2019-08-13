@@ -1,22 +1,18 @@
 package dcdmod.Vfx;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
-
 import dcdmod.Helper.SpecialAutoVajin;
-
-import com.badlogic.gdx.graphics.Color;
 
 public class AutoVajin_appear extends AbstractGameEffect {
 	private boolean start = true;
 
-	public AutoVajin_appear(float x, float y) {
+	public AutoVajin_appear() {
 
 		this.duration = 2.89F;//倒数时间
 		this.startingDuration = 2.89F;//持续时间
-		this.color = Color.WHITE.cpy();
+
 	}
 
 	public void update() {

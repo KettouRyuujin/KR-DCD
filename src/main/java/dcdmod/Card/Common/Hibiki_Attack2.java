@@ -48,7 +48,7 @@ public class Hibiki_Attack2 extends AbstractCustomCardWithType{
 		this.baseDamage = ATTACK_DMG;
 		this.baseMagicNumber = this.magicNumber = 1;
 		this.damageType = DamageType.NORMAL;
-		this.tips = new ArrayList<TooltipInfo>();
+		this.tips = new ArrayList<>();
 		this.tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[0], EXTENDED_DESCRIPTION[1]));
 	}
 	
@@ -74,7 +74,7 @@ public class Hibiki_Attack2 extends AbstractCustomCardWithType{
 				 }
 			}
 		}
-		AbstractDungeon.actionManager.addToTop(new VFXAction(new Hibiki_Attack2_sounds(p.drawX - 200.00f, p.drawY + 250.00f), 1.5F));
+		AbstractDungeon.actionManager.addToTop(new VFXAction(new Hibiki_Attack2_sounds(), 1.5F));
 	}
 	
 	@Override

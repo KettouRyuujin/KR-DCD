@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
-import com.badlogic.gdx.graphics.Color;
 import dcdmod.Characters.Decade;
 import dcdmod.DCDmod;
 import dcdmod.Patches.AbstractAnimation;

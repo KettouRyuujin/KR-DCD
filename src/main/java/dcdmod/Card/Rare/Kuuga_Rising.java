@@ -79,7 +79,9 @@ public class Kuuga_Rising extends AbstractCustomCardWithType{
 		}
 		else {
 			if(!p.hasPower("RisingMightyPower")){
-				AbstractDungeon.actionManager.addToTop(new VFXAction(new Kuuga_MightySoundsAndAnimation(),1.79F));
+				if(!DCDmod.AnimationTrigger){
+					AbstractDungeon.actionManager.addToTop(new VFXAction(new Kuuga_MightySoundsAndAnimation(),1.79F));
+				}
 				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RisingMightyPower(p,1),1));
 			}
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new SuperRegenPower(p, 3), 3));

@@ -47,7 +47,7 @@ public class Kabuto_KunaiGun extends AbstractCustomCardWithType{
 		this.baseDamage = ATTACK_DMG;
 		this.baseBlock = BLOCK_AMT;
 		this.baseMagicNumber = this.magicNumber = MAGIC_NUM;
-		this.tips = new ArrayList<TooltipInfo>();
+		this.tips = new ArrayList<>();
 		this.tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[1], EXTENDED_DESCRIPTION[2]));
 	}
 	

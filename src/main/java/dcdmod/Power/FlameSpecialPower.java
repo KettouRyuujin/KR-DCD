@@ -26,7 +26,7 @@ public class FlameSpecialPower extends AbstractPower
   private static final PowerStrings powerStrings;
   public static final String NAME;
   public static final String[] DESCRIPTIONS;
-  boolean Block;
+  private boolean Block;
 
   
    public FlameSpecialPower(AbstractCreature owner, int amt)
@@ -68,15 +68,15 @@ public class FlameSpecialPower extends AbstractPower
    }
    
    	public int onAttacked(final DamageInfo info, final int damageAmount) {
-   		int x = 0;
-   		if(this.owner.hasPower("Dexterity") && info.owner != this.owner && Block == true) {
+   		int x;
+   		if(this.owner.hasPower("Dexterity") && info.owner != this.owner && Block) {
    			x = this.owner.getPower("Dexterity").amount;
    			if(x>0) {
  			   if(this.owner.hasPower("AgitoFlamePower")&&!this.owner.hasPower("AgitoStormPower")) {
-				   AbstractDungeon.actionManager.addToTop(new VFXAction(new Agito_flame(this.owner.drawX - 200.00f, this.owner.drawY + 250.00f), 0F));
+				   AbstractDungeon.actionManager.addToTop(new VFXAction(new Agito_flame(), 0F));
 			   }
 			   else if(this.owner.hasPower("AgitoFlamePower")&&this.owner.hasPower("AgitoStormPower")) {
-				   AbstractDungeon.actionManager.addToTop(new VFXAction(new Agito_trinity(this.owner.drawX - 200.00f, this.owner.drawY + 250.00f), 0F));
+				   AbstractDungeon.actionManager.addToTop(new VFXAction(new Agito_trinity(), 0F));
 			   }
  			   AbstractDungeon.actionManager.addToBottom(new DamageAction(info.owner,new DamageInfo(this.owner, x * 3,  DamageType.THORNS), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
    			}

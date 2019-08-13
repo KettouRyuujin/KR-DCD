@@ -37,8 +37,7 @@ public class Faiz_Phone extends AbstractCustomCardWithType{
 	private static final int ATTACK_DMG = 3;
 	private static final int MAGIC_NUM = 3;
 	private List<TooltipInfo> tips;
-	AbstractMonster monster = null;
-	
+
 	public Faiz_Phone() {
 		super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
         		AbstractCard.CardType.ATTACK, AbstractCardEnum.DCD,
@@ -46,7 +45,7 @@ public class Faiz_Phone extends AbstractCustomCardWithType{
 		this.tags.add(DCDmod.RiderCard);
 		this.baseDamage = ATTACK_DMG;
 		this.baseMagicNumber = this.magicNumber = MAGIC_NUM;
-		this.tips = new ArrayList<TooltipInfo>();
+		this.tips = new ArrayList<>();
 		this.tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[3], EXTENDED_DESCRIPTION[4]));
 	}
 	
@@ -57,7 +56,7 @@ public class Faiz_Phone extends AbstractCustomCardWithType{
 			x = 4;
 		}
 		for(int i=0;i<this.magicNumber;i++) {
-			monster = AbstractDungeon.getMonsters().getRandomMonster(true);
+			AbstractMonster monster = AbstractDungeon.getMonsters().getRandomMonster(true);
 			AbstractDungeon.actionManager.addToTop(new VFXAction(p, new CleaveEffect(), 0.0F));
 			AbstractDungeon.actionManager.addToBottom(new DamageAction(monster,new DamageInfo(p, x,  DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
 			if(p.hasPower("KamenRideFaizPower")  && !monster.hasPower("Phone_Mark")) {
@@ -65,7 +64,7 @@ public class Faiz_Phone extends AbstractCustomCardWithType{
 			}
 		}
 		if(p.hasPower("KamenRideFaizPower")) {
-			AbstractDungeon.actionManager.addToTop(new VFXAction(new Faiz_gunattack(AbstractDungeon.player.drawX, AbstractDungeon.player.drawY), 0F));
+			AbstractDungeon.actionManager.addToTop(new VFXAction(new Faiz_gunattack(), 0F));
 		}
 	}
 	

@@ -1,27 +1,18 @@
 package dcdmod.Vfx;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
-import com.badlogic.gdx.graphics.Color;
 
 public class Faiz_axelsounds extends AbstractGameEffect {
-	private float x;
-	private float y;
-	private Texture img = null;
 
-	public Faiz_axelsounds(float x, float y) {
-		if (this.img == null) {
-			this.img =new Texture(Gdx.files.internal("img/1024/orb-dark.png"));
-		}
 
-		this.x = x- (float)this.img.getWidth() / 2.0F;
-		this.y = y;
+	public Faiz_axelsounds() {
+
 		this.duration = 0.5F;//倒数时间
 		this.startingDuration = 0.5F;//持续时间
-		this.color = Color.WHITE.cpy();
+
 	}
 
 	public void update() {
@@ -33,8 +24,7 @@ public class Faiz_axelsounds extends AbstractGameEffect {
 	}
 
 	public void render(SpriteBatch sb) {
-		sb.setColor(this.color);
-		sb.draw(this.img, this.x, this.y);
+
 	}
 
 	public void dispose() {

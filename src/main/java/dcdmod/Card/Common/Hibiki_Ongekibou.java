@@ -50,9 +50,9 @@ public class Hibiki_Ongekibou extends AbstractCustomCardWithType{
 		this.baseDamage = ATTACK_DMG;
 		this.baseMagicNumber = this.magicNumber = 1;
 		this.damageType = DamageType.NORMAL;
-		this.tips = new ArrayList<TooltipInfo>();
+		this.tips = new ArrayList<>();
 		this.tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[1], EXTENDED_DESCRIPTION[2]));
-		this.tips2 = new ArrayList<TooltipInfo>();
+		this.tips2 = new ArrayList<>();
 		this.tips2.add(new TooltipInfo(EXTENDED_DESCRIPTION[1], EXTENDED_DESCRIPTION[3]));
 	}
 	

@@ -42,13 +42,13 @@ public class Kabuto_PutOn extends AbstractCustomCardWithType{
 		this.tags.add(DCDmod.RiderCard);
 		this.tags.add(DCDmod.KamenRide);
 		this.exhaust = true;
-		this.tips = new ArrayList<TooltipInfo>();
+		this.tips = new ArrayList<>();
 		this.tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[1], EXTENDED_DESCRIPTION[2]));
 	}
 	
 	@Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToTop(new VFXAction(new Kabuto_RiderToMasked(p.drawX - 200.00f, p.drawY + 250.00f), 1.2F));
+		AbstractDungeon.actionManager.addToTop(new VFXAction(new Kabuto_RiderToMasked(), 1.2F));
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new KabutoMaskedPower(p,1),1));
 		AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(new Kabuto_CastOff(), 1));
 	}

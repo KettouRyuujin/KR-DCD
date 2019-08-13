@@ -29,7 +29,7 @@ public class FormRideJack extends AbstractCustomCardWithType{
 
 	
 	
-	public FormRideJack() {
+	FormRideJack() {
 		super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
         		AbstractCard.CardType.SKILL, AbstractCardEnum.DCD,
         		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF,CardColorType.Blade);

@@ -30,8 +30,6 @@ public class Kabuto_ClockUp extends AbstractCustomCardWithType{
 	public static final String[] EXTENDED_DESCRIPTION;
 	public static final String IMG_PATH = "img/cards/Kabuto_ClockUp.png";
 	private static final int COST = 3;
-	boolean Start = true;
-	boolean End = true;
 	private List<TooltipInfo> tips;
 	
 	public Kabuto_ClockUp() {
@@ -40,7 +38,7 @@ public class Kabuto_ClockUp extends AbstractCustomCardWithType{
         		AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF,CardColorType.Kabuto);
 		this.tags.add(DCDmod.RiderCard);
 		exhaust = true;
-		this.tips = new ArrayList<TooltipInfo>();
+		this.tips = new ArrayList<>();
 		this.tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[1], EXTENDED_DESCRIPTION[2]));
 	}
 	

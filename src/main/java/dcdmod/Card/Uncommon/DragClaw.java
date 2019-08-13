@@ -75,15 +75,15 @@ public class DragClaw extends AbstractCustomCardWithType{
 			AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, "DragShieldPower", 2));
 			AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, d));
 			if(p.hasPower("KamenRideRyukiPower")) {
-				AbstractDungeon.actionManager.addToTop(new VFXAction(new Ryuki_guardstrike(AbstractDungeon.player.drawX - 200.00f, AbstractDungeon.player.drawY + 250.00f), 1.25F));
+				AbstractDungeon.actionManager.addToTop(new VFXAction(new Ryuki_guardstrike(), 1.25F));
 			}
 		}
 		else {
 			if(p.hasPower("KamenRideRyukiPower")) {
-				AbstractDungeon.actionManager.addToTop(new VFXAction(new Ryuki_strike(AbstractDungeon.player.drawX - 200.00f, AbstractDungeon.player.drawY + 250.00f), 1F));
+				AbstractDungeon.actionManager.addToTop(new VFXAction(new Ryuki_strike(), 1F));
 			}
 		}
-		AbstractDungeon.actionManager.addToTop(new VFXAction(new DragClaw_sounds(p.drawX - 200.00f, p.drawY + 250.00f), 1.5F));
+		AbstractDungeon.actionManager.addToTop(new VFXAction(new DragClaw_sounds(), 1.5F));
 	}
 	
 	@Override
@@ -344,6 +344,7 @@ public class DragClaw extends AbstractCustomCardWithType{
 	@Override
     public void upgrade() {
 		if (!this.upgraded) {
+			upgradeName();
 			this.upgradeDamage(3);
 		}
     }

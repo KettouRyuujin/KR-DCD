@@ -27,8 +27,7 @@ import dcdmod.Vfx.Ryuki_strikeattack;
 	  private static final PowerStrings powerStrings;
 	  public static final String NAME;
 	  public static final String[] DESCRIPTIONS;
-	  int power;
-	  int x = 0;
+
 	   
 	   public KamenRideRyukiPower(AbstractCreature owner, int amt)
 	   {
@@ -45,7 +44,7 @@ import dcdmod.Vfx.Ryuki_strikeattack;
 	   
 	   public void onRemove() {
 		   if(this.owner.hasPower("KamenRideDecadePower")) {
-			   AbstractDungeon.actionManager.addToBottom(new VFXAction(new Ryuki_backtodcd(AbstractDungeon.player.drawX - 200.00f, AbstractDungeon.player.drawY + 250.00f), 2F));
+			   AbstractDungeon.actionManager.addToBottom(new VFXAction(new Ryuki_backtodcd(), 2F));
 			   SpecialRideBooker.kamenpowerpoint = 1;
 		   }
 		   AbstractDungeon.actionManager.addToBottom(new RemoveFormRideAction(this.owner, this.owner));
@@ -57,14 +56,14 @@ import dcdmod.Vfx.Ryuki_strikeattack;
 	   
 	   public void onUseCard(final AbstractCard card, final UseCardAction action) {
 		   if(!DCDmod.AnimationTrigger) {
-			   if(this.owner.hasPower("DragClawPower") && !this.owner.hasPower("DragShieldPower") && card.cardID == "Ryuki_DragSaber") {
-				   AbstractDungeon.actionManager.addToTop(new VFXAction(new Ryuki_strikeattack(this.owner.drawX - 200.00f, this.owner.drawY + 250.00f), 1F));
+			   if(this.owner.hasPower("DragClawPower") && !this.owner.hasPower("DragShieldPower") && card.cardID.equals("Ryuki_DragSaber")) {
+				   AbstractDungeon.actionManager.addToTop(new VFXAction(new Ryuki_strikeattack(), 1F));
 			   }
-			   else if(this.owner.hasPower("DragShieldPower") && card.cardID == "Ryuki_DragSaber") {
-				   AbstractDungeon.actionManager.addToTop(new VFXAction(new Ryuki_guardattack(this.owner.drawX - 200.00f, this.owner.drawY + 250.00f), 0.8F));
+			   else if(this.owner.hasPower("DragShieldPower") && card.cardID.equals("Ryuki_DragSaber")) {
+				   AbstractDungeon.actionManager.addToTop(new VFXAction(new Ryuki_guardattack(), 0.8F));
 			   }
-			   else if(card.cardID == "Ryuki_DragSaber") {
-				   AbstractDungeon.actionManager.addToTop(new VFXAction(new Ryuki_attack(this.owner.drawX - 200.00f, this.owner.drawY + 250.00f), 0F));
+			   else if(card.cardID.equals("Ryuki_DragSaber")) {
+				   AbstractDungeon.actionManager.addToTop(new VFXAction(new Ryuki_attack(), 0F));
 			   }
 		   }
 	   }

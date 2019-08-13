@@ -11,13 +11,11 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-
 import dcdmod.DCDmod;
 import dcdmod.Patches.AbstractCardEnum;
 import dcdmod.Patches.AbstractCustomCardWithType;
 import dcdmod.Vfx.Kuuga_FAR_Background;
 import dcdmod.Vfx.Kuuga_FAR_SoundsAndAnimation;
-import dcdmod.Vfx.Kuuga_Pegasus_FAR;
 import dcdmod.Vfx.Kuuga_Pegasus_FAR2;
 
 

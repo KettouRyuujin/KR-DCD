@@ -20,20 +20,17 @@ public class Axel_SparkleCut_Timer extends AbstractGameEffect {
 	
 	private float x;
 	private float y;
-	private Texture img = null;
-	private AbstractCreature m;
+	private Texture img;
 	private int damage;
-	boolean Start= true;
-	boolean Final = false;
-	int n = 0;
+	private boolean Start= true;
+	private boolean Final = false;
+	private int n = 0;
 
 	
 	
 	public Axel_SparkleCut_Timer(int d) {
-		if (this.img == null) {
-			this.img =new Texture(Gdx.files.internal("img/1024/orb-dark.png"));
-		}
-		this.m = AbstractDungeon.getMonsters().getRandomMonster(true);
+		this.img =new Texture(Gdx.files.internal("img/1024/orb-dark.png"));
+		AbstractCreature m = AbstractDungeon.getMonsters().getRandomMonster(true);
 		if(m != null) {
 			this.x = m.drawX;
 			this.y = m.drawY;

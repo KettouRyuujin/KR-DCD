@@ -43,7 +43,7 @@ public class Faiz_Shot extends AbstractCustomCardWithType{
 		this.tags.add(DCDmod.RiderCard);
 		this.baseDamage = ATTACK_DMG;
 		this.baseMagicNumber = this.magicNumber = MAGIC_NUM;
-		this.tips = new ArrayList<TooltipInfo>();
+		this.tips = new ArrayList<>();
 		this.tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[1], EXTENDED_DESCRIPTION[2]));
 	}
 	

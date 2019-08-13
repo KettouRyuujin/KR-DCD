@@ -1,13 +1,10 @@
 package dcdmod.Vfx;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import dcdmod.Helper.SpecialAutoVajin;
-import dcdmod.Patches.AbstractAnimation;
 import dcdmod.Patches.AbstractSummonedAnimation;
 
 public class AutoVajin_disappear extends AbstractGameEffect {

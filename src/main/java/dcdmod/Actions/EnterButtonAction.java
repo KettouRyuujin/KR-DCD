@@ -27,10 +27,10 @@ import dcdmod.Vfx.Axel_attack;
 import dcdmod.Vfx.Faiz_gunattack;
 
 public class EnterButtonAction {
-	static CardGroup group = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
-	static boolean FaizGear = true;
-	static boolean selectcard = false;
-	static boolean HasGear = false;
+	private static CardGroup group = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
+	private static boolean FaizGear = true;
+	private static boolean selectcard = false;
+	private static boolean HasGear = false;
 	public static boolean FaizPhone = true;
 	public static boolean FaizPointer = true;
 	public static boolean FaizShot = true;
@@ -39,7 +39,7 @@ public class EnterButtonAction {
 	public static int PointerPoint = 0;
 	public static int ShotPoint = 0;
 	public static int EdgePoint = 0;
-	static AbstractCard c = null;
+	private static AbstractCard c = null;
 	public static void EnterButton() {
 		if(FaizGear) {
 			group.addToBottom(new FaizPhone_s());
@@ -63,7 +63,7 @@ public class EnterButtonAction {
 							AbstractDungeon.actionManager.addToTop(new VFXAction(AbstractDungeon.player, new CleaveEffect(), 0.0F));
 							AbstractDungeon.actionManager.addToTop(new DamageAction(AbstractDungeon.getMonsters().getRandomMonster(true),new DamageInfo(AbstractDungeon.player, 5, DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));	
 					}
-					AbstractDungeon.actionManager.addToTop(new VFXAction(new Faiz_gunattack(AbstractDungeon.player.drawX, AbstractDungeon.player.drawY), 0F));
+					AbstractDungeon.actionManager.addToTop(new VFXAction(new Faiz_gunattack(), 0F));
 				}
 				break;
 			case "FaizPointer_s":
@@ -78,7 +78,7 @@ public class EnterButtonAction {
 					c = new CrimsonSmash();
 					PointerPoint += 1;
 					if(PointerPoint > 1) {
-						AbstractDungeon.actionManager.addToBottom(new VFXAction(new Axel_attack(AbstractDungeon.player.drawX, AbstractDungeon.player.drawY), 0F));
+						AbstractDungeon.actionManager.addToBottom(new VFXAction(new Axel_attack(), 0F));
 						AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, 1));
 					}
 					else {
@@ -100,7 +100,7 @@ public class EnterButtonAction {
 					c = new PunchingUnit();
 					ShotPoint += 1;
 					if(ShotPoint > 1) {
-						AbstractDungeon.actionManager.addToBottom(new VFXAction(new Axel_attack(AbstractDungeon.player.drawX, AbstractDungeon.player.drawY), 0F));
+						AbstractDungeon.actionManager.addToBottom(new VFXAction(new Axel_attack(), 0F));
 						AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, 1));
 					}
 					else {
@@ -122,7 +122,7 @@ public class EnterButtonAction {
 					c = new SparkleCut();
 					EdgePoint += 1;
 					if(EdgePoint > 1) {
-						AbstractDungeon.actionManager.addToBottom(new VFXAction(new Axel_attack(AbstractDungeon.player.drawX, AbstractDungeon.player.drawY), 0F));
+						AbstractDungeon.actionManager.addToBottom(new VFXAction(new Axel_attack(), 0F));
 						AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, 1));
 					}
 					else {

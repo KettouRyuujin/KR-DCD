@@ -39,7 +39,7 @@ public class Blade_Metal extends AbstractCustomCardWithType{
         		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF,CardColorType.Blade);
 		this.tags.add(DCDmod.RiderCard);
 		this.baseMagicNumber = this.magicNumber = 5;
-		this.tips = new ArrayList<TooltipInfo>();
+		this.tips = new ArrayList<>();
 		this.tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[0], EXTENDED_DESCRIPTION[1]));
 		this.exhaust = true;
 	}

@@ -23,12 +23,10 @@ import dcdmod.Vfx.Agito_flame;
 	  private static final PowerStrings powerStrings;
 	  public static final String NAME;
 	  public static final String[] DESCRIPTIONS;
-	  int sx = 0;
-	  int Lv = 1;
-	  boolean remove;
-	  
-	  
-	   public AgitoFlamePower(AbstractCreature owner, int amt)
+	  private int sx = 0;
+
+
+	 public AgitoFlamePower(AbstractCreature owner, int amt)
 	   {
 		   
 	    this.name = NAME;
@@ -47,14 +45,14 @@ import dcdmod.Vfx.Agito_flame;
 	   }
 	   
 	   public void onUseCard(final AbstractCard card, final UseCardAction action) {
-		   if(!this.owner.hasPower("AgitoStormPower") && card.cardID == "Agito_FlameSaber" && !DCDmod.AnimationTrigger) {
-		   AbstractDungeon.actionManager.addToTop(new VFXAction(new Agito_flame(this.owner.drawX - 200.00f, this.owner.drawY + 250.00f), 0F));
+		   if(!this.owner.hasPower("AgitoStormPower") && card.cardID.equals("Agito_FlameSaber") && !DCDmod.AnimationTrigger) {
+		   AbstractDungeon.actionManager.addToTop(new VFXAction(new Agito_flame(), 0F));
 		   } 
 	   }
 	   
 	   public void onAfterCardPlayed(final AbstractCard usedCard) {
 		   if(usedCard.type == CardType.SKILL) {
-			   if(usedCard.cardID == "Decade_Defend") {sx+=2;}
+			   if(usedCard.cardID.equals("Decade_Defend")) {sx+=2;}
 			   else{sx++;}
 			   updateDescription();
 		   }

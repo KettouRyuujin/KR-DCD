@@ -40,8 +40,9 @@ public class MirrorWorld extends AbstractCustomCardWithType{
 		boolean hasRelic =false;
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new MirrorWorldPower(p, this.magicNumber), this.magicNumber));
 		for(AbstractRelic r1 : p.relics){
-			if(r1.relicId == "MirrorWorldRelic") {
+			if (r1.relicId.equals("MirrorWorldRelic")) {
 				hasRelic = true;
+				break;
 			}
 		}
 		if(!hasRelic) {

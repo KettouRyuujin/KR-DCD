@@ -49,10 +49,10 @@ import dcdmod.Vfx.Faiz_backtodcd;
 	   public void onRemove() {
 		   if(this.owner.hasPower("KamenRideDecadePower")) {
 			   if(Decade.cf == 39||Decade.cf == 40||Decade.cf == 41) {
-				   AbstractDungeon.actionManager.addToBottom(new VFXAction(new Allformbacktodcd(AbstractDungeon.player.drawX - 200.00f, AbstractDungeon.player.drawY + 250.00f), 2F));
+				   AbstractDungeon.actionManager.addToBottom(new VFXAction(new Allformbacktodcd(), 2F));
 			   }
 			   else {
-				   AbstractDungeon.actionManager.addToBottom(new VFXAction(new Faiz_backtodcd(AbstractDungeon.player.drawX - 200.00f, AbstractDungeon.player.drawY + 250.00f), 2F));
+				   AbstractDungeon.actionManager.addToBottom(new VFXAction(new Faiz_backtodcd(), 2F));
 			   }		   
 		   }
 		   AbstractDungeon.actionManager.addToBottom(new RemoveFormRideAction(this.owner, this.owner));
@@ -70,7 +70,7 @@ import dcdmod.Vfx.Faiz_backtodcd;
 		   if(EnterButtonAction.AxelForm) {
 			   AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, 1));
 			   if(card.type == CardType.ATTACK) {
-				   AbstractDungeon.actionManager.addToBottom(new VFXAction(new Axel_attack(AbstractDungeon.player.drawX, AbstractDungeon.player.drawY), 0F));
+				   AbstractDungeon.actionManager.addToBottom(new VFXAction(new Axel_attack(), 0F));
 			   }
 		   }
 	   }

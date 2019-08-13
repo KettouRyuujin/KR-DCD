@@ -48,7 +48,7 @@ public class KamenRideFaiz extends AbstractCustomCardWithType{
 		this.baseMagicNumber = this.magicNumber = 1;
 		this.tags.add(DCDmod.RiderCard);
 		this.tags.add(DCDmod.KamenRide);
-		this.tips = new ArrayList<TooltipInfo>();
+		this.tips = new ArrayList<>();
 		this.tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[0], EXTENDED_DESCRIPTION[1]));
 	}
 	

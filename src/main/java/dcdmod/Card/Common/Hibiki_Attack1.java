@@ -47,7 +47,7 @@ public class Hibiki_Attack1 extends AbstractCustomCardWithType{
 		this.baseDamage = ATTACK_DMG;
 		this.baseMagicNumber = this.magicNumber = 1;
 		this.damageType = DamageType.NORMAL;
-		this.tips = new ArrayList<TooltipInfo>();
+		this.tips = new ArrayList<>();
 		this.tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[0], EXTENDED_DESCRIPTION[1]));
 	}
 	
@@ -55,7 +55,7 @@ public class Hibiki_Attack1 extends AbstractCustomCardWithType{
     public void use(AbstractPlayer p, AbstractMonster m) {
 		CardCrawlGame.sound.playA("attackride", 0.0f);
 		if(p.hasPower("HibikiKurenaiPower")) {
-			AbstractDungeon.actionManager.addToTop(new VFXAction(new Hibiki_attack1(m, this.damage, this.damageType, this.magicNumber), 0.0F));
+			AbstractDungeon.actionManager.addToTop(new VFXAction(new Hibiki_attack1(this.damage, this.damageType, this.magicNumber), 0.0F));
 			int x = p.getPower("HibikiKurenaiSpecialPower").amount;
 			if(x > ReturnRandomNumberAction2.ReturnRandomNumber()) {
 				for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
@@ -74,7 +74,7 @@ public class Hibiki_Attack1 extends AbstractCustomCardWithType{
 				}
 			}
 		}
-		AbstractDungeon.actionManager.addToTop(new VFXAction(new Hibiki_Attack1_sounds(p.drawX - 200.00f, p.drawY + 250.00f), 1.5F));
+		AbstractDungeon.actionManager.addToTop(new VFXAction(new Hibiki_Attack1_sounds(), 1.5F));
 	}
 	
 	@Override
